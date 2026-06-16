@@ -11,3 +11,8 @@ node_modules/
 # Python
 __pycache__/
 *.pyc
+
+# SvelteKit / Vite / Vercel
+.svelte-kit/
+build/
+.vercel/
