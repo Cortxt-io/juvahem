@@ -44,5 +44,127 @@
         "fetched": "2026-06-16"
       }
     }
+  },
+  "jobs": {
+    "ScKy_FHB_7wT": {
+      "label": "Hotell, restaurang, storhushåll",
+      "value": 11.75,
+      "count": 15,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "GazW_2TU_kJw": {
+      "label": "Yrken med social inriktning",
+      "value": 6.26,
+      "count": 8,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "RPTn_bxG_ExZ": {
+      "label": "Försäljning, inköp, marknadsföring",
+      "value": 3.13,
+      "count": 4,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "NYW6_mP6_vwf": {
+      "label": "Hälso- och sjukvård",
+      "value": 3.92,
+      "count": 5,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "yhCP_AqT_tns": {
+      "label": "Installation, drift, underhåll",
+      "value": 2.35,
+      "count": 3,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "6Hq3_tKo_V57": {
+      "label": "Yrken med teknisk inriktning",
+      "value": 2.35,
+      "count": 3,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "ASGV_zcE_bWf": {
+      "label": "Transport, distribution, lager",
+      "value": 2.35,
+      "count": 3,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "X82t_awd_Qyc": {
+      "label": "Administration, ekonomi, juridik",
+      "value": 1.57,
+      "count": 2,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "whao_Q6A_ScE": {
+      "label": "Sanering och renhållning",
+      "value": 1.57,
+      "count": 2,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "apaJ_2ja_LuF": {
+      "label": "Data/IT",
+      "value": 1.57,
+      "count": 2,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "PaxQ_o1G_wWH": {
+      "label": "Hantverk",
+      "value": 1.57,
+      "count": 2,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "9puE_nYg_crq": {
+      "label": "Kultur, media, design",
+      "value": 0.78,
+      "count": 1,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    }
   }
 }

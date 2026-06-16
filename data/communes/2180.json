@@ -44,5 +44,177 @@
         "fetched": "2026-06-16"
       }
     }
+  },
+  "jobs": {
+    "NYW6_mP6_vwf": {
+      "label": "Hälso- och sjukvård",
+      "value": 7.68,
+      "count": 80,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "MVqp_eS8_kDZ": {
+      "label": "Pedagogik",
+      "value": 4.8,
+      "count": 50,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "RPTn_bxG_ExZ": {
+      "label": "Försäljning, inköp, marknadsföring",
+      "value": 2.31,
+      "count": 24,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "yhCP_AqT_tns": {
+      "label": "Installation, drift, underhåll",
+      "value": 3.07,
+      "count": 32,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "GazW_2TU_kJw": {
+      "label": "Yrken med social inriktning",
+      "value": 2.98,
+      "count": 31,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "6Hq3_tKo_V57": {
+      "label": "Yrken med teknisk inriktning",
+      "value": 2.5,
+      "count": 26,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "j7Cq_ZJe_GkT": {
+      "label": "Bygg och anläggning",
+      "value": 2.4,
+      "count": 25,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "ASGV_zcE_bWf": {
+      "label": "Transport, distribution, lager",
+      "value": 0.48,
+      "count": 5,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "whao_Q6A_ScE": {
+      "label": "Sanering och renhållning",
+      "value": 1.73,
+      "count": 18,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "ScKy_FHB_7wT": {
+      "label": "Hotell, restaurang, storhushåll",
+      "value": 1.44,
+      "count": 15,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "bh3H_Y3h_5eD": {
+      "label": "Chefer och verksamhetsledare",
+      "value": 1.25,
+      "count": 13,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "apaJ_2ja_LuF": {
+      "label": "Data/IT",
+      "value": 0.96,
+      "count": 10,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "wTEr_CBC_bqh": {
+      "label": "Industriell tillverkning",
+      "value": 0.67,
+      "count": 7,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "VuuL_7CH_adj": {
+      "label": "Naturbruk",
+      "value": 0.29,
+      "count": 3,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "Uuf1_GMh_Uvw": {
+      "label": "Kropps- och skönhetsvård",
+      "value": 0.29,
+      "count": 3,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "9puE_nYg_crq": {
+      "label": "Kultur, media, design",
+      "value": 0.1,
+      "count": 1,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "kJeN_wmw_9wX": {
+      "label": "Naturvetenskap",
+      "value": 0.1,
+      "count": 1,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    }
   }
 }

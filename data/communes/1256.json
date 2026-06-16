@@ -44,5 +44,87 @@
         "fetched": "2026-06-16"
       }
     }
+  },
+  "jobs": {
+    "MVqp_eS8_kDZ": {
+      "label": "Pedagogik",
+      "value": 5.1,
+      "count": 7,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "GazW_2TU_kJw": {
+      "label": "Yrken med social inriktning",
+      "value": 5.1,
+      "count": 7,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "NYW6_mP6_vwf": {
+      "label": "Hälso- och sjukvård",
+      "value": 4.37,
+      "count": 6,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "ASGV_zcE_bWf": {
+      "label": "Transport, distribution, lager",
+      "value": 2.19,
+      "count": 3,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "wTEr_CBC_bqh": {
+      "label": "Industriell tillverkning",
+      "value": 2.19,
+      "count": 3,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "j7Cq_ZJe_GkT": {
+      "label": "Bygg och anläggning",
+      "value": 0.73,
+      "count": 1,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "RPTn_bxG_ExZ": {
+      "label": "Försäljning, inköp, marknadsföring",
+      "value": 0.73,
+      "count": 1,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "ScKy_FHB_7wT": {
+      "label": "Hotell, restaurang, storhushåll",
+      "value": 0.73,
+      "count": 1,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    }
   }
 }

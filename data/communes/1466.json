@@ -44,5 +44,107 @@
         "fetched": "2026-06-16"
       }
     }
+  },
+  "jobs": {
+    "wTEr_CBC_bqh": {
+      "label": "Industriell tillverkning",
+      "value": 9.46,
+      "count": 9,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "NYW6_mP6_vwf": {
+      "label": "Hälso- och sjukvård",
+      "value": 7.36,
+      "count": 7,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "GazW_2TU_kJw": {
+      "label": "Yrken med social inriktning",
+      "value": 4.21,
+      "count": 4,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "MVqp_eS8_kDZ": {
+      "label": "Pedagogik",
+      "value": 2.1,
+      "count": 2,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "X82t_awd_Qyc": {
+      "label": "Administration, ekonomi, juridik",
+      "value": 1.05,
+      "count": 1,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "yhCP_AqT_tns": {
+      "label": "Installation, drift, underhåll",
+      "value": 1.05,
+      "count": 1,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "VuuL_7CH_adj": {
+      "label": "Naturbruk",
+      "value": 1.05,
+      "count": 1,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "E7hm_BLq_fqZ": {
+      "label": "Säkerhet och bevakning",
+      "value": 1.05,
+      "count": 1,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "6Hq3_tKo_V57": {
+      "label": "Yrken med teknisk inriktning",
+      "value": 1.05,
+      "count": 1,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "RPTn_bxG_ExZ": {
+      "label": "Försäljning, inköp, marknadsföring",
+      "value": 1.05,
+      "count": 1,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    }
   }
 }

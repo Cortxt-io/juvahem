@@ -44,5 +44,77 @@
         "fetched": "2026-06-16"
       }
     }
+  },
+  "jobs": {
+    "MVqp_eS8_kDZ": {
+      "label": "Pedagogik",
+      "value": 16.93,
+      "count": 4,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "NYW6_mP6_vwf": {
+      "label": "Hälso- och sjukvård",
+      "value": 12.7,
+      "count": 3,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "ScKy_FHB_7wT": {
+      "label": "Hotell, restaurang, storhushåll",
+      "value": 8.47,
+      "count": 2,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "X82t_awd_Qyc": {
+      "label": "Administration, ekonomi, juridik",
+      "value": 4.23,
+      "count": 1,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "GazW_2TU_kJw": {
+      "label": "Yrken med social inriktning",
+      "value": 4.23,
+      "count": 1,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "E7hm_BLq_fqZ": {
+      "label": "Säkerhet och bevakning",
+      "value": 4.23,
+      "count": 1,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "RPTn_bxG_ExZ": {
+      "label": "Försäljning, inköp, marknadsföring",
+      "value": 4.23,
+      "count": 1,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    }
   }
 }

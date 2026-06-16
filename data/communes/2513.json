@@ -44,5 +44,37 @@
         "fetched": "2026-06-16"
       }
     }
+  },
+  "jobs": {
+    "NYW6_mP6_vwf": {
+      "label": "Hälso- och sjukvård",
+      "value": 25.13,
+      "count": 8,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "X82t_awd_Qyc": {
+      "label": "Administration, ekonomi, juridik",
+      "value": 3.14,
+      "count": 1,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "yhCP_AqT_tns": {
+      "label": "Installation, drift, underhåll",
+      "value": 3.14,
+      "count": 1,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    }
   }
 }

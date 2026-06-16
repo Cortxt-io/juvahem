@@ -44,5 +44,37 @@
         "fetched": "2026-06-16"
       }
     }
+  },
+  "jobs": {
+    "GazW_2TU_kJw": {
+      "label": "Yrken med social inriktning",
+      "value": 10.5,
+      "count": 4,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "NYW6_mP6_vwf": {
+      "label": "Hälso- och sjukvård",
+      "value": 5.25,
+      "count": 2,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "MVqp_eS8_kDZ": {
+      "label": "Pedagogik",
+      "value": 2.62,
+      "count": 1,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    }
   }
 }

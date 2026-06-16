@@ -44,5 +44,87 @@
         "fetched": "2026-06-16"
       }
     }
+  },
+  "jobs": {
+    "MVqp_eS8_kDZ": {
+      "label": "Pedagogik",
+      "value": 17.23,
+      "count": 5,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "GazW_2TU_kJw": {
+      "label": "Yrken med social inriktning",
+      "value": 13.78,
+      "count": 4,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "6Hq3_tKo_V57": {
+      "label": "Yrken med teknisk inriktning",
+      "value": 10.34,
+      "count": 3,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "RPTn_bxG_ExZ": {
+      "label": "Försäljning, inköp, marknadsföring",
+      "value": 10.34,
+      "count": 3,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "ScKy_FHB_7wT": {
+      "label": "Hotell, restaurang, storhushåll",
+      "value": 6.89,
+      "count": 2,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "NYW6_mP6_vwf": {
+      "label": "Hälso- och sjukvård",
+      "value": 6.89,
+      "count": 2,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "yhCP_AqT_tns": {
+      "label": "Installation, drift, underhåll",
+      "value": 3.45,
+      "count": 1,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "j7Cq_ZJe_GkT": {
+      "label": "Bygg och anläggning",
+      "value": 3.45,
+      "count": 1,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    }
   }
 }

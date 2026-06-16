@@ -44,5 +44,107 @@
         "fetched": "2026-06-16"
       }
     }
+  },
+  "jobs": {
+    "NYW6_mP6_vwf": {
+      "label": "Hälso- och sjukvård",
+      "value": 4.6,
+      "count": 8,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "GazW_2TU_kJw": {
+      "label": "Yrken med social inriktning",
+      "value": 4.02,
+      "count": 7,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "6Hq3_tKo_V57": {
+      "label": "Yrken med teknisk inriktning",
+      "value": 1.15,
+      "count": 2,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "bh3H_Y3h_5eD": {
+      "label": "Chefer och verksamhetsledare",
+      "value": 1.72,
+      "count": 3,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "RPTn_bxG_ExZ": {
+      "label": "Försäljning, inköp, marknadsföring",
+      "value": 1.72,
+      "count": 3,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "ASGV_zcE_bWf": {
+      "label": "Transport, distribution, lager",
+      "value": 1.15,
+      "count": 2,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "9puE_nYg_crq": {
+      "label": "Kultur, media, design",
+      "value": 0.57,
+      "count": 1,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "E7hm_BLq_fqZ": {
+      "label": "Säkerhet och bevakning",
+      "value": 0.57,
+      "count": 1,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "apaJ_2ja_LuF": {
+      "label": "Data/IT",
+      "value": 0.57,
+      "count": 1,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "PaxQ_o1G_wWH": {
+      "label": "Hantverk",
+      "value": 0.57,
+      "count": 1,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    }
   }
 }

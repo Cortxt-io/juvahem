@@ -44,5 +44,17 @@
         "fetched": "2026-06-16"
       }
     }
+  },
+  "jobs": {
+    "GazW_2TU_kJw": {
+      "label": "Yrken med social inriktning",
+      "value": 2.76,
+      "count": 1,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    }
   }
 }

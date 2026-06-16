@@ -16,10 +16,14 @@ Writes `data/communes/<kommunkod>.json` (one per kommun) + `data/index.json`.
 
 | Source | Block | Cost | Status |
 |--------|-------|------|--------|
-| **Kolada** v3 | economy, population | free, no agreement | ✅ step 1 (done) |
-| SCB PxWeb v2 | population/employment | free | ⏳ next |
-| JobTech | jobs per occupation × kommun | free | ⏳ next |
+| **Kolada** v3 | economy, population | free, no agreement | ✅ done |
+| **JobTech** | jobs per occupation field × kommun (ads/10k) | free | ✅ done |
+| SCB PxWeb v2 | employment detail | free | ⏳ next |
 | Skolverket | schools | free | ⏳ next |
+
+JobTech is a **live snapshot** of open ads (not historical). Per-commune job-fit is
+ads-per-10k-inhabitants per occupation field. Known refinement: it does not yet model
+remote work or jobs within commute radius (matters for small communes near job hubs).
 
 ## Model
 

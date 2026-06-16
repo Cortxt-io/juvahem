@@ -44,5 +44,37 @@
         "fetched": "2026-06-16"
       }
     }
+  },
+  "jobs": {
+    "NYW6_mP6_vwf": {
+      "label": "Hälso- och sjukvård",
+      "value": 31.24,
+      "count": 7,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "ASGV_zcE_bWf": {
+      "label": "Transport, distribution, lager",
+      "value": 4.46,
+      "count": 1,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    },
+    "RPTn_bxG_ExZ": {
+      "label": "Försäljning, inköp, marknadsföring",
+      "value": 4.46,
+      "count": 1,
+      "provenance": {
+        "source": "jobtech:jobsearch",
+        "period": "2026-06-16",
+        "fetched": "2026-06-16"
+      }
+    }
   }
 }

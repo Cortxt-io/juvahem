@@ -39,6 +39,20 @@ class Population(BaseModel):
     forecast_change_10y_pct: Metric | None = None  # N02838
 
 
+class JobField(BaseModel):
+    """Open job ads in one occupation field, for one commune (a live snapshot).
+
+    `value` is ads per 10 000 inhabitants (per-capita → comparable across communes);
+    `count` is the raw ad count. Keyed in Commune.jobs by the JobTech occupation-field
+    concept id, which is what a person's `occupationCode` in the profile points to.
+    """
+
+    label: str
+    value: float | None = None  # ads per 10k inhabitants
+    count: int = 0  # raw open-ad count
+    provenance: Provenance
+
+
 class Commune(BaseModel):
     """One Swedish kommun. `kommunkod` is the SCB 4-digit code (string, leading zeros)."""
 
@@ -46,4 +60,6 @@ class Commune(BaseModel):
     name: str
     economy: Economy = Field(default_factory=Economy)
     population: Population = Field(default_factory=Population)
-    # jobs / housing / service / future blocks land in later ETL steps.
+    # jobs keyed by JobTech occupation-field concept id.
+    jobs: dict[str, JobField] = Field(default_factory=dict)
+    # housing / service / future blocks land in later ETL steps.

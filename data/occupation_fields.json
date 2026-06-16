@@ -1,0 +1,89 @@
+{
+  "generated": "2026-06-16",
+  "fields": [
+    {
+      "id": "X82t_awd_Qyc",
+      "label": "Administration, ekonomi, juridik"
+    },
+    {
+      "id": "j7Cq_ZJe_GkT",
+      "label": "Bygg och anläggning"
+    },
+    {
+      "id": "bh3H_Y3h_5eD",
+      "label": "Chefer och verksamhetsledare"
+    },
+    {
+      "id": "apaJ_2ja_LuF",
+      "label": "Data/IT"
+    },
+    {
+      "id": "RPTn_bxG_ExZ",
+      "label": "Försäljning, inköp, marknadsföring"
+    },
+    {
+      "id": "PaxQ_o1G_wWH",
+      "label": "Hantverk"
+    },
+    {
+      "id": "ScKy_FHB_7wT",
+      "label": "Hotell, restaurang, storhushåll"
+    },
+    {
+      "id": "NYW6_mP6_vwf",
+      "label": "Hälso- och sjukvård"
+    },
+    {
+      "id": "wTEr_CBC_bqh",
+      "label": "Industriell tillverkning"
+    },
+    {
+      "id": "yhCP_AqT_tns",
+      "label": "Installation, drift, underhåll"
+    },
+    {
+      "id": "Uuf1_GMh_Uvw",
+      "label": "Kropps- och skönhetsvård"
+    },
+    {
+      "id": "9puE_nYg_crq",
+      "label": "Kultur, media, design"
+    },
+    {
+      "id": "bH5L_uXD_ZAX",
+      "label": "Militära yrken"
+    },
+    {
+      "id": "VuuL_7CH_adj",
+      "label": "Naturbruk"
+    },
+    {
+      "id": "kJeN_wmw_9wX",
+      "label": "Naturvetenskap"
+    },
+    {
+      "id": "MVqp_eS8_kDZ",
+      "label": "Pedagogik"
+    },
+    {
+      "id": "whao_Q6A_ScE",
+      "label": "Sanering och renhållning"
+    },
+    {
+      "id": "E7hm_BLq_fqZ",
+      "label": "Säkerhet och bevakning"
+    },
+    {
+      "id": "ASGV_zcE_bWf",
+      "label": "Transport, distribution, lager"
+    },
+    {
+      "id": "GazW_2TU_kJw",
+      "label": "Yrken med social inriktning"
+    },
+    {
+      "id": "6Hq3_tKo_V57",
+      "label": "Yrken med teknisk inriktning"
+    }
+  ]
+}
