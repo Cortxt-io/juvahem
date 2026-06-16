@@ -1,0 +1,9 @@
+# Skräp / lokalt
+.DS_Store
+node_modules/
+.env
+*.local
+
+# Ev. hemligheter (om backend tillkommer)
+.gcp-sa.json
+*-key.json
