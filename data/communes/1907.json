@@ -1,0 +1,48 @@
+{
+  "kommunkod": "1907",
+  "name": "Surahammar",
+  "economy": {
+    "municipal_tax_pct": {
+      "value": 22.31,
+      "provenance": {
+        "source": "kolada:N00901",
+        "period": 2025,
+        "fetched": "2026-06-16"
+      }
+    },
+    "total_tax_pct": {
+      "value": 33.19,
+      "provenance": {
+        "source": "kolada:N00900",
+        "period": 2025,
+        "fetched": "2026-06-16"
+      }
+    }
+  },
+  "population": {
+    "total": {
+      "value": 9733.0,
+      "provenance": {
+        "source": "kolada:N01951",
+        "period": 2025,
+        "fetched": "2026-06-16"
+      }
+    },
+    "forecast_change_5y_pct": {
+      "value": -1.887886,
+      "provenance": {
+        "source": "kolada:N02915",
+        "period": 2024,
+        "fetched": "2026-06-16"
+      }
+    },
+    "forecast_change_10y_pct": {
+      "value": -3.396628,
+      "provenance": {
+        "source": "kolada:N02838",
+        "period": 2024,
+        "fetched": "2026-06-16"
+      }
+    }
+  }
+}

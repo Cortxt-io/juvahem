@@ -1,0 +1,48 @@
+{
+  "kommunkod": "1427",
+  "name": "Sotenäs",
+  "economy": {
+    "municipal_tax_pct": {
+      "value": 21.99,
+      "provenance": {
+        "source": "kolada:N00901",
+        "period": 2025,
+        "fetched": "2026-06-16"
+      }
+    },
+    "total_tax_pct": {
+      "value": 33.47,
+      "provenance": {
+        "source": "kolada:N00900",
+        "period": 2025,
+        "fetched": "2026-06-16"
+      }
+    }
+  },
+  "population": {
+    "total": {
+      "value": 9036.0,
+      "provenance": {
+        "source": "kolada:N01951",
+        "period": 2025,
+        "fetched": "2026-06-16"
+      }
+    },
+    "forecast_change_5y_pct": {
+      "value": 0.00631,
+      "provenance": {
+        "source": "kolada:N02915",
+        "period": 2024,
+        "fetched": "2026-06-16"
+      }
+    },
+    "forecast_change_10y_pct": {
+      "value": 0.37049,
+      "provenance": {
+        "source": "kolada:N02838",
+        "period": 2024,
+        "fetched": "2026-06-16"
+      }
+    }
+  }
+}

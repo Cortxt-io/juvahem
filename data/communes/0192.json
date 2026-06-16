@@ -1,0 +1,48 @@
+{
+  "kommunkod": "0192",
+  "name": "Nynäshamn",
+  "economy": {
+    "municipal_tax_pct": {
+      "value": 19.85,
+      "provenance": {
+        "source": "kolada:N00901",
+        "period": 2025,
+        "fetched": "2026-06-16"
+      }
+    },
+    "total_tax_pct": {
+      "value": 32.23,
+      "provenance": {
+        "source": "kolada:N00900",
+        "period": 2025,
+        "fetched": "2026-06-16"
+      }
+    }
+  },
+  "population": {
+    "total": {
+      "value": 30610.0,
+      "provenance": {
+        "source": "kolada:N01951",
+        "period": 2025,
+        "fetched": "2026-06-16"
+      }
+    },
+    "forecast_change_5y_pct": {
+      "value": 2.991647,
+      "provenance": {
+        "source": "kolada:N02915",
+        "period": 2024,
+        "fetched": "2026-06-16"
+      }
+    },
+    "forecast_change_10y_pct": {
+      "value": 5.641969,
+      "provenance": {
+        "source": "kolada:N02838",
+        "period": 2024,
+        "fetched": "2026-06-16"
+      }
+    }
+  }
+}

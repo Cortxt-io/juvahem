@@ -1,0 +1,48 @@
+{
+  "kommunkod": "1447",
+  "name": "Gullspång",
+  "economy": {
+    "municipal_tax_pct": {
+      "value": 22.49,
+      "provenance": {
+        "source": "kolada:N00901",
+        "period": 2025,
+        "fetched": "2026-06-16"
+      }
+    },
+    "total_tax_pct": {
+      "value": 33.97,
+      "provenance": {
+        "source": "kolada:N00900",
+        "period": 2025,
+        "fetched": "2026-06-16"
+      }
+    }
+  },
+  "population": {
+    "total": {
+      "value": 4949.0,
+      "provenance": {
+        "source": "kolada:N01951",
+        "period": 2025,
+        "fetched": "2026-06-16"
+      }
+    },
+    "forecast_change_5y_pct": {
+      "value": -2.71225,
+      "provenance": {
+        "source": "kolada:N02915",
+        "period": 2024,
+        "fetched": "2026-06-16"
+      }
+    },
+    "forecast_change_10y_pct": {
+      "value": -4.233389,
+      "provenance": {
+        "source": "kolada:N02838",
+        "period": 2024,
+        "fetched": "2026-06-16"
+      }
+    }
+  }
+}

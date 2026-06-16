@@ -1,0 +1,48 @@
+{
+  "kommunkod": "1383",
+  "name": "Varberg",
+  "economy": {
+    "municipal_tax_pct": {
+      "value": 20.33,
+      "provenance": {
+        "source": "kolada:N00901",
+        "period": 2025,
+        "fetched": "2026-06-16"
+      }
+    },
+    "total_tax_pct": {
+      "value": 31.73,
+      "provenance": {
+        "source": "kolada:N00900",
+        "period": 2025,
+        "fetched": "2026-06-16"
+      }
+    }
+  },
+  "population": {
+    "total": {
+      "value": 69460.0,
+      "provenance": {
+        "source": "kolada:N01951",
+        "period": 2025,
+        "fetched": "2026-06-16"
+      }
+    },
+    "forecast_change_5y_pct": {
+      "value": 4.18788,
+      "provenance": {
+        "source": "kolada:N02915",
+        "period": 2024,
+        "fetched": "2026-06-16"
+      }
+    },
+    "forecast_change_10y_pct": {
+      "value": 7.839129,
+      "provenance": {
+        "source": "kolada:N02838",
+        "period": 2024,
+        "fetched": "2026-06-16"
+      }
+    }
+  }
+}

@@ -1,0 +1,1746 @@
+{
+  "generated": "2026-06-16",
+  "count": 290,
+  "communes": [
+    {
+      "kommunkod": "1440",
+      "name": "Ale",
+      "municipal_tax_pct": 21.37,
+      "population_total": 32620.0
+    },
+    {
+      "kommunkod": "1489",
+      "name": "Alingsås",
+      "municipal_tax_pct": 21.36,
+      "population_total": 42861.0
+    },
+    {
+      "kommunkod": "0764",
+      "name": "Alvesta",
+      "municipal_tax_pct": 21.42,
+      "population_total": 19687.0
+    },
+    {
+      "kommunkod": "0604",
+      "name": "Aneby",
+      "municipal_tax_pct": 22.09,
+      "population_total": 6851.0
+    },
+    {
+      "kommunkod": "1984",
+      "name": "Arboga",
+      "municipal_tax_pct": 22.41,
+      "population_total": 13929.0
+    },
+    {
+      "kommunkod": "2506",
+      "name": "Arjeplog",
+      "municipal_tax_pct": 23.5,
+      "population_total": 2570.0
+    },
+    {
+      "kommunkod": "2505",
+      "name": "Arvidsjaur",
+      "municipal_tax_pct": 22.8,
+      "population_total": 6026.0
+    },
+    {
+      "kommunkod": "1784",
+      "name": "Arvika",
+      "municipal_tax_pct": 21.75,
+      "population_total": 25408.0
+    },
+    {
+      "kommunkod": "1882",
+      "name": "Askersund",
+      "municipal_tax_pct": 21.85,
+      "population_total": 11382.0
+    },
+    {
+      "kommunkod": "2084",
+      "name": "Avesta",
+      "municipal_tax_pct": 21.96,
+      "population_total": 22366.0
+    },
+    {
+      "kommunkod": "1460",
+      "name": "Bengtsfors",
+      "municipal_tax_pct": 22.92,
+      "population_total": 8955.0
+    },
+    {
+      "kommunkod": "2326",
+      "name": "Berg",
+      "municipal_tax_pct": 22.52,
+      "population_total": 7085.0
+    },
+    {
+      "kommunkod": "2403",
+      "name": "Bjurholm",
+      "municipal_tax_pct": 23.15,
+      "population_total": 2327.0
+    },
+    {
+      "kommunkod": "1260",
+      "name": "Bjuv",
+      "municipal_tax_pct": 20.99,
+      "population_total": 16052.0
+    },
+    {
+      "kommunkod": "2582",
+      "name": "Boden",
+      "municipal_tax_pct": 22.6,
+      "population_total": 28624.0
+    },
+    {
+      "kommunkod": "1443",
+      "name": "Bollebygd",
+      "municipal_tax_pct": 21.59,
+      "population_total": 9784.0
+    },
+    {
+      "kommunkod": "2183",
+      "name": "Bollnäs",
+      "municipal_tax_pct": 21.86,
+      "population_total": 26018.0
+    },
+    {
+      "kommunkod": "0885",
+      "name": "Borgholm",
+      "municipal_tax_pct": 21.58,
+      "population_total": 10626.0
+    },
+    {
+      "kommunkod": "2081",
+      "name": "Borlänge",
+      "municipal_tax_pct": 22.41,
+      "population_total": 51354.0
+    },
+    {
+      "kommunkod": "1490",
+      "name": "Borås",
+      "municipal_tax_pct": 21.31,
+      "population_total": 115238.0
+    },
+    {
+      "kommunkod": "0127",
+      "name": "Botkyrka",
+      "municipal_tax_pct": 20.05,
+      "population_total": 96750.0
+    },
+    {
+      "kommunkod": "0560",
+      "name": "Boxholm",
+      "municipal_tax_pct": 21.82,
+      "population_total": 5451.0
+    },
+    {
+      "kommunkod": "1272",
+      "name": "Bromölla",
+      "municipal_tax_pct": 22.56,
+      "population_total": 12497.0
+    },
+    {
+      "kommunkod": "2305",
+      "name": "Bräcke",
+      "municipal_tax_pct": 23.39,
+      "population_total": 5950.0
+    },
+    {
+      "kommunkod": "1231",
+      "name": "Burlöv",
+      "municipal_tax_pct": 20.09,
+      "population_total": 20444.0
+    },
+    {
+      "kommunkod": "1278",
+      "name": "Båstad",
+      "municipal_tax_pct": 20.23,
+      "population_total": 16046.0
+    },
+    {
+      "kommunkod": "1438",
+      "name": "Dals-Ed",
+      "municipal_tax_pct": 23.21,
+      "population_total": 4571.0
+    },
+    {
+      "kommunkod": "0162",
+      "name": "Danderyd",
+      "municipal_tax_pct": 18.25,
+      "population_total": 32500.0
+    },
+    {
+      "kommunkod": "1862",
+      "name": "Degerfors",
+      "municipal_tax_pct": 23.0,
+      "population_total": 9237.0
+    },
+    {
+      "kommunkod": "2425",
+      "name": "Dorotea",
+      "municipal_tax_pct": 23.8,
+      "population_total": 2241.0
+    },
+    {
+      "kommunkod": "1730",
+      "name": "Eda",
+      "municipal_tax_pct": 22.27,
+      "population_total": 8289.0
+    },
+    {
+      "kommunkod": "0125",
+      "name": "Ekerö",
+      "municipal_tax_pct": 19.22,
+      "population_total": 29062.0
+    },
+    {
+      "kommunkod": "0686",
+      "name": "Eksjö",
+      "municipal_tax_pct": 22.26,
+      "population_total": 17660.0
+    },
+    {
+      "kommunkod": "0862",
+      "name": "Emmaboda",
+      "municipal_tax_pct": 21.96,
+      "population_total": 8807.0
+    },
+    {
+      "kommunkod": "0381",
+      "name": "Enköping",
+      "municipal_tax_pct": 21.34,
+      "population_total": 48804.0
+    },
+    {
+      "kommunkod": "0484",
+      "name": "Eskilstuna",
+      "municipal_tax_pct": 22.02,
+      "population_total": 106789.0
+    },
+    {
+      "kommunkod": "1285",
+      "name": "Eslöv",
+      "municipal_tax_pct": 20.54,
+      "population_total": 35126.0
+    },
+    {
+      "kommunkod": "1445",
+      "name": "Essunga",
+      "municipal_tax_pct": 21.57,
+      "population_total": 5559.0
+    },
+    {
+      "kommunkod": "1982",
+      "name": "Fagersta",
+      "municipal_tax_pct": 22.11,
+      "population_total": 12915.0
+    },
+    {
+      "kommunkod": "1382",
+      "name": "Falkenberg",
+      "municipal_tax_pct": 21.1,
+      "population_total": 47321.0
+    },
+    {
+      "kommunkod": "1499",
+      "name": "Falköping",
+      "municipal_tax_pct": 21.95,
+      "population_total": 32794.0
+    },
+    {
+      "kommunkod": "2080",
+      "name": "Falun",
+      "municipal_tax_pct": 22.06,
+      "population_total": 59974.0
+    },
+    {
+      "kommunkod": "1782",
+      "name": "Filipstad",
+      "municipal_tax_pct": 22.27,
+      "population_total": 9625.0
+    },
+    {
+      "kommunkod": "0562",
+      "name": "Finspång",
+      "municipal_tax_pct": 22.15,
+      "population_total": 21502.0
+    },
+    {
+      "kommunkod": "0482",
+      "name": "Flen",
+      "municipal_tax_pct": 22.27,
+      "population_total": 15095.0
+    },
+    {
+      "kommunkod": "1763",
+      "name": "Forshaga",
+      "municipal_tax_pct": 22.35,
+      "population_total": 11439.0
+    },
+    {
+      "kommunkod": "1439",
+      "name": "Färgelanda",
+      "municipal_tax_pct": 22.91,
+      "population_total": 6288.0
+    },
+    {
+      "kommunkod": "2026",
+      "name": "Gagnef",
+      "municipal_tax_pct": 22.28,
+      "population_total": 10307.0
+    },
+    {
+      "kommunkod": "0662",
+      "name": "Gislaved",
+      "municipal_tax_pct": 21.99,
+      "population_total": 28641.0
+    },
+    {
+      "kommunkod": "0461",
+      "name": "Gnesta",
+      "municipal_tax_pct": 22.12,
+      "population_total": 11343.0
+    },
+    {
+      "kommunkod": "0617",
+      "name": "Gnosjö",
+      "municipal_tax_pct": 22.24,
+      "population_total": 9010.0
+    },
+    {
+      "kommunkod": "0980",
+      "name": "Gotland",
+      "municipal_tax_pct": 33.6,
+      "population_total": 60852.0
+    },
+    {
+      "kommunkod": "1764",
+      "name": "Grums",
+      "municipal_tax_pct": 22.5,
+      "population_total": 8854.0
+    },
+    {
+      "kommunkod": "1444",
+      "name": "Grästorp",
+      "municipal_tax_pct": 21.99,
+      "population_total": 5602.0
+    },
+    {
+      "kommunkod": "1447",
+      "name": "Gullspång",
+      "municipal_tax_pct": 22.49,
+      "population_total": 4949.0
+    },
+    {
+      "kommunkod": "2523",
+      "name": "Gällivare",
+      "municipal_tax_pct": 22.55,
+      "population_total": 17135.0
+    },
+    {
+      "kommunkod": "2180",
+      "name": "Gävle",
+      "municipal_tax_pct": 22.26,
+      "population_total": 104108.0
+    },
+    {
+      "kommunkod": "1480",
+      "name": "Göteborg",
+      "municipal_tax_pct": 21.12,
+      "population_total": 613278.0
+    },
+    {
+      "kommunkod": "1471",
+      "name": "Götene",
+      "municipal_tax_pct": 22.12,
+      "population_total": 13223.0
+    },
+    {
+      "kommunkod": "0643",
+      "name": "Habo",
+      "municipal_tax_pct": 22.17,
+      "population_total": 13511.0
+    },
+    {
+      "kommunkod": "1783",
+      "name": "Hagfors",
+      "municipal_tax_pct": 22.02,
+      "population_total": 11324.0
+    },
+    {
+      "kommunkod": "1861",
+      "name": "Hallsberg",
+      "municipal_tax_pct": 21.55,
+      "population_total": 16082.0
+    },
+    {
+      "kommunkod": "1961",
+      "name": "Hallstahammar",
+      "municipal_tax_pct": 21.81,
+      "population_total": 16600.0
+    },
+    {
+      "kommunkod": "1380",
+      "name": "Halmstad",
+      "municipal_tax_pct": 20.98,
+      "population_total": 106315.0
+    },
+    {
+      "kommunkod": "1761",
+      "name": "Hammarö",
+      "municipal_tax_pct": 22.92,
+      "population_total": 16932.0
+    },
+    {
+      "kommunkod": "0136",
+      "name": "Haninge",
+      "municipal_tax_pct": 19.45,
+      "population_total": 101408.0
+    },
+    {
+      "kommunkod": "2583",
+      "name": "Haparanda",
+      "municipal_tax_pct": 22.5,
+      "population_total": 9027.0
+    },
+    {
+      "kommunkod": "0331",
+      "name": "Heby",
+      "municipal_tax_pct": 22.5,
+      "population_total": 14275.0
+    },
+    {
+      "kommunkod": "2083",
+      "name": "Hedemora",
+      "municipal_tax_pct": 22.16,
+      "population_total": 15025.0
+    },
+    {
+      "kommunkod": "1283",
+      "name": "Helsingborg",
+      "municipal_tax_pct": 20.21,
+      "population_total": 152776.0
+    },
+    {
+      "kommunkod": "1466",
+      "name": "Herrljunga",
+      "municipal_tax_pct": 21.94,
+      "population_total": 9509.0
+    },
+    {
+      "kommunkod": "1497",
+      "name": "Hjo",
+      "municipal_tax_pct": 22.0,
+      "population_total": 9322.0
+    },
+    {
+      "kommunkod": "2104",
+      "name": "Hofors",
+      "municipal_tax_pct": 22.86,
+      "population_total": 9138.0
+    },
+    {
+      "kommunkod": "0126",
+      "name": "Huddinge",
+      "municipal_tax_pct": 19.47,
+      "population_total": 114686.0
+    },
+    {
+      "kommunkod": "2184",
+      "name": "Hudiksvall",
+      "municipal_tax_pct": 21.61,
+      "population_total": 37341.0
+    },
+    {
+      "kommunkod": "0860",
+      "name": "Hultsfred",
+      "municipal_tax_pct": 21.91,
+      "population_total": 13484.0
+    },
+    {
+      "kommunkod": "1315",
+      "name": "Hylte",
+      "municipal_tax_pct": 22.45,
+      "population_total": 10094.0
+    },
+    {
+      "kommunkod": "1863",
+      "name": "Hällefors",
+      "municipal_tax_pct": 22.05,
+      "population_total": 6269.0
+    },
+    {
+      "kommunkod": "2361",
+      "name": "Härjedalen",
+      "municipal_tax_pct": 22.47,
+      "population_total": 10117.0
+    },
+    {
+      "kommunkod": "2280",
+      "name": "Härnösand",
+      "municipal_tax_pct": 23.34,
+      "population_total": 24348.0
+    },
+    {
+      "kommunkod": "1401",
+      "name": "Härryda",
+      "municipal_tax_pct": 20.5,
+      "population_total": 40011.0
+    },
+    {
+      "kommunkod": "1293",
+      "name": "Hässleholm",
+      "municipal_tax_pct": 21.2,
+      "population_total": 51915.0
+    },
+    {
+      "kommunkod": "0305",
+      "name": "Håbo",
+      "municipal_tax_pct": 21.59,
+      "population_total": 23252.0
+    },
+    {
+      "kommunkod": "1284",
+      "name": "Höganäs",
+      "municipal_tax_pct": 19.73,
+      "population_total": 28489.0
+    },
+    {
+      "kommunkod": "0821",
+      "name": "Högsby",
+      "municipal_tax_pct": 22.21,
+      "population_total": 5134.0
+    },
+    {
+      "kommunkod": "1266",
+      "name": "Hörby",
+      "municipal_tax_pct": 21.08,
+      "population_total": 15559.0
+    },
+    {
+      "kommunkod": "1267",
+      "name": "Höör",
+      "municipal_tax_pct": 21.75,
+      "population_total": 17680.0
+    },
+    {
+      "kommunkod": "2510",
+      "name": "Jokkmokk",
+      "municipal_tax_pct": 22.95,
+      "population_total": 4695.0
+    },
+    {
+      "kommunkod": "0123",
+      "name": "Järfälla",
+      "municipal_tax_pct": 19.24,
+      "population_total": 90180.0
+    },
+    {
+      "kommunkod": "0680",
+      "name": "Jönköping",
+      "municipal_tax_pct": 21.64,
+      "population_total": 148152.0
+    },
+    {
+      "kommunkod": "2514",
+      "name": "Kalix",
+      "municipal_tax_pct": 22.55,
+      "population_total": 15252.0
+    },
+    {
+      "kommunkod": "0880",
+      "name": "Kalmar",
+      "municipal_tax_pct": 21.81,
+      "population_total": 73068.0
+    },
+    {
+      "kommunkod": "1446",
+      "name": "Karlsborg",
+      "municipal_tax_pct": 21.32,
+      "population_total": 7047.0
+    },
+    {
+      "kommunkod": "1082",
+      "name": "Karlshamn",
+      "municipal_tax_pct": 22.06,
+      "population_total": 31642.0
+    },
+    {
+      "kommunkod": "1883",
+      "name": "Karlskoga",
+      "municipal_tax_pct": 22.0,
+      "population_total": 30128.0
+    },
+    {
+      "kommunkod": "1080",
+      "name": "Karlskrona",
+      "municipal_tax_pct": 21.65,
+      "population_total": 66021.0
+    },
+    {
+      "kommunkod": "1780",
+      "name": "Karlstad",
+      "municipal_tax_pct": 21.27,
+      "population_total": 99007.0
+    },
+    {
+      "kommunkod": "0483",
+      "name": "Katrineholm",
+      "municipal_tax_pct": 22.12,
+      "population_total": 33984.0
+    },
+    {
+      "kommunkod": "1715",
+      "name": "Kil",
+      "municipal_tax_pct": 22.35,
+      "population_total": 12024.0
+    },
+    {
+      "kommunkod": "0513",
+      "name": "Kinda",
+      "municipal_tax_pct": 21.45,
+      "population_total": 9924.0
+    },
+    {
+      "kommunkod": "2584",
+      "name": "Kiruna",
+      "municipal_tax_pct": 23.05,
+      "population_total": 22402.0
+    },
+    {
+      "kommunkod": "1276",
+      "name": "Klippan",
+      "municipal_tax_pct": 20.75,
+      "population_total": 17713.0
+    },
+    {
+      "kommunkod": "0330",
+      "name": "Knivsta",
+      "municipal_tax_pct": 20.91,
+      "population_total": 21733.0
+    },
+    {
+      "kommunkod": "2282",
+      "name": "Kramfors",
+      "municipal_tax_pct": 23.14,
+      "population_total": 17390.0
+    },
+    {
+      "kommunkod": "1290",
+      "name": "Kristianstad",
+      "municipal_tax_pct": 21.46,
+      "population_total": 85908.0
+    },
+    {
+      "kommunkod": "1781",
+      "name": "Kristinehamn",
+      "municipal_tax_pct": 21.97,
+      "population_total": 23590.0
+    },
+    {
+      "kommunkod": "2309",
+      "name": "Krokom",
+      "municipal_tax_pct": 22.17,
+      "population_total": 15795.0
+    },
+    {
+      "kommunkod": "1881",
+      "name": "Kumla",
+      "municipal_tax_pct": 21.54,
+      "population_total": 22665.0
+    },
+    {
+      "kommunkod": "1384",
+      "name": "Kungsbacka",
+      "municipal_tax_pct": 21.33,
+      "population_total": 86332.0
+    },
+    {
+      "kommunkod": "1960",
+      "name": "Kungsör",
+      "municipal_tax_pct": 22.03,
+      "population_total": 8550.0
+    },
+    {
+      "kommunkod": "1482",
+      "name": "Kungälv",
+      "municipal_tax_pct": 21.44,
+      "population_total": 50496.0
+    },
+    {
+      "kommunkod": "1261",
+      "name": "Kävlinge",
+      "municipal_tax_pct": 18.51,
+      "population_total": 32655.0
+    },
+    {
+      "kommunkod": "1983",
+      "name": "Köping",
+      "municipal_tax_pct": 22.16,
+      "population_total": 25610.0
+    },
+    {
+      "kommunkod": "1381",
+      "name": "Laholm",
+      "municipal_tax_pct": 21.4,
+      "population_total": 26565.0
+    },
+    {
+      "kommunkod": "1282",
+      "name": "Landskrona",
+      "municipal_tax_pct": 20.24,
+      "population_total": 47571.0
+    },
+    {
+      "kommunkod": "1860",
+      "name": "Laxå",
+      "municipal_tax_pct": 22.7,
+      "population_total": 5397.0
+    },
+    {
+      "kommunkod": "1814",
+      "name": "Lekeberg",
+      "municipal_tax_pct": 22.43,
+      "population_total": 8608.0
+    },
+    {
+      "kommunkod": "2029",
+      "name": "Leksand",
+      "municipal_tax_pct": 21.81,
+      "population_total": 16167.0
+    },
+    {
+      "kommunkod": "1441",
+      "name": "Lerum",
+      "municipal_tax_pct": 20.65,
+      "population_total": 43752.0
+    },
+    {
+      "kommunkod": "0761",
+      "name": "Lessebo",
+      "municipal_tax_pct": 21.81,
+      "population_total": 8115.0
+    },
+    {
+      "kommunkod": "0186",
+      "name": "Lidingö",
+      "municipal_tax_pct": 17.34,
+      "population_total": 48369.0
+    },
+    {
+      "kommunkod": "1494",
+      "name": "Lidköping",
+      "municipal_tax_pct": 21.26,
+      "population_total": 40359.0
+    },
+    {
+      "kommunkod": "1462",
+      "name": "Lilla Edet",
+      "municipal_tax_pct": 22.37,
+      "population_total": 14398.0
+    },
+    {
+      "kommunkod": "1885",
+      "name": "Lindesberg",
+      "municipal_tax_pct": 22.3,
+      "population_total": 23014.0
+    },
+    {
+      "kommunkod": "0580",
+      "name": "Linköping",
+      "municipal_tax_pct": 20.2,
+      "population_total": 168714.0
+    },
+    {
+      "kommunkod": "0781",
+      "name": "Ljungby",
+      "municipal_tax_pct": 21.07,
+      "population_total": 28132.0
+    },
+    {
+      "kommunkod": "2161",
+      "name": "Ljusdal",
+      "municipal_tax_pct": 22.36,
+      "population_total": 18377.0
+    },
+    {
+      "kommunkod": "1864",
+      "name": "Ljusnarsberg",
+      "municipal_tax_pct": 21.5,
+      "population_total": 4290.0
+    },
+    {
+      "kommunkod": "1262",
+      "name": "Lomma",
+      "municipal_tax_pct": 19.64,
+      "population_total": 24677.0
+    },
+    {
+      "kommunkod": "2085",
+      "name": "Ludvika",
+      "municipal_tax_pct": 22.06,
+      "population_total": 26812.0
+    },
+    {
+      "kommunkod": "2580",
+      "name": "Luleå",
+      "municipal_tax_pct": 22.5,
+      "population_total": 80304.0
+    },
+    {
+      "kommunkod": "1281",
+      "name": "Lund",
+      "municipal_tax_pct": 21.24,
+      "population_total": 132333.0
+    },
+    {
+      "kommunkod": "2481",
+      "name": "Lycksele",
+      "municipal_tax_pct": 23.05,
+      "population_total": 12159.0
+    },
+    {
+      "kommunkod": "1484",
+      "name": "Lysekil",
+      "municipal_tax_pct": 22.46,
+      "population_total": 13796.0
+    },
+    {
+      "kommunkod": "1280",
+      "name": "Malmö",
+      "municipal_tax_pct": 21.24,
+      "population_total": 367924.0
+    },
+    {
+      "kommunkod": "2023",
+      "name": "Malung-Sälen",
+      "municipal_tax_pct": 22.56,
+      "population_total": 10192.0
+    },
+    {
+      "kommunkod": "2418",
+      "name": "Malå",
+      "municipal_tax_pct": 23.35,
+      "population_total": 2902.0
+    },
+    {
+      "kommunkod": "1493",
+      "name": "Mariestad",
+      "municipal_tax_pct": 21.26,
+      "population_total": 24421.0
+    },
+    {
+      "kommunkod": "1463",
+      "name": "Mark",
+      "municipal_tax_pct": 21.51,
+      "population_total": 35134.0
+    },
+    {
+      "kommunkod": "0767",
+      "name": "Markaryd",
+      "municipal_tax_pct": 21.31,
+      "population_total": 9862.0
+    },
+    {
+      "kommunkod": "1461",
+      "name": "Mellerud",
+      "municipal_tax_pct": 22.6,
+      "population_total": 9038.0
+    },
+    {
+      "kommunkod": "0586",
+      "name": "Mjölby",
+      "municipal_tax_pct": 21.9,
+      "population_total": 28823.0
+    },
+    {
+      "kommunkod": "2062",
+      "name": "Mora",
+      "municipal_tax_pct": 22.33,
+      "population_total": 20419.0
+    },
+    {
+      "kommunkod": "0583",
+      "name": "Motala",
+      "municipal_tax_pct": 21.7,
+      "population_total": 43131.0
+    },
+    {
+      "kommunkod": "0642",
+      "name": "Mullsjö",
+      "municipal_tax_pct": 22.34,
+      "population_total": 7546.0
+    },
+    {
+      "kommunkod": "1430",
+      "name": "Munkedal",
+      "municipal_tax_pct": 23.38,
+      "population_total": 10272.0
+    },
+    {
+      "kommunkod": "1762",
+      "name": "Munkfors",
+      "municipal_tax_pct": 22.02,
+      "population_total": 3637.0
+    },
+    {
+      "kommunkod": "1481",
+      "name": "Mölndal",
+      "municipal_tax_pct": 20.51,
+      "population_total": 72128.0
+    },
+    {
+      "kommunkod": "0861",
+      "name": "Mönsterås",
+      "municipal_tax_pct": 22.21,
+      "population_total": 12978.0
+    },
+    {
+      "kommunkod": "0840",
+      "name": "Mörbylånga",
+      "municipal_tax_pct": 22.21,
+      "population_total": 16306.0
+    },
+    {
+      "kommunkod": "0182",
+      "name": "Nacka",
+      "municipal_tax_pct": 17.88,
+      "population_total": 113730.0
+    },
+    {
+      "kommunkod": "1884",
+      "name": "Nora",
+      "municipal_tax_pct": 22.25,
+      "population_total": 10603.0
+    },
+    {
+      "kommunkod": "1962",
+      "name": "Norberg",
+      "municipal_tax_pct": 22.66,
+      "population_total": 5351.0
+    },
+    {
+      "kommunkod": "2132",
+      "name": "Nordanstig",
+      "municipal_tax_pct": 22.51,
+      "population_total": 9284.0
+    },
+    {
+      "kommunkod": "2401",
+      "name": "Nordmaling",
+      "municipal_tax_pct": 23.25,
+      "population_total": 6905.0
+    },
+    {
+      "kommunkod": "0581",
+      "name": "Norrköping",
+      "municipal_tax_pct": 21.75,
+      "population_total": 144904.0
+    },
+    {
+      "kommunkod": "0188",
+      "name": "Norrtälje",
+      "municipal_tax_pct": 19.72,
+      "population_total": 66832.0
+    },
+    {
+      "kommunkod": "2417",
+      "name": "Norsjö",
+      "municipal_tax_pct": 23.35,
+      "population_total": 3811.0
+    },
+    {
+      "kommunkod": "0881",
+      "name": "Nybro",
+      "municipal_tax_pct": 22.33,
+      "population_total": 19803.0
+    },
+    {
+      "kommunkod": "0140",
+      "name": "Nykvarn",
+      "municipal_tax_pct": 19.97,
+      "population_total": 12384.0
+    },
+    {
+      "kommunkod": "0480",
+      "name": "Nyköping",
+      "municipal_tax_pct": 21.42,
+      "population_total": 58310.0
+    },
+    {
+      "kommunkod": "0192",
+      "name": "Nynäshamn",
+      "municipal_tax_pct": 19.85,
+      "population_total": 30610.0
+    },
+    {
+      "kommunkod": "0682",
+      "name": "Nässjö",
+      "municipal_tax_pct": 22.54,
+      "population_total": 31474.0
+    },
+    {
+      "kommunkod": "2101",
+      "name": "Ockelbo",
+      "municipal_tax_pct": 22.76,
+      "population_total": 5715.0
+    },
+    {
+      "kommunkod": "1060",
+      "name": "Olofström",
+      "municipal_tax_pct": 21.71,
+      "population_total": 12844.0
+    },
+    {
+      "kommunkod": "2034",
+      "name": "Orsa",
+      "municipal_tax_pct": 22.31,
+      "population_total": 6902.0
+    },
+    {
+      "kommunkod": "1421",
+      "name": "Orust",
+      "municipal_tax_pct": 22.31,
+      "population_total": 15363.0
+    },
+    {
+      "kommunkod": "1273",
+      "name": "Osby",
+      "municipal_tax_pct": 22.81,
+      "population_total": 12861.0
+    },
+    {
+      "kommunkod": "0882",
+      "name": "Oskarshamn",
+      "municipal_tax_pct": 22.35,
+      "population_total": 26762.0
+    },
+    {
+      "kommunkod": "2121",
+      "name": "Ovanåker",
+      "municipal_tax_pct": 21.86,
+      "population_total": 11272.0
+    },
+    {
+      "kommunkod": "0481",
+      "name": "Oxelösund",
+      "municipal_tax_pct": 22.22,
+      "population_total": 11962.0
+    },
+    {
+      "kommunkod": "2521",
+      "name": "Pajala",
+      "municipal_tax_pct": 23.4,
+      "population_total": 5706.0
+    },
+    {
+      "kommunkod": "1402",
+      "name": "Partille",
+      "municipal_tax_pct": 19.91,
+      "population_total": 41164.0
+    },
+    {
+      "kommunkod": "1275",
+      "name": "Perstorp",
+      "municipal_tax_pct": 20.81,
+      "population_total": 7115.0
+    },
+    {
+      "kommunkod": "2581",
+      "name": "Piteå",
+      "municipal_tax_pct": 22.25,
+      "population_total": 42184.0
+    },
+    {
+      "kommunkod": "2303",
+      "name": "Ragunda",
+      "municipal_tax_pct": 23.22,
+      "population_total": 5152.0
+    },
+    {
+      "kommunkod": "2409",
+      "name": "Robertsfors",
+      "municipal_tax_pct": 23.15,
+      "population_total": 6595.0
+    },
+    {
+      "kommunkod": "1081",
+      "name": "Ronneby",
+      "municipal_tax_pct": 21.64,
+      "population_total": 28708.0
+    },
+    {
+      "kommunkod": "2031",
+      "name": "Rättvik",
+      "municipal_tax_pct": 21.81,
+      "population_total": 10978.0
+    },
+    {
+      "kommunkod": "1981",
+      "name": "Sala",
+      "municipal_tax_pct": 22.31,
+      "population_total": 22600.0
+    },
+    {
+      "kommunkod": "0128",
+      "name": "Salem",
+      "municipal_tax_pct": 19.67,
+      "population_total": 17370.0
+    },
+    {
+      "kommunkod": "2181",
+      "name": "Sandviken",
+      "municipal_tax_pct": 21.61,
+      "population_total": 38033.0
+    },
+    {
+      "kommunkod": "0191",
+      "name": "Sigtuna",
+      "municipal_tax_pct": 19.7,
+      "population_total": 53365.0
+    },
+    {
+      "kommunkod": "1291",
+      "name": "Simrishamn",
+      "municipal_tax_pct": 20.51,
+      "population_total": 18779.0
+    },
+    {
+      "kommunkod": "1265",
+      "name": "Sjöbo",
+      "municipal_tax_pct": 20.92,
+      "population_total": 19397.0
+    },
+    {
+      "kommunkod": "1495",
+      "name": "Skara",
+      "municipal_tax_pct": 21.9,
+      "population_total": 18753.0
+    },
+    {
+      "kommunkod": "2482",
+      "name": "Skellefteå",
+      "municipal_tax_pct": 22.6,
+      "population_total": 75405.0
+    },
+    {
+      "kommunkod": "1904",
+      "name": "Skinnskatteberg",
+      "municipal_tax_pct": 22.46,
+      "population_total": 4234.0
+    },
+    {
+      "kommunkod": "1264",
+      "name": "Skurup",
+      "municipal_tax_pct": 20.42,
+      "population_total": 17139.0
+    },
+    {
+      "kommunkod": "1496",
+      "name": "Skövde",
+      "municipal_tax_pct": 21.61,
+      "population_total": 58272.0
+    },
+    {
+      "kommunkod": "2061",
+      "name": "Smedjebacken",
+      "municipal_tax_pct": 22.45,
+      "population_total": 10758.0
+    },
+    {
+      "kommunkod": "2283",
+      "name": "Sollefteå",
+      "municipal_tax_pct": 23.39,
+      "population_total": 18138.0
+    },
+    {
+      "kommunkod": "0163",
+      "name": "Sollentuna",
+      "municipal_tax_pct": 18.12,
+      "population_total": 78033.0
+    },
+    {
+      "kommunkod": "0184",
+      "name": "Solna",
+      "municipal_tax_pct": 17.37,
+      "population_total": 86435.0
+    },
+    {
+      "kommunkod": "2422",
+      "name": "Sorsele",
+      "municipal_tax_pct": 23.6,
+      "population_total": 2362.0
+    },
+    {
+      "kommunkod": "1427",
+      "name": "Sotenäs",
+      "municipal_tax_pct": 21.99,
+      "population_total": 9036.0
+    },
+    {
+      "kommunkod": "1230",
+      "name": "Staffanstorp",
+      "municipal_tax_pct": 19.09,
+      "population_total": 27482.0
+    },
+    {
+      "kommunkod": "1415",
+      "name": "Stenungsund",
+      "municipal_tax_pct": 21.64,
+      "population_total": 27854.0
+    },
+    {
+      "kommunkod": "0180",
+      "name": "Stockholm",
+      "municipal_tax_pct": 18.22,
+      "population_total": 999239.0
+    },
+    {
+      "kommunkod": "1760",
+      "name": "Storfors",
+      "municipal_tax_pct": 22.7,
+      "population_total": 3777.0
+    },
+    {
+      "kommunkod": "2421",
+      "name": "Storuman",
+      "municipal_tax_pct": 23.1,
+      "population_total": 5543.0
+    },
+    {
+      "kommunkod": "0486",
+      "name": "Strängnäs",
+      "municipal_tax_pct": 21.67,
+      "population_total": 39387.0
+    },
+    {
+      "kommunkod": "1486",
+      "name": "Strömstad",
+      "municipal_tax_pct": 21.91,
+      "population_total": 13557.0
+    },
+    {
+      "kommunkod": "2313",
+      "name": "Strömsund",
+      "municipal_tax_pct": 23.22,
+      "population_total": 10904.0
+    },
+    {
+      "kommunkod": "0183",
+      "name": "Sundbyberg",
+      "municipal_tax_pct": 19.25,
+      "population_total": 57000.0
+    },
+    {
+      "kommunkod": "2281",
+      "name": "Sundsvall",
+      "municipal_tax_pct": 22.59,
+      "population_total": 98962.0
+    },
+    {
+      "kommunkod": "1766",
+      "name": "Sunne",
+      "municipal_tax_pct": 21.62,
+      "population_total": 13354.0
+    },
+    {
+      "kommunkod": "1907",
+      "name": "Surahammar",
+      "municipal_tax_pct": 22.31,
+      "population_total": 9733.0
+    },
+    {
+      "kommunkod": "1214",
+      "name": "Svalöv",
+      "municipal_tax_pct": 20.74,
+      "population_total": 14474.0
+    },
+    {
+      "kommunkod": "1263",
+      "name": "Svedala",
+      "municipal_tax_pct": 20.24,
+      "population_total": 23714.0
+    },
+    {
+      "kommunkod": "1465",
+      "name": "Svenljunga",
+      "municipal_tax_pct": 22.05,
+      "population_total": 10616.0
+    },
+    {
+      "kommunkod": "1785",
+      "name": "Säffle",
+      "municipal_tax_pct": 21.52,
+      "population_total": 14756.0
+    },
+    {
+      "kommunkod": "2082",
+      "name": "Säter",
+      "municipal_tax_pct": 22.31,
+      "population_total": 11222.0
+    },
+    {
+      "kommunkod": "0684",
+      "name": "Sävsjö",
+      "municipal_tax_pct": 21.92,
+      "population_total": 11531.0
+    },
+    {
+      "kommunkod": "2182",
+      "name": "Söderhamn",
+      "municipal_tax_pct": 21.66,
+      "population_total": 24163.0
+    },
+    {
+      "kommunkod": "0582",
+      "name": "Söderköping",
+      "municipal_tax_pct": 21.98,
+      "population_total": 14741.0
+    },
+    {
+      "kommunkod": "0181",
+      "name": "Södertälje",
+      "municipal_tax_pct": 20.15,
+      "population_total": 102772.0
+    },
+    {
+      "kommunkod": "1083",
+      "name": "Sölvesborg",
+      "municipal_tax_pct": 21.82,
+      "population_total": 17405.0
+    },
+    {
+      "kommunkod": "1435",
+      "name": "Tanum",
+      "municipal_tax_pct": 21.56,
+      "population_total": 12677.0
+    },
+    {
+      "kommunkod": "1472",
+      "name": "Tibro",
+      "municipal_tax_pct": 21.71,
+      "population_total": 11326.0
+    },
+    {
+      "kommunkod": "1498",
+      "name": "Tidaholm",
+      "municipal_tax_pct": 22.07,
+      "population_total": 12736.0
+    },
+    {
+      "kommunkod": "0360",
+      "name": "Tierp",
+      "municipal_tax_pct": 21.29,
+      "population_total": 21028.0
+    },
+    {
+      "kommunkod": "2262",
+      "name": "Timrå",
+      "municipal_tax_pct": 23.19,
+      "population_total": 17465.0
+    },
+    {
+      "kommunkod": "0763",
+      "name": "Tingsryd",
+      "municipal_tax_pct": 22.0,
+      "population_total": 11896.0
+    },
+    {
+      "kommunkod": "1419",
+      "name": "Tjörn",
+      "municipal_tax_pct": 21.71,
+      "population_total": 16003.0
+    },
+    {
+      "kommunkod": "1270",
+      "name": "Tomelilla",
+      "municipal_tax_pct": 20.61,
+      "population_total": 13669.0
+    },
+    {
+      "kommunkod": "1737",
+      "name": "Torsby",
+      "municipal_tax_pct": 22.02,
+      "population_total": 11278.0
+    },
+    {
+      "kommunkod": "0834",
+      "name": "Torsås",
+      "municipal_tax_pct": 21.93,
+      "population_total": 6919.0
+    },
+    {
+      "kommunkod": "1452",
+      "name": "Tranemo",
+      "municipal_tax_pct": 21.5,
+      "population_total": 11873.0
+    },
+    {
+      "kommunkod": "0687",
+      "name": "Tranås",
+      "municipal_tax_pct": 22.01,
+      "population_total": 18555.0
+    },
+    {
+      "kommunkod": "1287",
+      "name": "Trelleborg",
+      "municipal_tax_pct": 20.4,
+      "population_total": 47405.0
+    },
+    {
+      "kommunkod": "1488",
+      "name": "Trollhättan",
+      "municipal_tax_pct": 22.36,
+      "population_total": 59265.0
+    },
+    {
+      "kommunkod": "0488",
+      "name": "Trosa",
+      "municipal_tax_pct": 21.3,
+      "population_total": 14900.0
+    },
+    {
+      "kommunkod": "0138",
+      "name": "Tyresö",
+      "municipal_tax_pct": 19.5,
+      "population_total": 49645.0
+    },
+    {
+      "kommunkod": "0160",
+      "name": "Täby",
+      "municipal_tax_pct": 17.55,
+      "population_total": 78514.0
+    },
+    {
+      "kommunkod": "1473",
+      "name": "Töreboda",
+      "municipal_tax_pct": 21.72,
+      "population_total": 9093.0
+    },
+    {
+      "kommunkod": "1485",
+      "name": "Uddevalla",
+      "municipal_tax_pct": 22.16,
+      "population_total": 56744.0
+    },
+    {
+      "kommunkod": "1491",
+      "name": "Ulricehamn",
+      "municipal_tax_pct": 21.05,
+      "population_total": 24954.0
+    },
+    {
+      "kommunkod": "2480",
+      "name": "Umeå",
+      "municipal_tax_pct": 22.8,
+      "population_total": 135273.0
+    },
+    {
+      "kommunkod": "0114",
+      "name": "Upplands Väsby",
+      "municipal_tax_pct": 19.42,
+      "population_total": 50495.0
+    },
+    {
+      "kommunkod": "0139",
+      "name": "Upplands-Bro",
+      "municipal_tax_pct": 19.4,
+      "population_total": 33333.0
+    },
+    {
+      "kommunkod": "0380",
+      "name": "Uppsala",
+      "municipal_tax_pct": 21.14,
+      "population_total": 249726.0
+    },
+    {
+      "kommunkod": "0760",
+      "name": "Uppvidinge",
+      "municipal_tax_pct": 21.8,
+      "population_total": 8911.0
+    },
+    {
+      "kommunkod": "0584",
+      "name": "Vadstena",
+      "municipal_tax_pct": 22.8,
+      "population_total": 7484.0
+    },
+    {
+      "kommunkod": "0665",
+      "name": "Vaggeryd",
+      "municipal_tax_pct": 21.49,
+      "population_total": 14943.0
+    },
+    {
+      "kommunkod": "0563",
+      "name": "Valdemarsvik",
+      "municipal_tax_pct": 22.48,
+      "population_total": 7526.0
+    },
+    {
+      "kommunkod": "0115",
+      "name": "Vallentuna",
+      "municipal_tax_pct": 18.9,
+      "population_total": 35361.0
+    },
+    {
+      "kommunkod": "2021",
+      "name": "Vansbro",
+      "municipal_tax_pct": 22.29,
+      "population_total": 6741.0
+    },
+    {
+      "kommunkod": "1470",
+      "name": "Vara",
+      "municipal_tax_pct": 21.77,
+      "population_total": 16011.0
+    },
+    {
+      "kommunkod": "1383",
+      "name": "Varberg",
+      "municipal_tax_pct": 20.33,
+      "population_total": 69460.0
+    },
+    {
+      "kommunkod": "0187",
+      "name": "Vaxholm",
+      "municipal_tax_pct": 19.3,
+      "population_total": 11636.0
+    },
+    {
+      "kommunkod": "1233",
+      "name": "Vellinge",
+      "municipal_tax_pct": 18.5,
+      "population_total": 37833.0
+    },
+    {
+      "kommunkod": "0685",
+      "name": "Vetlanda",
+      "municipal_tax_pct": 22.01,
+      "population_total": 27313.0
+    },
+    {
+      "kommunkod": "2462",
+      "name": "Vilhelmina",
+      "municipal_tax_pct": 23.65,
+      "population_total": 6172.0
+    },
+    {
+      "kommunkod": "0884",
+      "name": "Vimmerby",
+      "municipal_tax_pct": 22.36,
+      "population_total": 15327.0
+    },
+    {
+      "kommunkod": "2404",
+      "name": "Vindeln",
+      "municipal_tax_pct": 23.35,
+      "population_total": 5421.0
+    },
+    {
+      "kommunkod": "0428",
+      "name": "Vingåker",
+      "municipal_tax_pct": 22.67,
+      "population_total": 8666.0
+    },
+    {
+      "kommunkod": "1487",
+      "name": "Vänersborg",
+      "municipal_tax_pct": 22.21,
+      "population_total": 40078.0
+    },
+    {
+      "kommunkod": "2460",
+      "name": "Vännäs",
+      "municipal_tax_pct": 23.35,
+      "population_total": 9225.0
+    },
+    {
+      "kommunkod": "0120",
+      "name": "Värmdö",
+      "municipal_tax_pct": 18.98,
+      "population_total": 46601.0
+    },
+    {
+      "kommunkod": "0683",
+      "name": "Värnamo",
+      "municipal_tax_pct": 21.52,
+      "population_total": 34534.0
+    },
+    {
+      "kommunkod": "0883",
+      "name": "Västervik",
+      "municipal_tax_pct": 21.16,
+      "population_total": 36269.0
+    },
+    {
+      "kommunkod": "1980",
+      "name": "Västerås",
+      "municipal_tax_pct": 20.36,
+      "population_total": 161240.0
+    },
+    {
+      "kommunkod": "0780",
+      "name": "Växjö",
+      "municipal_tax_pct": 20.19,
+      "population_total": 98940.0
+    },
+    {
+      "kommunkod": "1442",
+      "name": "Vårgårda",
+      "municipal_tax_pct": 21.61,
+      "population_total": 12472.0
+    },
+    {
+      "kommunkod": "0512",
+      "name": "Ydre",
+      "municipal_tax_pct": 22.55,
+      "population_total": 3619.0
+    },
+    {
+      "kommunkod": "1286",
+      "name": "Ystad",
+      "municipal_tax_pct": 20.11,
+      "population_total": 32188.0
+    },
+    {
+      "kommunkod": "0765",
+      "name": "Älmhult",
+      "municipal_tax_pct": 21.86,
+      "population_total": 17579.0
+    },
+    {
+      "kommunkod": "2039",
+      "name": "Älvdalen",
+      "municipal_tax_pct": 22.78,
+      "population_total": 6831.0
+    },
+    {
+      "kommunkod": "0319",
+      "name": "Älvkarleby",
+      "municipal_tax_pct": 22.69,
+      "population_total": 9573.0
+    },
+    {
+      "kommunkod": "2560",
+      "name": "Älvsbyn",
+      "municipal_tax_pct": 22.45,
+      "population_total": 7815.0
+    },
+    {
+      "kommunkod": "1292",
+      "name": "Ängelholm",
+      "municipal_tax_pct": 20.29,
+      "population_total": 45159.0
+    },
+    {
+      "kommunkod": "1492",
+      "name": "Åmål",
+      "municipal_tax_pct": 22.46,
+      "population_total": 11679.0
+    },
+    {
+      "kommunkod": "2260",
+      "name": "Ånge",
+      "municipal_tax_pct": 23.33,
+      "population_total": 9000.0
+    },
+    {
+      "kommunkod": "2321",
+      "name": "Åre",
+      "municipal_tax_pct": 22.22,
+      "population_total": 12770.0
+    },
+    {
+      "kommunkod": "1765",
+      "name": "Årjäng",
+      "municipal_tax_pct": 21.97,
+      "population_total": 9734.0
+    },
+    {
+      "kommunkod": "2463",
+      "name": "Åsele",
+      "municipal_tax_pct": 23.6,
+      "population_total": 2683.0
+    },
+    {
+      "kommunkod": "1277",
+      "name": "Åstorp",
+      "municipal_tax_pct": 20.29,
+      "population_total": 16491.0
+    },
+    {
+      "kommunkod": "0561",
+      "name": "Åtvidaberg",
+      "municipal_tax_pct": 22.39,
+      "population_total": 11490.0
+    },
+    {
+      "kommunkod": "1407",
+      "name": "Öckerö",
+      "municipal_tax_pct": 21.56,
+      "population_total": 12863.0
+    },
+    {
+      "kommunkod": "0509",
+      "name": "Ödeshög",
+      "municipal_tax_pct": 22.4,
+      "population_total": 5221.0
+    },
+    {
+      "kommunkod": "1880",
+      "name": "Örebro",
+      "municipal_tax_pct": 21.35,
+      "population_total": 160687.0
+    },
+    {
+      "kommunkod": "1257",
+      "name": "Örkelljunga",
+      "municipal_tax_pct": 19.06,
+      "population_total": 10293.0
+    },
+    {
+      "kommunkod": "2284",
+      "name": "Örnsköldsvik",
+      "municipal_tax_pct": 22.71,
+      "population_total": 55338.0
+    },
+    {
+      "kommunkod": "2380",
+      "name": "Östersund",
+      "municipal_tax_pct": 22.02,
+      "population_total": 64963.0
+    },
+    {
+      "kommunkod": "0117",
+      "name": "Österåker",
+      "municipal_tax_pct": 16.6,
+      "population_total": 49943.0
+    },
+    {
+      "kommunkod": "0382",
+      "name": "Östhammar",
+      "municipal_tax_pct": 21.64,
+      "population_total": 22181.0
+    },
+    {
+      "kommunkod": "1256",
+      "name": "Östra Göinge",
+      "municipal_tax_pct": 20.99,
+      "population_total": 13718.0
+    },
+    {
+      "kommunkod": "2513",
+      "name": "Överkalix",
+      "municipal_tax_pct": 22.8,
+      "population_total": 3183.0
+    },
+    {
+      "kommunkod": "2518",
+      "name": "Övertorneå",
+      "municipal_tax_pct": 22.5,
+      "population_total": 3995.0
+    }
+  ]
+}
