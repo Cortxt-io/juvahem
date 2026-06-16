@@ -7,3 +7,7 @@ node_modules/
 # Ev. hemligheter (om backend tillkommer)
 .gcp-sa.json
 *-key.json
+
+# Python
+__pycache__/
+*.pyc
