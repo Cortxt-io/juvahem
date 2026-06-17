@@ -47,9 +47,12 @@ export const DIMENSIONS = [
   },
   {
     key: "tax",
-    label: "Kommunalskatt",
+    label: "Skatt (kommun + region)",
     direction: "lower",
-    extract: (c) => c.economy?.municipal_tax_pct?.value ?? null,
+    // Total local tax = what residents actually pay (municipal + regional). Falls
+    // back to municipal-only if total is missing. Wide spread → high signal.
+    extract: (c) =>
+      c.economy?.total_tax_pct?.value ?? c.economy?.municipal_tax_pct?.value ?? null,
   },
   {
     key: "growth",

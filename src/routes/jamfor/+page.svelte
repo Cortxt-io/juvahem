@@ -6,22 +6,46 @@
   import RankedList from '$lib/components/RankedList.svelte';
   import Map from '$lib/components/Map.svelte';
 
-  // The couple profile. price/commute weights stay 0 (no data yet).
+  // Life-situation presets — pick one to set how many people and the default
+  // weights. juvahem ranks against YOUR situation, not a generic top-list. As more
+  // dimensions land (schools/safety/transit) their weights get added per situation.
+  const SITUATIONS = [
+    { id: 'par', label: 'Par som jobbar', icon: '👫', persons: 2,
+      weights: { jobs: 45, tax: 20, energy: 20, growth: 15 } },
+    { id: 'singel', label: 'Singel', icon: '🧍', persons: 1,
+      weights: { jobs: 45, tax: 20, energy: 20, growth: 15 } },
+    { id: 'familj', label: 'Familj med barn', icon: '👨‍👩‍👧', persons: 2,
+      weights: { jobs: 35, tax: 15, energy: 20, growth: 30 } },
+    { id: 'pensionar', label: 'Pensionär', icon: '🌅', persons: 2,
+      weights: { jobs: 5, tax: 35, energy: 35, growth: 25 } },
+    { id: 'distans', label: 'Distansarbetare', icon: '💻', persons: 1,
+      weights: { jobs: 15, tax: 25, energy: 35, growth: 25 } }
+  ];
+
   let profile = $state({
     persons: [{ occupationCode: '' }, { occupationCode: '' }],
     weights: { jobs: 45, tax: 20, energy: 20, growth: 15, price: 0, commute: 0 }
   });
+  let situation = $state(null);
 
-  let step = $state(0); // 0 intro · 1 persons · 2 weights · 3 results
+  let step = $state(0); // 0 situation · 1 persons · 2 weights · 3 results
   let view = $state('list'); // list | map
+
+  function pickSituation(s) {
+    profile.persons = Array.from(
+      { length: s.persons },
+      (_, i) => profile.persons[i] ?? { occupationCode: '' }
+    );
+    profile.weights = { ...profile.weights, ...s.weights };
+    situation = s.id;
+    step = 1;
+  }
 
   // Live ranking — recomputes on every profile change.
   const ranked = $derived(rankCommunes(communes, profile));
-  const bothChosen = $derived(
-    profile.persons[0].occupationCode && profile.persons[1].occupationCode
-  );
+  const single = $derived(profile.persons.length === 1);
 
-  const STEPS = ['Intro', 'Ni två', 'Vikter', 'Resultat'];
+  const STEPS = ['Situation', 'Yrken', 'Vikter', 'Resultat'];
 </script>
 
 <svelte:head>
@@ -50,24 +74,29 @@
 
   {#if step === 0}
     <section class="panel">
-      <h1>Var ska ni bo?</h1>
+      <h1>Var ska du bo?</h1>
       <p class="lead">
-        Vi rankar Sveriges alla 290 kommuner mot <b>ert pars</b> kombinerade profil — jobbmarknaden
-        för er båda (vägd med harmoniskt medel så att <i>båda</i> måste kunna jobba), kommunalskatt och
-        befolkningstrend. Justera vikterna och se listan ranka om sig direkt.
+        Vi rankar Sveriges alla 290 kommuner mot <b>din</b> situation — jobb, skatt, elkostnad
+        och befolkningstrend, vägt som det passar dig. Börja med vilken situation som stämmer:
       </p>
-      <button class="btn" type="button" onclick={() => (step = 1)}>Sätt igång →</button>
+      <div class="situations">
+        {#each SITUATIONS as s (s.id)}
+          <button class="sit" type="button" onclick={() => pickSituation(s)}>
+            <span class="ico">{s.icon}</span>{s.label}
+          </button>
+        {/each}
+      </div>
     </section>
   {:else if step === 1}
     <section class="panel">
-      <h2>Era yrken</h2>
-      <p class="sub">Välj yrkesområde för var och en — det driver jobb-dimensionen för er båda.</p>
+      <h2>{single ? 'Ditt yrke' : 'Era yrken'}</h2>
+      <p class="sub">
+        Välj yrkesområde — det driver jobb-dimensionen{single ? '' : ' för er båda (harmoniskt medel: båda måste kunna jobba)'}.
+        Hoppa över om jobb inte är relevant (t.ex. pensionär) — då räknas det inte.
+      </p>
       <PersonColumns bind:persons={profile.persons} />
       <div class="actions">
-        <button class="btn" type="button" onclick={() => (step = 2)} disabled={!bothChosen}>
-          Vidare till vikter →
-        </button>
-        {#if !bothChosen}<span class="hint">Välj yrkesområde för båda för att gå vidare.</span>{/if}
+        <button class="btn" type="button" onclick={() => (step = 2)}>Vidare till vikter →</button>
       </div>
     </section>
   {:else if step === 2}
@@ -178,9 +207,32 @@
     align-items: center;
     gap: 14px;
   }
-  .hint {
-    color: var(--muted);
-    font-size: 13px;
+  .situations {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+    margin-top: 8px;
+  }
+  .sit {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid var(--line);
+    background: var(--card);
+    border-radius: 12px;
+    padding: 16px 18px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--ink);
+    text-align: left;
+  }
+  .sit:hover {
+    border-color: var(--accent);
+    background: #fbf8f2;
+  }
+  .sit .ico {
+    font-size: 24px;
   }
   .results-head {
     display: flex;

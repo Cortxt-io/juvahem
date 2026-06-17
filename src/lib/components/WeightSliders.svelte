@@ -6,7 +6,7 @@
 
   const ACTIVE = [
     { key: 'jobs', label: 'Jobb (båda)' },
-    { key: 'tax', label: 'Kommunalskatt' },
+    { key: 'tax', label: 'Skatt (kommun + region)' },
     { key: 'energy', label: 'Elkostnad (elområde)' },
     { key: 'growth', label: 'Befolkningstrend' }
   ];
