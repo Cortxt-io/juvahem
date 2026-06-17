@@ -2,14 +2,19 @@
   // Constant-sum-style weighting. The scoring engine renormalizes weights itself,
   // so these raw 0–100 values just need to be relative; we show each as a % of the
   // total for comprehension (UI-SPEC: "normalized to 100%").
-  let { weights = $bindable() } = $props();
-
-  const ACTIVE = [
+  // `dims` is the slider set for the current mode (defaults to "bo här").
+  const BO_DIMS = [
     { key: 'jobs', label: 'Jobb (båda)' },
-    { key: 'tax', label: 'Kommunalskatt' },
+    { key: 'tax', label: 'Skatt (kommun + region)' },
+    { key: 'energy', label: 'Elkostnad (elområde)' },
+    { key: 'schools', label: 'Skola (behörighet)' },
+    { key: 'safety', label: 'Trygghet (få brott)' },
+    { key: 'transit', label: 'Kollektivtrafik' },
     { key: 'growth', label: 'Befolkningstrend' }
   ];
+  let { weights = $bindable(), dims = BO_DIMS, hint = '' } = $props();
 
+  const ACTIVE = $derived(dims);
   const total = $derived(ACTIVE.reduce((s, d) => s + (Number(weights[d.key]) || 0), 0));
   function pct(key) {
     if (total <= 0) return 0;
@@ -28,8 +33,7 @@
     </div>
   {/each}
   <p class="hint">
-    Dra för att vikta vad som betyder mest för er. Bostadspris och pendling är på väg in —
-    de påverkar inte rankningen ännu.
+    {hint || 'Dra för att vikta vad som betyder mest för er. Bostadspris och pendling är på väg in — de påverkar inte rankningen ännu.'}
   </p>
 </div>
 

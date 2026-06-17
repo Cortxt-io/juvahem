@@ -246,5 +246,78 @@
         "fetched": "2026-06-16"
       }
     }
+  },
+  "energy": {
+    "price_area": "SE3",
+    "price_level": {
+      "value": 76.42,
+      "provenance": {
+        "source": "elprisetjustnu:spot;zones:electricitymaps/entsoe",
+        "period": "trailing-30d",
+        "fetched": "2026-06-17"
+      }
+    }
+  },
+  "safety": {
+    "reported_crime_per_100k": {
+      "value": 14412.62541,
+      "provenance": {
+        "source": "kolada:N07540",
+        "period": 2025
+      }
+    }
+  },
+  "schools": {
+    "eligibility_pct": {
+      "value": 87.1,
+      "provenance": {
+        "source": "kolada:N15424",
+        "period": 2025
+      }
+    }
+  },
+  "transit": {
+    "stop_count": {
+      "value": 200,
+      "provenance": {
+        "source": "resrobot:nearbystops",
+        "period": "2026-06-17",
+        "radius_m": 4000
+      }
+    }
+  },
+  "housing": {
+    "price_level_tkr": {
+      "value": 10851.0,
+      "provenance": {
+        "source": "scb:FastprisSHRegionAr",
+        "period": 2025,
+        "fetched": "2026-06-17"
+      }
+    },
+    "price_change_5y_pct": {
+      "value": 9.3,
+      "provenance": {
+        "source": "scb:FastprisSHRegionAr",
+        "period": 2025,
+        "fetched": "2026-06-17"
+      }
+    },
+    "price_change_10y_pct": {
+      "value": 17.0,
+      "provenance": {
+        "source": "scb:FastprisSHRegionAr",
+        "period": 2025,
+        "fetched": "2026-06-17"
+      }
+    },
+    "num_sales": {
+      "value": 28.0,
+      "provenance": {
+        "source": "scb:FastprisSHRegionAr",
+        "period": 2025,
+        "fetched": "2026-06-17"
+      }
+    }
   }
 }

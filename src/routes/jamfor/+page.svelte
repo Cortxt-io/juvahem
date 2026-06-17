@@ -1,27 +1,70 @@
 <script>
   import { communes } from '$lib/data/communes.js';
-  import { rankCommunes } from '$lib/score.js';
+  import { rankCommunes, INVEST_DIMENSIONS } from '$lib/score.js';
   import PersonColumns from '$lib/components/PersonColumns.svelte';
   import WeightSliders from '$lib/components/WeightSliders.svelte';
   import RankedList from '$lib/components/RankedList.svelte';
   import Map from '$lib/components/Map.svelte';
 
-  // The couple profile. price/commute weights stay 0 (no data yet).
+  // Life-situation presets — pick one to set how many people and the default
+  // weights. juvahem ranks against YOUR situation, not a generic top-list. As more
+  // dimensions land (schools/safety/transit) their weights get added per situation.
+  const SITUATIONS = [
+    { id: 'par', label: 'Par som jobbar', icon: '👫', persons: 2,
+      weights: { jobs: 35, tax: 15, energy: 15, schools: 5, safety: 10, transit: 5, growth: 15 } },
+    { id: 'singel', label: 'Singel', icon: '🧍', persons: 1,
+      weights: { jobs: 40, tax: 15, energy: 10, schools: 0, safety: 10, transit: 10, growth: 15 } },
+    { id: 'familj', label: 'Familj med barn', icon: '👨‍👩‍👧', persons: 2,
+      weights: { jobs: 20, tax: 10, energy: 15, schools: 30, safety: 15, transit: 5, growth: 5 } },
+    { id: 'pensionar', label: 'Pensionär', icon: '🌅', persons: 2,
+      weights: { jobs: 5, tax: 25, energy: 25, schools: 0, safety: 25, transit: 10, growth: 10 } },
+    { id: 'distans', label: 'Distansarbetare', icon: '💻', persons: 1,
+      weights: { jobs: 10, tax: 20, energy: 30, schools: 5, safety: 10, transit: 5, growth: 20 } }
+  ];
+
   let profile = $state({
     persons: [{ occupationCode: '' }, { occupationCode: '' }],
-    weights: { jobs: 50, tax: 20, growth: 30, price: 0, commute: 0 }
+    weights: {
+      jobs: 35, tax: 15, energy: 15, schools: 5, safety: 10, transit: 5, growth: 15, price: 0, commute: 0,
+      // "Investera här"-vikter (egna nycklar, krockar inte med bo-läget):
+      price_trend: 45, demand: 25, price_entry: 15, activity: 15
+    }
   });
+  let situation = $state(null);
 
-  let step = $state(0); // 0 intro · 1 persons · 2 weights · 3 results
+  let mode = $state('bo'); // bo | invest — two modes, one engine
+  let step = $state(0); // 0 situation · 1 persons · 2 weights · 3 results
   let view = $state('list'); // list | map
 
-  // Live ranking — recomputes on every profile change.
-  const ranked = $derived(rankCommunes(communes, profile));
-  const bothChosen = $derived(
-    profile.persons[0].occupationCode && profile.persons[1].occupationCode
-  );
+  // Slider set + helper text for the "investera här"-mode.
+  const INVEST_SLIDERS = [
+    { key: 'price_trend', label: 'Prisutveckling 5 år' },
+    { key: 'price_entry', label: 'Lågt insteg (pris)' },
+    { key: 'demand', label: 'Efterfrågan (befolkning)' },
+    { key: 'activity', label: 'Marknadsaktivitet (antal köp)' }
+  ];
+  const INVEST_HINT =
+    'Makro-screening på kommunnivå (fria SCB-data). Visar var marknaden vuxit och är aktiv — ' +
+    'inte avkastning per objekt (det kräver licensierad fastighetsdata).';
 
-  const STEPS = ['Intro', 'Ni två', 'Vikter', 'Resultat'];
+  function pickSituation(s) {
+    profile.persons = Array.from(
+      { length: s.persons },
+      (_, i) => profile.persons[i] ?? { occupationCode: '' }
+    );
+    profile.weights = { ...profile.weights, ...s.weights };
+    situation = s.id;
+    step = 1;
+  }
+
+  // Live ranking — recomputes on every profile/mode change. Invest mode swaps the
+  // dimension set; same engine, same renormalization.
+  const ranked = $derived(
+    rankCommunes(communes, profile, mode === 'invest' ? INVEST_DIMENSIONS : undefined)
+  );
+  const single = $derived(profile.persons.length === 1);
+
+  const STEPS = ['Situation', 'Yrken', 'Vikter', 'Resultat'];
 </script>
 
 <svelte:head>
@@ -33,6 +76,15 @@
   <header>
     <a class="brand" href="/"><span class="dot">🏡</span> Juvahem</a>
   </header>
+
+  <div class="mode">
+    <button class="modebtn" class:active={mode === 'bo'} type="button" onclick={() => (mode = 'bo')}>
+      🏡 Bo här
+    </button>
+    <button class="modebtn" class:active={mode === 'invest'} type="button" onclick={() => (mode = 'invest')}>
+      📈 Investera här
+    </button>
+  </div>
 
   <nav class="steps">
     {#each STEPS as s, i (s)}
@@ -50,31 +102,40 @@
 
   {#if step === 0}
     <section class="panel">
-      <h1>Var ska ni bo?</h1>
+      <h1>Var ska du bo?</h1>
       <p class="lead">
-        Vi rankar Sveriges alla 290 kommuner mot <b>ert pars</b> kombinerade profil — jobbmarknaden
-        för er båda (vägd med harmoniskt medel så att <i>båda</i> måste kunna jobba), kommunalskatt och
-        befolkningstrend. Justera vikterna och se listan ranka om sig direkt.
+        Vi rankar Sveriges alla 290 kommuner mot <b>din</b> situation — jobb, skatt, elkostnad
+        och befolkningstrend, vägt som det passar dig. Börja med vilken situation som stämmer:
       </p>
-      <button class="btn" type="button" onclick={() => (step = 1)}>Sätt igång →</button>
+      <div class="situations">
+        {#each SITUATIONS as s (s.id)}
+          <button class="sit" type="button" onclick={() => pickSituation(s)}>
+            <span class="ico">{s.icon}</span>{s.label}
+          </button>
+        {/each}
+      </div>
     </section>
   {:else if step === 1}
     <section class="panel">
-      <h2>Era yrken</h2>
-      <p class="sub">Välj yrkesområde för var och en — det driver jobb-dimensionen för er båda.</p>
+      <h2>{single ? 'Ditt yrke' : 'Era yrken'}</h2>
+      <p class="sub">
+        Välj yrkesområde — det driver jobb-dimensionen{single ? '' : ' för er båda (harmoniskt medel: båda måste kunna jobba)'}.
+        Hoppa över om jobb inte är relevant (t.ex. pensionär) — då räknas det inte.
+      </p>
       <PersonColumns bind:persons={profile.persons} />
       <div class="actions">
-        <button class="btn" type="button" onclick={() => (step = 2)} disabled={!bothChosen}>
-          Vidare till vikter →
-        </button>
-        {#if !bothChosen}<span class="hint">Välj yrkesområde för båda för att gå vidare.</span>{/if}
+        <button class="btn" type="button" onclick={() => (step = 2)}>Vidare till vikter →</button>
       </div>
     </section>
   {:else if step === 2}
     <section class="panel">
-      <h2>Vad väger tyngst för er?</h2>
+      <h2>{mode === 'invest' ? 'Vad väger tyngst i investeringen?' : 'Vad väger tyngst för er?'}</h2>
       <p class="sub">Dra reglagen. Rankningen längst ner uppdateras direkt.</p>
-      <WeightSliders bind:weights={profile.weights} />
+      {#if mode === 'invest'}
+        <WeightSliders bind:weights={profile.weights} dims={INVEST_SLIDERS} hint={INVEST_HINT} />
+      {:else}
+        <WeightSliders bind:weights={profile.weights} />
+      {/if}
       <div class="actions">
         <button class="btn" type="button" onclick={() => (step = 3)}>Se resultatet →</button>
       </div>
@@ -82,7 +143,7 @@
   {:else}
     <section class="panel">
       <div class="results-head">
-        <h2>Era topp-kommuner</h2>
+        <h2>{mode === 'invest' ? 'Topp för investering' : 'Era topp-kommuner'}</h2>
         <div class="toggle">
           <button class:active={view === 'list'} type="button" onclick={() => (view = 'list')}>Lista</button>
           <button class:active={view === 'map'} type="button" onclick={() => (view = 'map')}>Karta</button>
@@ -94,14 +155,18 @@
       </p>
 
       {#if view === 'list'}
-        <RankedList {ranked} limit={20} />
+        <RankedList {ranked} limit={20} persons={profile.persons} {mode} />
       {:else}
         <Map {ranked} />
       {/if}
 
       <details class="tune">
         <summary>Justera vikter</summary>
-        <WeightSliders bind:weights={profile.weights} />
+        {#if mode === 'invest'}
+          <WeightSliders bind:weights={profile.weights} dims={INVEST_SLIDERS} hint={INVEST_HINT} />
+        {:else}
+          <WeightSliders bind:weights={profile.weights} />
+        {/if}
       </details>
     </section>
   {/if}
@@ -110,6 +175,26 @@
 <style>
   header {
     padding: 22px 0;
+  }
+  .mode {
+    display: inline-flex;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 4px 0 16px;
+  }
+  .modebtn {
+    border: 0;
+    background: var(--card);
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--muted);
+  }
+  .modebtn.active {
+    background: var(--accent);
+    color: #fff;
   }
   .steps {
     display: flex;
@@ -178,9 +263,32 @@
     align-items: center;
     gap: 14px;
   }
-  .hint {
-    color: var(--muted);
-    font-size: 13px;
+  .situations {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+    margin-top: 8px;
+  }
+  .sit {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid var(--line);
+    background: var(--card);
+    border-radius: 12px;
+    padding: 16px 18px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--ink);
+    text-align: left;
+  }
+  .sit:hover {
+    border-color: var(--accent);
+    background: #fbf8f2;
+  }
+  .sit .ico {
+    font-size: 24px;
   }
   .results-head {
     display: flex;

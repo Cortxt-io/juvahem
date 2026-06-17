@@ -1,4 +1,7 @@
 <script>
+  import ListingLinks from '$lib/components/ListingLinks.svelte';
+  import { jobLink } from '$lib/data/portalKeys.js';
+
   let { data } = $props();
   const c = $derived(data.commune);
   const fmt = (n, suffix = '') =>
@@ -30,16 +33,38 @@
       <div class="card stat"><span class="k">Total skatt</span><span class="v">{fmt(c.totalTax, '%')}</span></div>
       <div class="card stat"><span class="k">Invånare</span><span class="v">{fmt(c.population)}</span></div>
       <div class="card stat"><span class="k">Trend 5 år</span><span class="v">{fmt(c.growth5y, '%')}</span></div>
+      {#if c.priceArea}
+        <div class="card stat">
+          <span class="k">Elområde</span>
+          <span class="v">{c.priceArea} · {fmt(c.energyOre, ' öre')}</span>
+        </div>
+      {/if}
+      {#if c.schoolPct != null}
+        <div class="card stat"><span class="k">Skola (behörighet)</span><span class="v">{fmt(c.schoolPct, '%')}</span></div>
+      {/if}
+      {#if c.crime100k != null}
+        <div class="card stat"><span class="k">Brott / 100k</span><span class="v">{fmt(c.crime100k)}</span></div>
+      {/if}
+      {#if c.transitStops != null}
+        <div class="card stat"><span class="k">Kollektivtrafik</span><span class="v">{fmt(c.transitStops)} hållpl.</span></div>
+      {/if}
     </div>
 
     {#if data.topJobs.length}
       <h2>Starkast jobbmarknad här</h2>
       <ul class="jobs">
         {#each data.topJobs as j (j.id)}
-          <li><span>{j.label}</span><b>{j.value.toFixed(1)}</b><small>annonser / 10k inv.</small></li>
+          <li>
+            <span>{j.label}</span>
+            <b>{j.value.toFixed(1)}</b><small>annonser / 10k inv.</small>
+            <a href={jobLink(c.kommunkod, j.id)} target="_blank" rel="noopener nofollow">Se jobben ↗</a>
+          </li>
         {/each}
       </ul>
     {/if}
+
+    <h2>Bostäder i {c.name}</h2>
+    <ListingLinks kommunkod={c.kommunkod} name={c.name} />
 
     {#if data.neighbours.length}
       <h2>Liknande kommuner</h2>

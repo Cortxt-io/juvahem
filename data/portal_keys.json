@@ -1,0 +1,1742 @@
+{
+  "1440": {
+    "name": "Ale",
+    "hemnet_slug": "ale-kommun",
+    "qasa_area": "Ale kommun",
+    "jobtech_municipality_id": "17Ug_Btv_mBr"
+  },
+  "1489": {
+    "name": "Alingsås",
+    "hemnet_slug": "alingsas-kommun",
+    "qasa_area": "Alingsås kommun",
+    "jobtech_municipality_id": "UQ75_1eU_jaC"
+  },
+  "0764": {
+    "name": "Alvesta",
+    "hemnet_slug": "alvesta-kommun",
+    "qasa_area": "Alvesta kommun",
+    "jobtech_municipality_id": "MMph_wmN_esc"
+  },
+  "0604": {
+    "name": "Aneby",
+    "hemnet_slug": "aneby-kommun",
+    "qasa_area": "Aneby kommun",
+    "jobtech_municipality_id": "y9HE_XD7_WaD"
+  },
+  "1984": {
+    "name": "Arboga",
+    "hemnet_slug": "arboga-kommun",
+    "qasa_area": "Arboga kommun",
+    "jobtech_municipality_id": "Jkyb_5MQ_7pB"
+  },
+  "2506": {
+    "name": "Arjeplog",
+    "hemnet_slug": "arjeplogs-kommun",
+    "qasa_area": "Arjeplogs kommun",
+    "jobtech_municipality_id": "vkQW_GB6_MNk"
+  },
+  "2505": {
+    "name": "Arvidsjaur",
+    "hemnet_slug": "arvidsjaurs-kommun",
+    "qasa_area": "Arvidsjaurs kommun",
+    "jobtech_municipality_id": "A5WX_XVo_Zt6"
+  },
+  "1784": {
+    "name": "Arvika",
+    "hemnet_slug": "arvika-kommun",
+    "qasa_area": "Arvika kommun",
+    "jobtech_municipality_id": "yGue_F32_wev"
+  },
+  "1882": {
+    "name": "Askersund",
+    "hemnet_slug": "askersunds-kommun",
+    "qasa_area": "Askersunds kommun",
+    "jobtech_municipality_id": "dbF7_Ecz_CWF"
+  },
+  "2084": {
+    "name": "Avesta",
+    "hemnet_slug": "avesta-kommun",
+    "qasa_area": "Avesta kommun",
+    "jobtech_municipality_id": "Szbq_2fg_ydQ"
+  },
+  "1460": {
+    "name": "Bengtsfors",
+    "hemnet_slug": "bengtsfors-kommun",
+    "qasa_area": "Bengtsfors kommun",
+    "jobtech_municipality_id": "hejM_Jct_XJk"
+  },
+  "2326": {
+    "name": "Berg",
+    "hemnet_slug": "bergs-kommun",
+    "qasa_area": "Bergs kommun",
+    "jobtech_municipality_id": "gRNJ_hVW_Gpg"
+  },
+  "2403": {
+    "name": "Bjurholm",
+    "hemnet_slug": "bjurholms-kommun",
+    "qasa_area": "Bjurholms kommun",
+    "jobtech_municipality_id": "vQkf_tw2_CmR"
+  },
+  "1260": {
+    "name": "Bjuv",
+    "hemnet_slug": "bjuvs-kommun",
+    "qasa_area": "Bjuvs kommun",
+    "jobtech_municipality_id": "waQp_FjW_qhF"
+  },
+  "2582": {
+    "name": "Boden",
+    "hemnet_slug": "bodens-kommun",
+    "qasa_area": "Bodens kommun",
+    "jobtech_municipality_id": "y4NQ_tnB_eVd"
+  },
+  "1443": {
+    "name": "Bollebygd",
+    "hemnet_slug": "bollebygds-kommun",
+    "qasa_area": "Bollebygds kommun",
+    "jobtech_municipality_id": "ypAQ_vTD_KLU"
+  },
+  "2183": {
+    "name": "Bollnäs",
+    "hemnet_slug": "bollnas-kommun",
+    "qasa_area": "Bollnäs kommun",
+    "jobtech_municipality_id": "KxjG_ig5_exF"
+  },
+  "0885": {
+    "name": "Borgholm",
+    "hemnet_slug": "borgholms-kommun",
+    "qasa_area": "Borgholms kommun",
+    "jobtech_municipality_id": "LY9i_qNL_kXf"
+  },
+  "2081": {
+    "name": "Borlänge",
+    "hemnet_slug": "borlange-kommun",
+    "qasa_area": "Borlänge kommun",
+    "jobtech_municipality_id": "cpya_jJg_pGp"
+  },
+  "1490": {
+    "name": "Borås",
+    "hemnet_slug": "boras-kommun",
+    "qasa_area": "Borås kommun",
+    "jobtech_municipality_id": "TpRZ_bFL_jhL"
+  },
+  "0127": {
+    "name": "Botkyrka",
+    "hemnet_slug": "botkyrka-kommun",
+    "qasa_area": "Botkyrka kommun",
+    "jobtech_municipality_id": "CCVZ_JA7_d3y"
+  },
+  "0560": {
+    "name": "Boxholm",
+    "hemnet_slug": "boxholms-kommun",
+    "qasa_area": "Boxholms kommun",
+    "jobtech_municipality_id": "e5LB_m9V_TnT"
+  },
+  "1272": {
+    "name": "Bromölla",
+    "hemnet_slug": "bromolla-kommun",
+    "qasa_area": "Bromölla kommun",
+    "jobtech_municipality_id": "WMNK_PXa_Khm"
+  },
+  "2305": {
+    "name": "Bräcke",
+    "hemnet_slug": "bracke-kommun",
+    "qasa_area": "Bräcke kommun",
+    "jobtech_municipality_id": "eNSc_Nj1_CDP"
+  },
+  "1231": {
+    "name": "Burlöv",
+    "hemnet_slug": "burlovs-kommun",
+    "qasa_area": "Burlövs kommun",
+    "jobtech_municipality_id": "64g5_Lio_aMU"
+  },
+  "1278": {
+    "name": "Båstad",
+    "hemnet_slug": "bastads-kommun",
+    "qasa_area": "Båstads kommun",
+    "jobtech_municipality_id": "i8vK_odq_6ar"
+  },
+  "1438": {
+    "name": "Dals-Ed",
+    "hemnet_slug": "dals-eds-kommun",
+    "qasa_area": "Dals-Eds kommun",
+    "jobtech_municipality_id": "NMc9_oEm_yxy"
+  },
+  "0162": {
+    "name": "Danderyd",
+    "hemnet_slug": "danderyds-kommun",
+    "qasa_area": "Danderyds kommun",
+    "jobtech_municipality_id": "E4CV_a5E_ucX"
+  },
+  "1862": {
+    "name": "Degerfors",
+    "hemnet_slug": "degerfors-kommun",
+    "qasa_area": "Degerfors kommun",
+    "jobtech_municipality_id": "pvzC_muj_rcq"
+  },
+  "2425": {
+    "name": "Dorotea",
+    "hemnet_slug": "dorotea-kommun",
+    "qasa_area": "Dorotea kommun",
+    "jobtech_municipality_id": "tSkf_Tbn_rHk"
+  },
+  "1730": {
+    "name": "Eda",
+    "hemnet_slug": "eda-kommun",
+    "qasa_area": "Eda kommun",
+    "jobtech_municipality_id": "N5HQ_hfp_7Rm"
+  },
+  "0125": {
+    "name": "Ekerö",
+    "hemnet_slug": "ekero-kommun",
+    "qasa_area": "Ekerö kommun",
+    "jobtech_municipality_id": "magF_Gon_YL2"
+  },
+  "0686": {
+    "name": "Eksjö",
+    "hemnet_slug": "eksjo-kommun",
+    "qasa_area": "Eksjö kommun",
+    "jobtech_municipality_id": "VacK_WF6_XVg"
+  },
+  "0862": {
+    "name": "Emmaboda",
+    "hemnet_slug": "emmaboda-kommun",
+    "qasa_area": "Emmaboda kommun",
+    "jobtech_municipality_id": "1koj_6Bg_8K6"
+  },
+  "0381": {
+    "name": "Enköping",
+    "hemnet_slug": "enkopings-kommun",
+    "qasa_area": "Enköpings kommun",
+    "jobtech_municipality_id": "HGwg_unG_TsG"
+  },
+  "0484": {
+    "name": "Eskilstuna",
+    "hemnet_slug": "eskilstuna-kommun",
+    "qasa_area": "Eskilstuna kommun",
+    "jobtech_municipality_id": "kMxr_NiX_YrU"
+  },
+  "1285": {
+    "name": "Eslöv",
+    "hemnet_slug": "eslovs-kommun",
+    "qasa_area": "Eslövs kommun",
+    "jobtech_municipality_id": "gfCw_egj_1M4"
+  },
+  "1445": {
+    "name": "Essunga",
+    "hemnet_slug": "essunga-kommun",
+    "qasa_area": "Essunga kommun",
+    "jobtech_municipality_id": "ZzEA_2Fg_Pt2"
+  },
+  "1982": {
+    "name": "Fagersta",
+    "hemnet_slug": "fagersta-kommun",
+    "qasa_area": "Fagersta kommun",
+    "jobtech_municipality_id": "7D9G_yrX_AGJ"
+  },
+  "1382": {
+    "name": "Falkenberg",
+    "hemnet_slug": "falkenbergs-kommun",
+    "qasa_area": "Falkenbergs kommun",
+    "jobtech_municipality_id": "qaJg_wMR_C8T"
+  },
+  "1499": {
+    "name": "Falköping",
+    "hemnet_slug": "falkopings-kommun",
+    "qasa_area": "Falköpings kommun",
+    "jobtech_municipality_id": "ZySF_gif_zE4"
+  },
+  "2080": {
+    "name": "Falun",
+    "hemnet_slug": "faluns-kommun",
+    "qasa_area": "Faluns kommun",
+    "jobtech_municipality_id": "N1wJ_Cuu_7Cs"
+  },
+  "1782": {
+    "name": "Filipstad",
+    "hemnet_slug": "filipstads-kommun",
+    "qasa_area": "Filipstads kommun",
+    "jobtech_municipality_id": "UXir_vKD_FuW"
+  },
+  "0562": {
+    "name": "Finspång",
+    "hemnet_slug": "finspangs-kommun",
+    "qasa_area": "Finspångs kommun",
+    "jobtech_municipality_id": "dMFe_J6W_iJv"
+  },
+  "0482": {
+    "name": "Flen",
+    "hemnet_slug": "flens-kommun",
+    "qasa_area": "Flens kommun",
+    "jobtech_municipality_id": "P8yp_WT9_Bks"
+  },
+  "1763": {
+    "name": "Forshaga",
+    "hemnet_slug": "forshaga-kommun",
+    "qasa_area": "Forshaga kommun",
+    "jobtech_municipality_id": "xnEt_JN3_GkA"
+  },
+  "1439": {
+    "name": "Färgelanda",
+    "hemnet_slug": "fargelanda-kommun",
+    "qasa_area": "Färgelanda kommun",
+    "jobtech_municipality_id": "kCHb_icw_W5E"
+  },
+  "2026": {
+    "name": "Gagnef",
+    "hemnet_slug": "gagnefs-kommun",
+    "qasa_area": "Gagnefs kommun",
+    "jobtech_municipality_id": "Nn7p_W3Z_y68"
+  },
+  "0662": {
+    "name": "Gislaved",
+    "hemnet_slug": "gislaveds-kommun",
+    "qasa_area": "Gislaveds kommun",
+    "jobtech_municipality_id": "cNQx_Yqi_83Q"
+  },
+  "0461": {
+    "name": "Gnesta",
+    "hemnet_slug": "gnesta-kommun",
+    "qasa_area": "Gnesta kommun",
+    "jobtech_municipality_id": "os8Y_RUo_U3u"
+  },
+  "0617": {
+    "name": "Gnosjö",
+    "hemnet_slug": "gnosjo-kommun",
+    "qasa_area": "Gnosjö kommun",
+    "jobtech_municipality_id": "91VR_Hxi_GN4"
+  },
+  "0980": {
+    "name": "Gotland",
+    "hemnet_slug": "gotlands-kommun",
+    "qasa_area": "Gotlands kommun",
+    "jobtech_municipality_id": "Ft9P_E8F_VLJ"
+  },
+  "1764": {
+    "name": "Grums",
+    "hemnet_slug": "grums-kommun",
+    "qasa_area": "Grums kommun",
+    "jobtech_municipality_id": "PSNt_P95_x6q"
+  },
+  "1444": {
+    "name": "Grästorp",
+    "hemnet_slug": "grastorps-kommun",
+    "qasa_area": "Grästorps kommun",
+    "jobtech_municipality_id": "ZNZy_Hh5_gSW"
+  },
+  "1447": {
+    "name": "Gullspång",
+    "hemnet_slug": "gullspangs-kommun",
+    "qasa_area": "Gullspångs kommun",
+    "jobtech_municipality_id": "roiB_uVV_4Cj"
+  },
+  "2523": {
+    "name": "Gällivare",
+    "hemnet_slug": "gallivare-kommun",
+    "qasa_area": "Gällivare kommun",
+    "jobtech_municipality_id": "6R2u_zkb_uoS"
+  },
+  "2180": {
+    "name": "Gävle",
+    "hemnet_slug": "gavle-kommun",
+    "qasa_area": "Gävle kommun",
+    "jobtech_municipality_id": "qk8Y_2b6_82D"
+  },
+  "1480": {
+    "name": "Göteborg",
+    "hemnet_slug": "goteborgs-kommun",
+    "qasa_area": "Göteborgs kommun",
+    "jobtech_municipality_id": "PVZL_BQT_XtL"
+  },
+  "1471": {
+    "name": "Götene",
+    "hemnet_slug": "gotene-kommun",
+    "qasa_area": "Götene kommun",
+    "jobtech_municipality_id": "txzq_PQY_FGi"
+  },
+  "0643": {
+    "name": "Habo",
+    "hemnet_slug": "habo-kommun",
+    "qasa_area": "Habo kommun",
+    "jobtech_municipality_id": "9zQB_3vU_BQA"
+  },
+  "1783": {
+    "name": "Hagfors",
+    "hemnet_slug": "hagfors-kommun",
+    "qasa_area": "Hagfors kommun",
+    "jobtech_municipality_id": "qk9a_g5U_sAH"
+  },
+  "1861": {
+    "name": "Hallsberg",
+    "hemnet_slug": "hallsbergs-kommun",
+    "qasa_area": "Hallsbergs kommun",
+    "jobtech_municipality_id": "Ak9V_rby_yYS"
+  },
+  "1961": {
+    "name": "Hallstahammar",
+    "hemnet_slug": "hallstahammars-kommun",
+    "qasa_area": "Hallstahammars kommun",
+    "jobtech_municipality_id": "oXYf_HmD_ddE"
+  },
+  "1380": {
+    "name": "Halmstad",
+    "hemnet_slug": "halmstads-kommun",
+    "qasa_area": "Halmstads kommun",
+    "jobtech_municipality_id": "kUQB_KdK_kAh"
+  },
+  "1761": {
+    "name": "Hammarö",
+    "hemnet_slug": "hammaro-kommun",
+    "qasa_area": "Hammarö kommun",
+    "jobtech_municipality_id": "x5qW_BXr_aut"
+  },
+  "0136": {
+    "name": "Haninge",
+    "hemnet_slug": "haninge-kommun",
+    "qasa_area": "Haninge kommun",
+    "jobtech_municipality_id": "Q7gp_9dT_k2F"
+  },
+  "2583": {
+    "name": "Haparanda",
+    "hemnet_slug": "haparanda-kommun",
+    "qasa_area": "Haparanda kommun",
+    "jobtech_municipality_id": "tfRE_hXa_eq7"
+  },
+  "0331": {
+    "name": "Heby",
+    "hemnet_slug": "heby-kommun",
+    "qasa_area": "Heby kommun",
+    "jobtech_municipality_id": "sD2e_1Tr_4WZ"
+  },
+  "2083": {
+    "name": "Hedemora",
+    "hemnet_slug": "hedemora-kommun",
+    "qasa_area": "Hedemora kommun",
+    "jobtech_municipality_id": "DE9u_V4K_Z1S"
+  },
+  "1283": {
+    "name": "Helsingborg",
+    "hemnet_slug": "helsingborgs-kommun",
+    "qasa_area": "Helsingborgs kommun",
+    "jobtech_municipality_id": "qj3q_oXH_MGR"
+  },
+  "1466": {
+    "name": "Herrljunga",
+    "hemnet_slug": "herrljunga-kommun",
+    "qasa_area": "Herrljunga kommun",
+    "jobtech_municipality_id": "J116_VFs_cg6"
+  },
+  "1497": {
+    "name": "Hjo",
+    "hemnet_slug": "hjo-kommun",
+    "qasa_area": "Hjo kommun",
+    "jobtech_municipality_id": "YbFS_34r_K2v"
+  },
+  "2104": {
+    "name": "Hofors",
+    "hemnet_slug": "hofors-kommun",
+    "qasa_area": "Hofors kommun",
+    "jobtech_municipality_id": "yuNd_3bg_ttc"
+  },
+  "0126": {
+    "name": "Huddinge",
+    "hemnet_slug": "huddinge-kommun",
+    "qasa_area": "Huddinge kommun",
+    "jobtech_municipality_id": "g1Gc_aXK_EKu"
+  },
+  "2184": {
+    "name": "Hudiksvall",
+    "hemnet_slug": "hudiksvalls-kommun",
+    "qasa_area": "Hudiksvalls kommun",
+    "jobtech_municipality_id": "Utks_mwF_axY"
+  },
+  "0860": {
+    "name": "Hultsfred",
+    "hemnet_slug": "hultsfreds-kommun",
+    "qasa_area": "Hultsfreds kommun",
+    "jobtech_municipality_id": "AEQD_1RT_vM9"
+  },
+  "1315": {
+    "name": "Hylte",
+    "hemnet_slug": "hylte-kommun",
+    "qasa_area": "Hylte kommun",
+    "jobtech_municipality_id": "3XMe_nGt_RcU"
+  },
+  "1863": {
+    "name": "Hällefors",
+    "hemnet_slug": "hallefors-kommun",
+    "qasa_area": "Hällefors kommun",
+    "jobtech_municipality_id": "sCbY_r36_xhs"
+  },
+  "2361": {
+    "name": "Härjedalen",
+    "hemnet_slug": "harjedalens-kommun",
+    "qasa_area": "Härjedalens kommun",
+    "jobtech_municipality_id": "j35Q_VKL_NiM"
+  },
+  "2280": {
+    "name": "Härnösand",
+    "hemnet_slug": "harnosands-kommun",
+    "qasa_area": "Härnösands kommun",
+    "jobtech_municipality_id": "uYRx_AdM_r4A"
+  },
+  "1401": {
+    "name": "Härryda",
+    "hemnet_slug": "harryda-kommun",
+    "qasa_area": "Härryda kommun",
+    "jobtech_municipality_id": "dzWW_R3G_6Eh"
+  },
+  "1293": {
+    "name": "Hässleholm",
+    "hemnet_slug": "hassleholms-kommun",
+    "qasa_area": "Hässleholms kommun",
+    "jobtech_municipality_id": "bP5q_53x_aqJ"
+  },
+  "0305": {
+    "name": "Håbo",
+    "hemnet_slug": "habo-kommun",
+    "qasa_area": "Håbo kommun",
+    "jobtech_municipality_id": "Bbs5_JUs_Qh5"
+  },
+  "1284": {
+    "name": "Höganäs",
+    "hemnet_slug": "hoganas-kommun",
+    "qasa_area": "Höganäs kommun",
+    "jobtech_municipality_id": "8QQ6_e95_a1d"
+  },
+  "0821": {
+    "name": "Högsby",
+    "hemnet_slug": "hogsby-kommun",
+    "qasa_area": "Högsby kommun",
+    "jobtech_municipality_id": "WPDh_pMr_RLZ"
+  },
+  "1266": {
+    "name": "Hörby",
+    "hemnet_slug": "horby-kommun",
+    "qasa_area": "Hörby kommun",
+    "jobtech_municipality_id": "autr_KMa_cfp"
+  },
+  "1267": {
+    "name": "Höör",
+    "hemnet_slug": "hoors-kommun",
+    "qasa_area": "Höörs kommun",
+    "jobtech_municipality_id": "N29z_AqQ_Ppc"
+  },
+  "2510": {
+    "name": "Jokkmokk",
+    "hemnet_slug": "jokkmokks-kommun",
+    "qasa_area": "Jokkmokks kommun",
+    "jobtech_municipality_id": "mp6j_2b6_1bz"
+  },
+  "0123": {
+    "name": "Järfälla",
+    "hemnet_slug": "jarfalla-kommun",
+    "qasa_area": "Järfälla kommun",
+    "jobtech_municipality_id": "qm5H_jsD_fUF"
+  },
+  "0680": {
+    "name": "Jönköping",
+    "hemnet_slug": "jonkopings-kommun",
+    "qasa_area": "Jönköpings kommun",
+    "jobtech_municipality_id": "KURg_KJF_Lwc"
+  },
+  "2514": {
+    "name": "Kalix",
+    "hemnet_slug": "kalix-kommun",
+    "qasa_area": "Kalix kommun",
+    "jobtech_municipality_id": "cUyN_C9V_HLU"
+  },
+  "0880": {
+    "name": "Kalmar",
+    "hemnet_slug": "kalmars-kommun",
+    "qasa_area": "Kalmars kommun",
+    "jobtech_municipality_id": "Pnmg_SgP_uHQ"
+  },
+  "1446": {
+    "name": "Karlsborg",
+    "hemnet_slug": "karlsborgs-kommun",
+    "qasa_area": "Karlsborgs kommun",
+    "jobtech_municipality_id": "e413_94L_hdh"
+  },
+  "1082": {
+    "name": "Karlshamn",
+    "hemnet_slug": "karlshamns-kommun",
+    "qasa_area": "Karlshamns kommun",
+    "jobtech_municipality_id": "HtGW_WgR_dpE"
+  },
+  "1883": {
+    "name": "Karlskoga",
+    "hemnet_slug": "karlskoga-kommun",
+    "qasa_area": "Karlskoga kommun",
+    "jobtech_municipality_id": "wgJm_upX_z5W"
+  },
+  "1080": {
+    "name": "Karlskrona",
+    "hemnet_slug": "karlskrona-kommun",
+    "qasa_area": "Karlskrona kommun",
+    "jobtech_municipality_id": "YSt4_bAa_ccs"
+  },
+  "1780": {
+    "name": "Karlstad",
+    "hemnet_slug": "karlstads-kommun",
+    "qasa_area": "Karlstads kommun",
+    "jobtech_municipality_id": "hRDj_PoV_sFU"
+  },
+  "0483": {
+    "name": "Katrineholm",
+    "hemnet_slug": "katrineholms-kommun",
+    "qasa_area": "Katrineholms kommun",
+    "jobtech_municipality_id": "snx9_qVD_Dr1"
+  },
+  "1715": {
+    "name": "Kil",
+    "hemnet_slug": "kils-kommun",
+    "qasa_area": "Kils kommun",
+    "jobtech_municipality_id": "ocMw_Rz5_B1L"
+  },
+  "0513": {
+    "name": "Kinda",
+    "hemnet_slug": "kinda-kommun",
+    "qasa_area": "Kinda kommun",
+    "jobtech_municipality_id": "U4XJ_hYF_FBA"
+  },
+  "2584": {
+    "name": "Kiruna",
+    "hemnet_slug": "kiruna-kommun",
+    "qasa_area": "Kiruna kommun",
+    "jobtech_municipality_id": "biN6_UiL_Qob"
+  },
+  "1276": {
+    "name": "Klippan",
+    "hemnet_slug": "klippans-kommun",
+    "qasa_area": "Klippans kommun",
+    "jobtech_municipality_id": "JARU_FAY_hTS"
+  },
+  "0330": {
+    "name": "Knivsta",
+    "hemnet_slug": "knivsta-kommun",
+    "qasa_area": "Knivsta kommun",
+    "jobtech_municipality_id": "KALq_sG6_VrW"
+  },
+  "2282": {
+    "name": "Kramfors",
+    "hemnet_slug": "kramfors-kommun",
+    "qasa_area": "Kramfors kommun",
+    "jobtech_municipality_id": "yR8g_7Jz_HBZ"
+  },
+  "1290": {
+    "name": "Kristianstad",
+    "hemnet_slug": "kristianstads-kommun",
+    "qasa_area": "Kristianstads kommun",
+    "jobtech_municipality_id": "vrvW_sr8_1en"
+  },
+  "1781": {
+    "name": "Kristinehamn",
+    "hemnet_slug": "kristinehamns-kommun",
+    "qasa_area": "Kristinehamns kommun",
+    "jobtech_municipality_id": "SVQS_uwJ_m2B"
+  },
+  "2309": {
+    "name": "Krokom",
+    "hemnet_slug": "krokoms-kommun",
+    "qasa_area": "Krokoms kommun",
+    "jobtech_municipality_id": "yurW_aLE_4ga"
+  },
+  "1881": {
+    "name": "Kumla",
+    "hemnet_slug": "kumla-kommun",
+    "qasa_area": "Kumla kommun",
+    "jobtech_municipality_id": "viCA_36P_pQp"
+  },
+  "1384": {
+    "name": "Kungsbacka",
+    "hemnet_slug": "kungsbacka-kommun",
+    "qasa_area": "Kungsbacka kommun",
+    "jobtech_municipality_id": "3JKV_KSK_x6z"
+  },
+  "1960": {
+    "name": "Kungsör",
+    "hemnet_slug": "kungsors-kommun",
+    "qasa_area": "Kungsörs kommun",
+    "jobtech_municipality_id": "Fac5_h7a_UoM"
+  },
+  "1482": {
+    "name": "Kungälv",
+    "hemnet_slug": "kungalvs-kommun",
+    "qasa_area": "Kungälvs kommun",
+    "jobtech_municipality_id": "ZkZf_HbK_Mcr"
+  },
+  "1261": {
+    "name": "Kävlinge",
+    "hemnet_slug": "kavlinge-kommun",
+    "qasa_area": "Kävlinge kommun",
+    "jobtech_municipality_id": "5ohg_WJU_Ktn"
+  },
+  "1983": {
+    "name": "Köping",
+    "hemnet_slug": "kopings-kommun",
+    "qasa_area": "Köpings kommun",
+    "jobtech_municipality_id": "4Taz_AuG_tSm"
+  },
+  "1381": {
+    "name": "Laholm",
+    "hemnet_slug": "laholms-kommun",
+    "qasa_area": "Laholms kommun",
+    "jobtech_municipality_id": "c1iL_rqh_Zja"
+  },
+  "1282": {
+    "name": "Landskrona",
+    "hemnet_slug": "landskrona-kommun",
+    "qasa_area": "Landskrona kommun",
+    "jobtech_municipality_id": "Yt5s_Vf9_rds"
+  },
+  "1860": {
+    "name": "Laxå",
+    "hemnet_slug": "laxa-kommun",
+    "qasa_area": "Laxå kommun",
+    "jobtech_municipality_id": "oYEQ_m8Q_unY"
+  },
+  "1814": {
+    "name": "Lekeberg",
+    "hemnet_slug": "lekebergs-kommun",
+    "qasa_area": "Lekebergs kommun",
+    "jobtech_municipality_id": "yaHU_E7z_YnE"
+  },
+  "2029": {
+    "name": "Leksand",
+    "hemnet_slug": "leksands-kommun",
+    "qasa_area": "Leksands kommun",
+    "jobtech_municipality_id": "7Zsu_ant_gcn"
+  },
+  "1441": {
+    "name": "Lerum",
+    "hemnet_slug": "lerums-kommun",
+    "qasa_area": "Lerums kommun",
+    "jobtech_municipality_id": "yHV7_2Y6_zQx"
+  },
+  "0761": {
+    "name": "Lessebo",
+    "hemnet_slug": "lessebo-kommun",
+    "qasa_area": "Lessebo kommun",
+    "jobtech_municipality_id": "nXZy_1Jd_D8X"
+  },
+  "0186": {
+    "name": "Lidingö",
+    "hemnet_slug": "lidingo-kommun",
+    "qasa_area": "Lidingö kommun",
+    "jobtech_municipality_id": "FBbF_mda_TYD"
+  },
+  "1494": {
+    "name": "Lidköping",
+    "hemnet_slug": "lidkopings-kommun",
+    "qasa_area": "Lidköpings kommun",
+    "jobtech_municipality_id": "FN1Y_asc_D8y"
+  },
+  "1462": {
+    "name": "Lilla Edet",
+    "hemnet_slug": "lilla-edets-kommun",
+    "qasa_area": "Lilla Edets kommun",
+    "jobtech_municipality_id": "YQcE_SNB_Tv3"
+  },
+  "1885": {
+    "name": "Lindesberg",
+    "hemnet_slug": "lindesbergs-kommun",
+    "qasa_area": "Lindesbergs kommun",
+    "jobtech_municipality_id": "JQE9_189_Ska"
+  },
+  "0580": {
+    "name": "Linköping",
+    "hemnet_slug": "linkopings-kommun",
+    "qasa_area": "Linköpings kommun",
+    "jobtech_municipality_id": "bm2x_1mr_Qhx"
+  },
+  "0781": {
+    "name": "Ljungby",
+    "hemnet_slug": "ljungby-kommun",
+    "qasa_area": "Ljungby kommun",
+    "jobtech_municipality_id": "GzKo_S48_QCm"
+  },
+  "2161": {
+    "name": "Ljusdal",
+    "hemnet_slug": "ljusdals-kommun",
+    "qasa_area": "Ljusdals kommun",
+    "jobtech_municipality_id": "63iQ_V6F_REB"
+  },
+  "1864": {
+    "name": "Ljusnarsberg",
+    "hemnet_slug": "ljusnarsbergs-kommun",
+    "qasa_area": "Ljusnarsbergs kommun",
+    "jobtech_municipality_id": "eF2n_714_hSU"
+  },
+  "1262": {
+    "name": "Lomma",
+    "hemnet_slug": "lomma-kommun",
+    "qasa_area": "Lomma kommun",
+    "jobtech_municipality_id": "naG4_AUS_z2v"
+  },
+  "2085": {
+    "name": "Ludvika",
+    "hemnet_slug": "ludvika-kommun",
+    "qasa_area": "Ludvika kommun",
+    "jobtech_municipality_id": "Ny2b_2bo_7EL"
+  },
+  "2580": {
+    "name": "Luleå",
+    "hemnet_slug": "lulea-kommun",
+    "qasa_area": "Luleå kommun",
+    "jobtech_municipality_id": "CXbY_gui_14v"
+  },
+  "1281": {
+    "name": "Lund",
+    "hemnet_slug": "lunds-kommun",
+    "qasa_area": "Lunds kommun",
+    "jobtech_municipality_id": "muSY_tsR_vDZ"
+  },
+  "2481": {
+    "name": "Lycksele",
+    "hemnet_slug": "lycksele-kommun",
+    "qasa_area": "Lycksele kommun",
+    "jobtech_municipality_id": "7rpN_naz_3Uz"
+  },
+  "1484": {
+    "name": "Lysekil",
+    "hemnet_slug": "lysekils-kommun",
+    "qasa_area": "Lysekils kommun",
+    "jobtech_municipality_id": "z2cX_rjC_zFo"
+  },
+  "1280": {
+    "name": "Malmö",
+    "hemnet_slug": "malmo-kommun",
+    "qasa_area": "Malmö kommun",
+    "jobtech_municipality_id": "oYPt_yRA_Smm"
+  },
+  "2023": {
+    "name": "Malung-Sälen",
+    "hemnet_slug": "malung-salens-kommun",
+    "qasa_area": "Malung-Sälens kommun",
+    "jobtech_municipality_id": "FPCd_poj_3tq"
+  },
+  "2418": {
+    "name": "Malå",
+    "hemnet_slug": "mala-kommun",
+    "qasa_area": "Malå kommun",
+    "jobtech_municipality_id": "7sHJ_YCE_5Zv"
+  },
+  "1493": {
+    "name": "Mariestad",
+    "hemnet_slug": "mariestads-kommun",
+    "qasa_area": "Mariestads kommun",
+    "jobtech_municipality_id": "Lzpu_thX_Wpa"
+  },
+  "1463": {
+    "name": "Mark",
+    "hemnet_slug": "marks-kommun",
+    "qasa_area": "Marks kommun",
+    "jobtech_municipality_id": "7HAb_9or_eFM"
+  },
+  "0767": {
+    "name": "Markaryd",
+    "hemnet_slug": "markaryds-kommun",
+    "qasa_area": "Markaryds kommun",
+    "jobtech_municipality_id": "ZhVf_yL5_Q5g"
+  },
+  "1461": {
+    "name": "Mellerud",
+    "hemnet_slug": "melleruds-kommun",
+    "qasa_area": "Melleruds kommun",
+    "jobtech_municipality_id": "tt1B_7rH_vhG"
+  },
+  "0586": {
+    "name": "Mjölby",
+    "hemnet_slug": "mjolby-kommun",
+    "qasa_area": "Mjölby kommun",
+    "jobtech_municipality_id": "stqv_JGB_x8A"
+  },
+  "2062": {
+    "name": "Mora",
+    "hemnet_slug": "mora-kommun",
+    "qasa_area": "Mora kommun",
+    "jobtech_municipality_id": "UGcC_kYx_fTs"
+  },
+  "0583": {
+    "name": "Motala",
+    "hemnet_slug": "motala-kommun",
+    "qasa_area": "Motala kommun",
+    "jobtech_municipality_id": "E1MC_1uG_phm"
+  },
+  "0642": {
+    "name": "Mullsjö",
+    "hemnet_slug": "mullsjo-kommun",
+    "qasa_area": "Mullsjö kommun",
+    "jobtech_municipality_id": "smXg_BXp_jTW"
+  },
+  "1430": {
+    "name": "Munkedal",
+    "hemnet_slug": "munkedals-kommun",
+    "qasa_area": "Munkedals kommun",
+    "jobtech_municipality_id": "96Dh_3sQ_RFb"
+  },
+  "1762": {
+    "name": "Munkfors",
+    "hemnet_slug": "munkfors-kommun",
+    "qasa_area": "Munkfors kommun",
+    "jobtech_municipality_id": "x73h_7rW_mXN"
+  },
+  "1481": {
+    "name": "Mölndal",
+    "hemnet_slug": "molndals-kommun",
+    "qasa_area": "Mölndals kommun",
+    "jobtech_municipality_id": "mc45_ki9_Bv3"
+  },
+  "0861": {
+    "name": "Mönsterås",
+    "hemnet_slug": "monsteras-kommun",
+    "qasa_area": "Mönsterås kommun",
+    "jobtech_municipality_id": "8eEp_iz4_cNN"
+  },
+  "0840": {
+    "name": "Mörbylånga",
+    "hemnet_slug": "morbylanga-kommun",
+    "qasa_area": "Mörbylånga kommun",
+    "jobtech_municipality_id": "Muim_EAi_EFp"
+  },
+  "0182": {
+    "name": "Nacka",
+    "hemnet_slug": "nacka-kommun",
+    "qasa_area": "Nacka kommun",
+    "jobtech_municipality_id": "aYA7_PpG_BqP"
+  },
+  "1884": {
+    "name": "Nora",
+    "hemnet_slug": "nora-kommun",
+    "qasa_area": "Nora kommun",
+    "jobtech_municipality_id": "WFXN_hsU_gmx"
+  },
+  "1962": {
+    "name": "Norberg",
+    "hemnet_slug": "norbergs-kommun",
+    "qasa_area": "Norbergs kommun",
+    "jobtech_municipality_id": "jbVe_Cps_vtd"
+  },
+  "2132": {
+    "name": "Nordanstig",
+    "hemnet_slug": "nordanstigs-kommun",
+    "qasa_area": "Nordanstigs kommun",
+    "jobtech_municipality_id": "fFeF_RCz_Tm5"
+  },
+  "2401": {
+    "name": "Nordmaling",
+    "hemnet_slug": "nordmalings-kommun",
+    "qasa_area": "Nordmalings kommun",
+    "jobtech_municipality_id": "wMab_4Zs_wpM"
+  },
+  "0581": {
+    "name": "Norrköping",
+    "hemnet_slug": "norrkopings-kommun",
+    "qasa_area": "Norrköpings kommun",
+    "jobtech_municipality_id": "SYty_Yho_JAF"
+  },
+  "0188": {
+    "name": "Norrtälje",
+    "hemnet_slug": "norrtalje-kommun",
+    "qasa_area": "Norrtälje kommun",
+    "jobtech_municipality_id": "btgf_fS7_sKG"
+  },
+  "2417": {
+    "name": "Norsjö",
+    "hemnet_slug": "norsjo-kommun",
+    "qasa_area": "Norsjö kommun",
+    "jobtech_municipality_id": "XmpG_vPQ_K7T"
+  },
+  "0881": {
+    "name": "Nybro",
+    "hemnet_slug": "nybro-kommun",
+    "qasa_area": "Nybro kommun",
+    "jobtech_municipality_id": "xk68_bJa_6Fh"
+  },
+  "0140": {
+    "name": "Nykvarn",
+    "hemnet_slug": "nykvarns-kommun",
+    "qasa_area": "Nykvarns kommun",
+    "jobtech_municipality_id": "mBKv_q3B_SK8"
+  },
+  "0480": {
+    "name": "Nyköping",
+    "hemnet_slug": "nykopings-kommun",
+    "qasa_area": "Nyköpings kommun",
+    "jobtech_municipality_id": "KzvD_ePV_DKQ"
+  },
+  "0192": {
+    "name": "Nynäshamn",
+    "hemnet_slug": "nynashamns-kommun",
+    "qasa_area": "Nynäshamns kommun",
+    "jobtech_municipality_id": "37UU_T7x_oxG"
+  },
+  "0682": {
+    "name": "Nässjö",
+    "hemnet_slug": "nassjo-kommun",
+    "qasa_area": "Nässjö kommun",
+    "jobtech_municipality_id": "KfXT_ySA_do2"
+  },
+  "2101": {
+    "name": "Ockelbo",
+    "hemnet_slug": "ockelbo-kommun",
+    "qasa_area": "Ockelbo kommun",
+    "jobtech_municipality_id": "GEvW_wKy_A9H"
+  },
+  "1060": {
+    "name": "Olofström",
+    "hemnet_slug": "olofstroms-kommun",
+    "qasa_area": "Olofströms kommun",
+    "jobtech_municipality_id": "1gEC_kvM_TXK"
+  },
+  "2034": {
+    "name": "Orsa",
+    "hemnet_slug": "orsa-kommun",
+    "qasa_area": "Orsa kommun",
+    "jobtech_municipality_id": "CRyF_5Jg_4ht"
+  },
+  "1421": {
+    "name": "Orust",
+    "hemnet_slug": "orusts-kommun",
+    "qasa_area": "Orusts kommun",
+    "jobtech_municipality_id": "tmAp_ykH_N6k"
+  },
+  "1273": {
+    "name": "Osby",
+    "hemnet_slug": "osby-kommun",
+    "qasa_area": "Osby kommun",
+    "jobtech_municipality_id": "najS_Lvy_mDD"
+  },
+  "0882": {
+    "name": "Oskarshamn",
+    "hemnet_slug": "oskarshamns-kommun",
+    "qasa_area": "Oskarshamns kommun",
+    "jobtech_municipality_id": "tUP8_hRE_NcF"
+  },
+  "2121": {
+    "name": "Ovanåker",
+    "hemnet_slug": "ovanakers-kommun",
+    "qasa_area": "Ovanåkers kommun",
+    "jobtech_municipality_id": "JPSe_mUQ_NDs"
+  },
+  "0481": {
+    "name": "Oxelösund",
+    "hemnet_slug": "oxelosunds-kommun",
+    "qasa_area": "Oxelösunds kommun",
+    "jobtech_municipality_id": "72XK_mUU_CAH"
+  },
+  "2521": {
+    "name": "Pajala",
+    "hemnet_slug": "pajala-kommun",
+    "qasa_area": "Pajala kommun",
+    "jobtech_municipality_id": "dHMF_72G_4NM"
+  },
+  "1402": {
+    "name": "Partille",
+    "hemnet_slug": "partille-kommun",
+    "qasa_area": "Partille kommun",
+    "jobtech_municipality_id": "CCiR_sXa_BVW"
+  },
+  "1275": {
+    "name": "Perstorp",
+    "hemnet_slug": "perstorps-kommun",
+    "qasa_area": "Perstorps kommun",
+    "jobtech_municipality_id": "BN7r_iPV_F9p"
+  },
+  "2581": {
+    "name": "Piteå",
+    "hemnet_slug": "pitea-kommun",
+    "qasa_area": "Piteå kommun",
+    "jobtech_municipality_id": "umej_bP2_PpK"
+  },
+  "2303": {
+    "name": "Ragunda",
+    "hemnet_slug": "ragunda-kommun",
+    "qasa_area": "Ragunda kommun",
+    "jobtech_municipality_id": "Voto_egJ_FZP"
+  },
+  "2409": {
+    "name": "Robertsfors",
+    "hemnet_slug": "robertsfors-kommun",
+    "qasa_area": "Robertsfors kommun",
+    "jobtech_municipality_id": "p8Mv_377_bxp"
+  },
+  "1081": {
+    "name": "Ronneby",
+    "hemnet_slug": "ronneby-kommun",
+    "qasa_area": "Ronneby kommun",
+    "jobtech_municipality_id": "vH8x_gVz_z7R"
+  },
+  "2031": {
+    "name": "Rättvik",
+    "hemnet_slug": "rattviks-kommun",
+    "qasa_area": "Rättviks kommun",
+    "jobtech_municipality_id": "Jy3D_2ux_dg8"
+  },
+  "1981": {
+    "name": "Sala",
+    "hemnet_slug": "sala-kommun",
+    "qasa_area": "Sala kommun",
+    "jobtech_municipality_id": "dAen_yTK_tqz"
+  },
+  "0128": {
+    "name": "Salem",
+    "hemnet_slug": "salems-kommun",
+    "qasa_area": "Salems kommun",
+    "jobtech_municipality_id": "4KBw_CPU_VQv"
+  },
+  "2181": {
+    "name": "Sandviken",
+    "hemnet_slug": "sandvikens-kommun",
+    "qasa_area": "Sandvikens kommun",
+    "jobtech_municipality_id": "BbdN_xLB_k6s"
+  },
+  "0191": {
+    "name": "Sigtuna",
+    "hemnet_slug": "sigtuna-kommun",
+    "qasa_area": "Sigtuna kommun",
+    "jobtech_municipality_id": "8ryy_X54_xJj"
+  },
+  "1291": {
+    "name": "Simrishamn",
+    "hemnet_slug": "simrishamns-kommun",
+    "qasa_area": "Simrishamns kommun",
+    "jobtech_municipality_id": "dLxo_EpC_oPe"
+  },
+  "1265": {
+    "name": "Sjöbo",
+    "hemnet_slug": "sjobo-kommun",
+    "qasa_area": "Sjöbo kommun",
+    "jobtech_municipality_id": "P3Cs_1ZP_9XB"
+  },
+  "1495": {
+    "name": "Skara",
+    "hemnet_slug": "skara-kommun",
+    "qasa_area": "Skara kommun",
+    "jobtech_municipality_id": "k1SK_gxg_dW4"
+  },
+  "2482": {
+    "name": "Skellefteå",
+    "hemnet_slug": "skelleftea-kommun",
+    "qasa_area": "Skellefteå kommun",
+    "jobtech_municipality_id": "kicB_LgH_2Dk"
+  },
+  "1904": {
+    "name": "Skinnskatteberg",
+    "hemnet_slug": "skinnskattebergs-kommun",
+    "qasa_area": "Skinnskattebergs kommun",
+    "jobtech_municipality_id": "Nufj_vmt_VrH"
+  },
+  "1264": {
+    "name": "Skurup",
+    "hemnet_slug": "skurups-kommun",
+    "qasa_area": "Skurups kommun",
+    "jobtech_municipality_id": "oezL_78x_r89"
+  },
+  "1496": {
+    "name": "Skövde",
+    "hemnet_slug": "skovde-kommun",
+    "qasa_area": "Skövde kommun",
+    "jobtech_municipality_id": "fqAy_4ji_Lz2"
+  },
+  "2061": {
+    "name": "Smedjebacken",
+    "hemnet_slug": "smedjebackens-kommun",
+    "qasa_area": "Smedjebackens kommun",
+    "jobtech_municipality_id": "5zZX_8FH_Sbq"
+  },
+  "2283": {
+    "name": "Sollefteå",
+    "hemnet_slug": "solleftea-kommun",
+    "qasa_area": "Sollefteå kommun",
+    "jobtech_municipality_id": "v5y4_YPe_TMZ"
+  },
+  "0163": {
+    "name": "Sollentuna",
+    "hemnet_slug": "sollentuna-kommun",
+    "qasa_area": "Sollentuna kommun",
+    "jobtech_municipality_id": "Z5Cq_SgB_dsB"
+  },
+  "0184": {
+    "name": "Solna",
+    "hemnet_slug": "solna-kommun",
+    "qasa_area": "Solna kommun",
+    "jobtech_municipality_id": "zHxw_uJZ_NJ8"
+  },
+  "2422": {
+    "name": "Sorsele",
+    "hemnet_slug": "sorsele-kommun",
+    "qasa_area": "Sorsele kommun",
+    "jobtech_municipality_id": "VM7L_yJK_Doo"
+  },
+  "1427": {
+    "name": "Sotenäs",
+    "hemnet_slug": "sotenas-kommun",
+    "qasa_area": "Sotenäs kommun",
+    "jobtech_municipality_id": "aKkp_sEX_cVM"
+  },
+  "1230": {
+    "name": "Staffanstorp",
+    "hemnet_slug": "staffanstorps-kommun",
+    "qasa_area": "Staffanstorps kommun",
+    "jobtech_municipality_id": "vBrj_bov_KEX"
+  },
+  "1415": {
+    "name": "Stenungsund",
+    "hemnet_slug": "stenungsunds-kommun",
+    "qasa_area": "Stenungsunds kommun",
+    "jobtech_municipality_id": "wHrG_FBH_hoD"
+  },
+  "0180": {
+    "name": "Stockholm",
+    "hemnet_slug": "stockholms-kommun",
+    "qasa_area": "Stockholms kommun",
+    "jobtech_municipality_id": "AvNB_uwa_6n6"
+  },
+  "1760": {
+    "name": "Storfors",
+    "hemnet_slug": "storfors-kommun",
+    "qasa_area": "Storfors kommun",
+    "jobtech_municipality_id": "mPt5_3QD_LTM"
+  },
+  "2421": {
+    "name": "Storuman",
+    "hemnet_slug": "storumans-kommun",
+    "qasa_area": "Storumans kommun",
+    "jobtech_municipality_id": "gQgT_BAk_fMu"
+  },
+  "0486": {
+    "name": "Strängnäs",
+    "hemnet_slug": "strangnas-kommun",
+    "qasa_area": "Strängnäs kommun",
+    "jobtech_municipality_id": "shnD_RiE_RKL"
+  },
+  "1486": {
+    "name": "Strömstad",
+    "hemnet_slug": "stromstads-kommun",
+    "qasa_area": "Strömstads kommun",
+    "jobtech_municipality_id": "PAxT_FLT_3Kq"
+  },
+  "2313": {
+    "name": "Strömsund",
+    "hemnet_slug": "stromsunds-kommun",
+    "qasa_area": "Strömsunds kommun",
+    "jobtech_municipality_id": "ppjq_Eci_Wz9"
+  },
+  "0183": {
+    "name": "Sundbyberg",
+    "hemnet_slug": "sundbybergs-kommun",
+    "qasa_area": "Sundbybergs kommun",
+    "jobtech_municipality_id": "UTJZ_zHH_mJm"
+  },
+  "2281": {
+    "name": "Sundsvall",
+    "hemnet_slug": "sundsvalls-kommun",
+    "qasa_area": "Sundsvalls kommun",
+    "jobtech_municipality_id": "dJbx_FWY_tK6"
+  },
+  "1766": {
+    "name": "Sunne",
+    "hemnet_slug": "sunne-kommun",
+    "qasa_area": "Sunne kommun",
+    "jobtech_municipality_id": "oqNH_cnJ_Tdi"
+  },
+  "1907": {
+    "name": "Surahammar",
+    "hemnet_slug": "surahammars-kommun",
+    "qasa_area": "Surahammars kommun",
+    "jobtech_municipality_id": "jfD3_Hdg_UhT"
+  },
+  "1214": {
+    "name": "Svalöv",
+    "hemnet_slug": "svalovs-kommun",
+    "qasa_area": "Svalövs kommun",
+    "jobtech_municipality_id": "2r6J_g2w_qp5"
+  },
+  "1263": {
+    "name": "Svedala",
+    "hemnet_slug": "svedala-kommun",
+    "qasa_area": "Svedala kommun",
+    "jobtech_municipality_id": "n6r4_fjK_kRr"
+  },
+  "1465": {
+    "name": "Svenljunga",
+    "hemnet_slug": "svenljunga-kommun",
+    "qasa_area": "Svenljunga kommun",
+    "jobtech_municipality_id": "rZWC_pXf_ySZ"
+  },
+  "1785": {
+    "name": "Säffle",
+    "hemnet_slug": "saffle-kommun",
+    "qasa_area": "Säffle kommun",
+    "jobtech_municipality_id": "wmxQ_Guc_dsy"
+  },
+  "2082": {
+    "name": "Säter",
+    "hemnet_slug": "saters-kommun",
+    "qasa_area": "Säters kommun",
+    "jobtech_municipality_id": "c3Zx_jBf_CqF"
+  },
+  "0684": {
+    "name": "Sävsjö",
+    "hemnet_slug": "savsjo-kommun",
+    "qasa_area": "Sävsjö kommun",
+    "jobtech_municipality_id": "L1cX_MjM_y8W"
+  },
+  "2182": {
+    "name": "Söderhamn",
+    "hemnet_slug": "soderhamns-kommun",
+    "qasa_area": "Söderhamns kommun",
+    "jobtech_municipality_id": "JauG_nz5_7mu"
+  },
+  "0582": {
+    "name": "Söderköping",
+    "hemnet_slug": "soderkopings-kommun",
+    "qasa_area": "Söderköpings kommun",
+    "jobtech_municipality_id": "Pcv9_yYh_Uw8"
+  },
+  "0181": {
+    "name": "Södertälje",
+    "hemnet_slug": "sodertalje-kommun",
+    "qasa_area": "Södertälje kommun",
+    "jobtech_municipality_id": "g6hK_M1o_hiU"
+  },
+  "1083": {
+    "name": "Sölvesborg",
+    "hemnet_slug": "solvesborgs-kommun",
+    "qasa_area": "Sölvesborgs kommun",
+    "jobtech_municipality_id": "EVPy_phD_8Vf"
+  },
+  "1435": {
+    "name": "Tanum",
+    "hemnet_slug": "tanums-kommun",
+    "qasa_area": "Tanums kommun",
+    "jobtech_municipality_id": "qffn_qY4_DLk"
+  },
+  "1472": {
+    "name": "Tibro",
+    "hemnet_slug": "tibro-kommun",
+    "qasa_area": "Tibro kommun",
+    "jobtech_municipality_id": "aLFZ_NHw_atB"
+  },
+  "1498": {
+    "name": "Tidaholm",
+    "hemnet_slug": "tidaholms-kommun",
+    "qasa_area": "Tidaholms kommun",
+    "jobtech_municipality_id": "Zsf5_vpP_Bs4"
+  },
+  "0360": {
+    "name": "Tierp",
+    "hemnet_slug": "tierps-kommun",
+    "qasa_area": "Tierps kommun",
+    "jobtech_municipality_id": "K8A2_JBa_e6e"
+  },
+  "2262": {
+    "name": "Timrå",
+    "hemnet_slug": "timra-kommun",
+    "qasa_area": "Timrå kommun",
+    "jobtech_municipality_id": "oJ8D_rq6_kjt"
+  },
+  "0763": {
+    "name": "Tingsryd",
+    "hemnet_slug": "tingsryds-kommun",
+    "qasa_area": "Tingsryds kommun",
+    "jobtech_municipality_id": "qz8Q_kDz_N2Y"
+  },
+  "1419": {
+    "name": "Tjörn",
+    "hemnet_slug": "tjorns-kommun",
+    "qasa_area": "Tjörns kommun",
+    "jobtech_municipality_id": "TbL3_HmF_gnx"
+  },
+  "1270": {
+    "name": "Tomelilla",
+    "hemnet_slug": "tomelilla-kommun",
+    "qasa_area": "Tomelilla kommun",
+    "jobtech_municipality_id": "UMev_wGs_9bg"
+  },
+  "1737": {
+    "name": "Torsby",
+    "hemnet_slug": "torsby-kommun",
+    "qasa_area": "Torsby kommun",
+    "jobtech_municipality_id": "hQdb_zn9_Sok"
+  },
+  "0834": {
+    "name": "Torsås",
+    "hemnet_slug": "torsas-kommun",
+    "qasa_area": "Torsås kommun",
+    "jobtech_municipality_id": "wYFb_q7w_Nnh"
+  },
+  "1452": {
+    "name": "Tranemo",
+    "hemnet_slug": "tranemo-kommun",
+    "qasa_area": "Tranemo kommun",
+    "jobtech_municipality_id": "SEje_LdC_9qN"
+  },
+  "0687": {
+    "name": "Tranås",
+    "hemnet_slug": "tranas-kommun",
+    "qasa_area": "Tranås kommun",
+    "jobtech_municipality_id": "Namm_SpC_RPG"
+  },
+  "1287": {
+    "name": "Trelleborg",
+    "hemnet_slug": "trelleborgs-kommun",
+    "qasa_area": "Trelleborgs kommun",
+    "jobtech_municipality_id": "STvk_dra_M1X"
+  },
+  "1488": {
+    "name": "Trollhättan",
+    "hemnet_slug": "trollhattans-kommun",
+    "qasa_area": "Trollhättans kommun",
+    "jobtech_municipality_id": "CSy8_41F_YvX"
+  },
+  "0488": {
+    "name": "Trosa",
+    "hemnet_slug": "trosa-kommun",
+    "qasa_area": "Trosa kommun",
+    "jobtech_municipality_id": "rjzu_nQn_mCK"
+  },
+  "0138": {
+    "name": "Tyresö",
+    "hemnet_slug": "tyreso-kommun",
+    "qasa_area": "Tyresö kommun",
+    "jobtech_municipality_id": "sTPc_k2B_SqV"
+  },
+  "0160": {
+    "name": "Täby",
+    "hemnet_slug": "taby-kommun",
+    "qasa_area": "Täby kommun",
+    "jobtech_municipality_id": "onpA_B5a_zfv"
+  },
+  "1473": {
+    "name": "Töreboda",
+    "hemnet_slug": "toreboda-kommun",
+    "qasa_area": "Töreboda kommun",
+    "jobtech_municipality_id": "a15F_gAH_pn6"
+  },
+  "1485": {
+    "name": "Uddevalla",
+    "hemnet_slug": "uddevalla-kommun",
+    "qasa_area": "Uddevalla kommun",
+    "jobtech_municipality_id": "xQc2_SzA_rHK"
+  },
+  "1491": {
+    "name": "Ulricehamn",
+    "hemnet_slug": "ulricehamns-kommun",
+    "qasa_area": "Ulricehamns kommun",
+    "jobtech_municipality_id": "an4a_8t2_Zpd"
+  },
+  "2480": {
+    "name": "Umeå",
+    "hemnet_slug": "umea-kommun",
+    "qasa_area": "Umeå kommun",
+    "jobtech_municipality_id": "QiGt_BLu_amP"
+  },
+  "0114": {
+    "name": "Upplands Väsby",
+    "hemnet_slug": "upplands-vasby-kommun",
+    "qasa_area": "Upplands Väsby kommun",
+    "jobtech_municipality_id": "XWKY_c49_5nv"
+  },
+  "0139": {
+    "name": "Upplands-Bro",
+    "hemnet_slug": "upplands-bro-kommun",
+    "qasa_area": "Upplands-Bro kommun",
+    "jobtech_municipality_id": "w6yq_CGR_Fiv"
+  },
+  "0380": {
+    "name": "Uppsala",
+    "hemnet_slug": "uppsala-kommun",
+    "qasa_area": "Uppsala kommun",
+    "jobtech_municipality_id": "otaF_bQY_4ZD"
+  },
+  "0760": {
+    "name": "Uppvidinge",
+    "hemnet_slug": "uppvidinge-kommun",
+    "qasa_area": "Uppvidinge kommun",
+    "jobtech_municipality_id": "78cu_S5T_Pgp"
+  },
+  "0584": {
+    "name": "Vadstena",
+    "hemnet_slug": "vadstena-kommun",
+    "qasa_area": "Vadstena kommun",
+    "jobtech_municipality_id": "VcCU_Y86_eKU"
+  },
+  "0665": {
+    "name": "Vaggeryd",
+    "hemnet_slug": "vaggeryds-kommun",
+    "qasa_area": "Vaggeryds kommun",
+    "jobtech_municipality_id": "zFup_umX_LVv"
+  },
+  "0563": {
+    "name": "Valdemarsvik",
+    "hemnet_slug": "valdemarsviks-kommun",
+    "qasa_area": "Valdemarsviks kommun",
+    "jobtech_municipality_id": "Sb3D_iGB_aXu"
+  },
+  "0115": {
+    "name": "Vallentuna",
+    "hemnet_slug": "vallentuna-kommun",
+    "qasa_area": "Vallentuna kommun",
+    "jobtech_municipality_id": "K4az_Bm6_hRV"
+  },
+  "2021": {
+    "name": "Vansbro",
+    "hemnet_slug": "vansbro-kommun",
+    "qasa_area": "Vansbro kommun",
+    "jobtech_municipality_id": "4eS9_HX1_M7V"
+  },
+  "1470": {
+    "name": "Vara",
+    "hemnet_slug": "vara-kommun",
+    "qasa_area": "Vara kommun",
+    "jobtech_municipality_id": "fbHM_yhA_BqS"
+  },
+  "1383": {
+    "name": "Varberg",
+    "hemnet_slug": "varbergs-kommun",
+    "qasa_area": "Varbergs kommun",
+    "jobtech_municipality_id": "AkUx_yAq_kGr"
+  },
+  "0187": {
+    "name": "Vaxholm",
+    "hemnet_slug": "vaxholms-kommun",
+    "qasa_area": "Vaxholms kommun",
+    "jobtech_municipality_id": "9aAJ_j6L_DST"
+  },
+  "1233": {
+    "name": "Vellinge",
+    "hemnet_slug": "vellinge-kommun",
+    "qasa_area": "Vellinge kommun",
+    "jobtech_municipality_id": "Tcog_5sH_b46"
+  },
+  "0685": {
+    "name": "Vetlanda",
+    "hemnet_slug": "vetlanda-kommun",
+    "qasa_area": "Vetlanda kommun",
+    "jobtech_municipality_id": "xJqx_SLC_415"
+  },
+  "2462": {
+    "name": "Vilhelmina",
+    "hemnet_slug": "vilhelmina-kommun",
+    "qasa_area": "Vilhelmina kommun",
+    "jobtech_municipality_id": "tUnW_mFo_Hvi"
+  },
+  "0884": {
+    "name": "Vimmerby",
+    "hemnet_slug": "vimmerby-kommun",
+    "qasa_area": "Vimmerby kommun",
+    "jobtech_municipality_id": "a7hJ_zwv_2FR"
+  },
+  "2404": {
+    "name": "Vindeln",
+    "hemnet_slug": "vindelns-kommun",
+    "qasa_area": "Vindelns kommun",
+    "jobtech_municipality_id": "izT6_zWu_tta"
+  },
+  "0428": {
+    "name": "Vingåker",
+    "hemnet_slug": "vingakers-kommun",
+    "qasa_area": "Vingåkers kommun",
+    "jobtech_municipality_id": "rut9_f5W_kTX"
+  },
+  "1487": {
+    "name": "Vänersborg",
+    "hemnet_slug": "vanersborgs-kommun",
+    "qasa_area": "Vänersborgs kommun",
+    "jobtech_municipality_id": "THif_q6H_MjG"
+  },
+  "2460": {
+    "name": "Vännäs",
+    "hemnet_slug": "vannas-kommun",
+    "qasa_area": "Vännäs kommun",
+    "jobtech_municipality_id": "utQc_6xq_Dfm"
+  },
+  "0120": {
+    "name": "Värmdö",
+    "hemnet_slug": "varmdo-kommun",
+    "qasa_area": "Värmdö kommun",
+    "jobtech_municipality_id": "15nx_Vut_GrH"
+  },
+  "0683": {
+    "name": "Värnamo",
+    "hemnet_slug": "varnamo-kommun",
+    "qasa_area": "Värnamo kommun",
+    "jobtech_municipality_id": "6bS8_fzf_xpW"
+  },
+  "0883": {
+    "name": "Västervik",
+    "hemnet_slug": "vasterviks-kommun",
+    "qasa_area": "Västerviks kommun",
+    "jobtech_municipality_id": "t7H4_S2P_3Fw"
+  },
+  "1980": {
+    "name": "Västerås",
+    "hemnet_slug": "vasteras-kommun",
+    "qasa_area": "Västerås kommun",
+    "jobtech_municipality_id": "8deT_FRF_2SP"
+  },
+  "0780": {
+    "name": "Växjö",
+    "hemnet_slug": "vaxjo-kommun",
+    "qasa_area": "Växjö kommun",
+    "jobtech_municipality_id": "mmot_H3A_auW"
+  },
+  "1442": {
+    "name": "Vårgårda",
+    "hemnet_slug": "vargarda-kommun",
+    "qasa_area": "Vårgårda kommun",
+    "jobtech_municipality_id": "NfFx_5jj_ogg"
+  },
+  "0512": {
+    "name": "Ydre",
+    "hemnet_slug": "ydre-kommun",
+    "qasa_area": "Ydre kommun",
+    "jobtech_municipality_id": "vRRz_nLT_vYv"
+  },
+  "1286": {
+    "name": "Ystad",
+    "hemnet_slug": "ystads-kommun",
+    "qasa_area": "Ystads kommun",
+    "jobtech_municipality_id": "hdYk_hnP_uju"
+  },
+  "0765": {
+    "name": "Älmhult",
+    "hemnet_slug": "almhults-kommun",
+    "qasa_area": "Älmhults kommun",
+    "jobtech_municipality_id": "EK6X_wZq_CQ8"
+  },
+  "2039": {
+    "name": "Älvdalen",
+    "hemnet_slug": "alvdalens-kommun",
+    "qasa_area": "Älvdalens kommun",
+    "jobtech_municipality_id": "cZtt_qGo_oBr"
+  },
+  "0319": {
+    "name": "Älvkarleby",
+    "hemnet_slug": "alvkarleby-kommun",
+    "qasa_area": "Älvkarleby kommun",
+    "jobtech_municipality_id": "cbyw_9aK_Cni"
+  },
+  "2560": {
+    "name": "Älvsbyn",
+    "hemnet_slug": "alvsbyns-kommun",
+    "qasa_area": "Älvsbyns kommun",
+    "jobtech_municipality_id": "14WF_zh1_W3y"
+  },
+  "1292": {
+    "name": "Ängelholm",
+    "hemnet_slug": "angelholms-kommun",
+    "qasa_area": "Ängelholms kommun",
+    "jobtech_municipality_id": "pCuv_P5A_9oh"
+  },
+  "1492": {
+    "name": "Åmål",
+    "hemnet_slug": "amals-kommun",
+    "qasa_area": "Åmåls kommun",
+    "jobtech_municipality_id": "M1UC_Cnf_r7g"
+  },
+  "2260": {
+    "name": "Ånge",
+    "hemnet_slug": "ange-kommun",
+    "qasa_area": "Ånge kommun",
+    "jobtech_municipality_id": "swVa_cyS_EMN"
+  },
+  "2321": {
+    "name": "Åre",
+    "hemnet_slug": "are-kommun",
+    "qasa_area": "Åre kommun",
+    "jobtech_municipality_id": "D7ax_CXP_6r1"
+  },
+  "1765": {
+    "name": "Årjäng",
+    "hemnet_slug": "arjangs-kommun",
+    "qasa_area": "Årjängs kommun",
+    "jobtech_municipality_id": "ymBu_aFc_QJA"
+  },
+  "2463": {
+    "name": "Åsele",
+    "hemnet_slug": "asele-kommun",
+    "qasa_area": "Åsele kommun",
+    "jobtech_municipality_id": "xLdL_tMA_JJv"
+  },
+  "1277": {
+    "name": "Åstorp",
+    "hemnet_slug": "astorps-kommun",
+    "qasa_area": "Åstorps kommun",
+    "jobtech_municipality_id": "tEv6_ktG_QQb"
+  },
+  "0561": {
+    "name": "Åtvidaberg",
+    "hemnet_slug": "atvidabergs-kommun",
+    "qasa_area": "Åtvidabergs kommun",
+    "jobtech_municipality_id": "bFWo_FRJ_x2T"
+  },
+  "1407": {
+    "name": "Öckerö",
+    "hemnet_slug": "ockero-kommun",
+    "qasa_area": "Öckerö kommun",
+    "jobtech_municipality_id": "Zjiv_rhk_oJK"
+  },
+  "0509": {
+    "name": "Ödeshög",
+    "hemnet_slug": "odeshogs-kommun",
+    "qasa_area": "Ödeshögs kommun",
+    "jobtech_municipality_id": "Fu8g_29u_3xF"
+  },
+  "1880": {
+    "name": "Örebro",
+    "hemnet_slug": "orebro-kommun",
+    "qasa_area": "Örebro kommun",
+    "jobtech_municipality_id": "kuMn_feU_hXx"
+  },
+  "1257": {
+    "name": "Örkelljunga",
+    "hemnet_slug": "orkelljunga-kommun",
+    "qasa_area": "Örkelljunga kommun",
+    "jobtech_municipality_id": "nBTS_Nge_dVH"
+  },
+  "2284": {
+    "name": "Örnsköldsvik",
+    "hemnet_slug": "ornskoldsviks-kommun",
+    "qasa_area": "Örnsköldsviks kommun",
+    "jobtech_municipality_id": "zBmE_n6s_MnQ"
+  },
+  "2380": {
+    "name": "Östersund",
+    "hemnet_slug": "ostersunds-kommun",
+    "qasa_area": "Östersunds kommun",
+    "jobtech_municipality_id": "Vt7P_856_WZS"
+  },
+  "0117": {
+    "name": "Österåker",
+    "hemnet_slug": "osterakers-kommun",
+    "qasa_area": "Österåkers kommun",
+    "jobtech_municipality_id": "8gKt_ZsV_PGj"
+  },
+  "0382": {
+    "name": "Östhammar",
+    "hemnet_slug": "osthammars-kommun",
+    "qasa_area": "Östhammars kommun",
+    "jobtech_municipality_id": "VE3L_3Ei_XbG"
+  },
+  "1256": {
+    "name": "Östra Göinge",
+    "hemnet_slug": "ostra-goinge-kommun",
+    "qasa_area": "Östra Göinge kommun",
+    "jobtech_municipality_id": "LTt7_CGG_RUf"
+  },
+  "2513": {
+    "name": "Överkalix",
+    "hemnet_slug": "overkalix-kommun",
+    "qasa_area": "Överkalix kommun",
+    "jobtech_municipality_id": "n5Sq_xxo_QWL"
+  },
+  "2518": {
+    "name": "Övertorneå",
+    "hemnet_slug": "overtornea-kommun",
+    "qasa_area": "Övertorneå kommun",
+    "jobtech_municipality_id": "ehMP_onv_Chk"
+  }
+}
