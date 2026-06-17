@@ -23,7 +23,8 @@ from jobtech import (
     fetch_occupation_fields,
 )
 from kolada import fetch_kpi_latest, fetch_municipalities
-from models import Commune, Economy, JobField, Metric, Population, Provenance
+from models import Commune, Economy, Housing, JobField, Metric, Population, Provenance
+from scb import fetch_housing
 
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 COMMUNES_DIR = DATA_DIR / "communes"
@@ -69,6 +70,26 @@ def main() -> None:
         job_counts = fetch_all_field_counts(client, muni_map)
         print(f"  jobtech: counts for {len(job_counts)} municipalities")
 
+        # SCB house-price signals per kommun (invest mode).
+        housing_data = fetch_housing(client)
+        print(f"  scb housing: prices for {len(housing_data)} municipalities")
+
+    def _housing_block(code: str) -> Housing:
+        h = housing_data.get(code)
+        if not h:
+            return Housing()
+        prov = Provenance(source="scb:FastprisSHRegionAr", period=h["period"], fetched=today)
+
+        def _m(v):
+            return Metric(value=v, provenance=prov) if v is not None else None
+
+        return Housing(
+            price_level_tkr=_m(h["price_level_tkr"]),
+            price_change_5y_pct=_m(h["change_5y_pct"]),
+            price_change_10y_pct=_m(h["change_10y_pct"]),
+            num_sales=_m(h["num_sales"]),
+        )
+
     def _jobs_block(code: str) -> dict[str, JobField]:
         """ads-per-10k per occupation field for one commune."""
         counts = job_counts.get(code, {})
@@ -100,6 +121,7 @@ def main() -> None:
                 forecast_change_5y_pct=_metric(tables["forecast_5y_pct"], code, KPI["forecast_5y_pct"], today),
                 forecast_change_10y_pct=_metric(tables["forecast_10y_pct"], code, KPI["forecast_10y_pct"], today),
             ),
+            housing=_housing_block(code),
             jobs=_jobs_block(code),
         )
         (COMMUNES_DIR / f"{code}.json").write_text(

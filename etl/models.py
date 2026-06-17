@@ -53,6 +53,23 @@ class JobField(BaseModel):
     provenance: Provenance
 
 
+class Housing(BaseModel):
+    """House-price signals for the "investera här" mode (SCB Fastighetspriser och
+    lagfarter, table FastprisSHRegionAr — mean köpeskilling småhus per kommun, CC0).
+
+    These feed INVEST_DIMENSIONS in score.js. NOTE the price *index* (FastpiPSRegKv)
+    is only 12 regions, not per-kommun — trend MUST be derived from the raw mean
+    köpeskilling here, not the index (verified deep-research wf_02886d5d, 2026-06-17).
+    """
+
+    price_level_tkr: Metric | None = None  # mean köpeskilling småhus, tkr (entry cost)
+    price_change_5y_pct: Metric | None = None  # % change vs 5 years ago (capital growth)
+    price_change_10y_pct: Metric | None = None  # % change vs 10 years ago
+    num_sales: Metric | None = None  # antal köp this period (market activity/liquidity)
+    # price_proxy is the legacy "bo här" cheap-is-better field score.js still reads.
+    price_proxy: Metric | None = None
+
+
 class Commune(BaseModel):
     """One Swedish kommun. `kommunkod` is the SCB 4-digit code (string, leading zeros)."""
 
@@ -60,6 +77,7 @@ class Commune(BaseModel):
     name: str
     economy: Economy = Field(default_factory=Economy)
     population: Population = Field(default_factory=Population)
+    housing: Housing = Field(default_factory=Housing)
     # jobs keyed by JobTech occupation-field concept id.
     jobs: dict[str, JobField] = Field(default_factory=dict)
-    # housing / service / future blocks land in later ETL steps.
+    # service / future blocks land in later ETL steps.

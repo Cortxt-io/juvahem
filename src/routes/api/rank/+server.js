@@ -4,7 +4,10 @@
 
 import { json } from '@sveltejs/kit';
 import { communes } from '$lib/data/communes.js';
-import { rankCommunes } from '$lib/score.js';
+import { rankCommunes, DIMENSIONS, INVEST_DIMENSIONS } from '$lib/score.js';
+
+// Two modes, one engine: "bo" ranks for living, "invest" ranks for buying.
+const DIMENSION_SETS = { bo: DIMENSIONS, invest: INVEST_DIMENSIONS };
 
 export async function POST({ request }) {
   let profile;
@@ -14,7 +17,8 @@ export async function POST({ request }) {
     return json({ error: 'Invalid JSON body' }, { status: 400 });
   }
 
-  const ranked = rankCommunes(communes, profile ?? {});
+  const mode = profile?.mode === 'invest' ? 'invest' : 'bo';
+  const ranked = rankCommunes(communes, profile ?? {}, DIMENSION_SETS[mode]);
   const limit = Number(profile?.limit) || ranked.length;
-  return json({ count: ranked.length, results: ranked.slice(0, limit) });
+  return json({ mode, count: ranked.length, results: ranked.slice(0, limit) });
 }

@@ -1,6 +1,6 @@
 <script>
   import { communes } from '$lib/data/communes.js';
-  import { rankCommunes } from '$lib/score.js';
+  import { rankCommunes, INVEST_DIMENSIONS } from '$lib/score.js';
   import PersonColumns from '$lib/components/PersonColumns.svelte';
   import WeightSliders from '$lib/components/WeightSliders.svelte';
   import RankedList from '$lib/components/RankedList.svelte';
@@ -24,12 +24,28 @@
 
   let profile = $state({
     persons: [{ occupationCode: '' }, { occupationCode: '' }],
-    weights: { jobs: 35, tax: 15, energy: 15, schools: 5, safety: 10, transit: 5, growth: 15, price: 0, commute: 0 }
+    weights: {
+      jobs: 35, tax: 15, energy: 15, schools: 5, safety: 10, transit: 5, growth: 15, price: 0, commute: 0,
+      // "Investera här"-vikter (egna nycklar, krockar inte med bo-läget):
+      price_trend: 45, demand: 25, price_entry: 15, activity: 15
+    }
   });
   let situation = $state(null);
 
+  let mode = $state('bo'); // bo | invest — two modes, one engine
   let step = $state(0); // 0 situation · 1 persons · 2 weights · 3 results
   let view = $state('list'); // list | map
+
+  // Slider set + helper text for the "investera här"-mode.
+  const INVEST_SLIDERS = [
+    { key: 'price_trend', label: 'Prisutveckling 5 år' },
+    { key: 'price_entry', label: 'Lågt insteg (pris)' },
+    { key: 'demand', label: 'Efterfrågan (befolkning)' },
+    { key: 'activity', label: 'Marknadsaktivitet (antal köp)' }
+  ];
+  const INVEST_HINT =
+    'Makro-screening på kommunnivå (fria SCB-data). Visar var marknaden vuxit och är aktiv — ' +
+    'inte avkastning per objekt (det kräver licensierad fastighetsdata).';
 
   function pickSituation(s) {
     profile.persons = Array.from(
@@ -41,8 +57,11 @@
     step = 1;
   }
 
-  // Live ranking — recomputes on every profile change.
-  const ranked = $derived(rankCommunes(communes, profile));
+  // Live ranking — recomputes on every profile/mode change. Invest mode swaps the
+  // dimension set; same engine, same renormalization.
+  const ranked = $derived(
+    rankCommunes(communes, profile, mode === 'invest' ? INVEST_DIMENSIONS : undefined)
+  );
   const single = $derived(profile.persons.length === 1);
 
   const STEPS = ['Situation', 'Yrken', 'Vikter', 'Resultat'];
@@ -57,6 +76,15 @@
   <header>
     <a class="brand" href="/"><span class="dot">🏡</span> Juvahem</a>
   </header>
+
+  <div class="mode">
+    <button class="modebtn" class:active={mode === 'bo'} type="button" onclick={() => (mode = 'bo')}>
+      🏡 Bo här
+    </button>
+    <button class="modebtn" class:active={mode === 'invest'} type="button" onclick={() => (mode = 'invest')}>
+      📈 Investera här
+    </button>
+  </div>
 
   <nav class="steps">
     {#each STEPS as s, i (s)}
@@ -101,9 +129,13 @@
     </section>
   {:else if step === 2}
     <section class="panel">
-      <h2>Vad väger tyngst för er?</h2>
+      <h2>{mode === 'invest' ? 'Vad väger tyngst i investeringen?' : 'Vad väger tyngst för er?'}</h2>
       <p class="sub">Dra reglagen. Rankningen längst ner uppdateras direkt.</p>
-      <WeightSliders bind:weights={profile.weights} />
+      {#if mode === 'invest'}
+        <WeightSliders bind:weights={profile.weights} dims={INVEST_SLIDERS} hint={INVEST_HINT} />
+      {:else}
+        <WeightSliders bind:weights={profile.weights} />
+      {/if}
       <div class="actions">
         <button class="btn" type="button" onclick={() => (step = 3)}>Se resultatet →</button>
       </div>
@@ -111,7 +143,7 @@
   {:else}
     <section class="panel">
       <div class="results-head">
-        <h2>Era topp-kommuner</h2>
+        <h2>{mode === 'invest' ? 'Topp för investering' : 'Era topp-kommuner'}</h2>
         <div class="toggle">
           <button class:active={view === 'list'} type="button" onclick={() => (view = 'list')}>Lista</button>
           <button class:active={view === 'map'} type="button" onclick={() => (view = 'map')}>Karta</button>
@@ -123,14 +155,18 @@
       </p>
 
       {#if view === 'list'}
-        <RankedList {ranked} limit={20} persons={profile.persons} />
+        <RankedList {ranked} limit={20} persons={profile.persons} {mode} />
       {:else}
         <Map {ranked} />
       {/if}
 
       <details class="tune">
         <summary>Justera vikter</summary>
-        <WeightSliders bind:weights={profile.weights} />
+        {#if mode === 'invest'}
+          <WeightSliders bind:weights={profile.weights} dims={INVEST_SLIDERS} hint={INVEST_HINT} />
+        {:else}
+          <WeightSliders bind:weights={profile.weights} />
+        {/if}
       </details>
     </section>
   {/if}
@@ -139,6 +175,26 @@
 <style>
   header {
     padding: 22px 0;
+  }
+  .mode {
+    display: inline-flex;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 4px 0 16px;
+  }
+  .modebtn {
+    border: 0;
+    background: var(--card);
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--muted);
+  }
+  .modebtn.active {
+    background: var(--accent);
+    color: #fff;
   }
   .steps {
     display: flex;

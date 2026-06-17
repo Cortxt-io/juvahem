@@ -9,7 +9,10 @@ harness, 3-vote adversarial verification — 24/25 claims confirmed).
 (municipal+regional), energy SE1–SE4 (elprisetjustnu, point-in-polygon zone crosswalk),
 schools (Kolada N15424), safety (Kolada N07540), transit (ResRobot nearby-stops),
 population growth (Kolada). Plus life-situation presets (single/couple/family/retiree/
-remote). Dormant: housing price (Tier 3, licensed) + door-to-door commute time.
+remote). Dormant: housing price + door-to-door commute time. **Update (recovered
+2026-06-17):** a FREE coarse per-kommun price *index* exists via SCB "Fastighetspriser
+och lagfarter" — the dormant `price` dim can be seeded without a licence (licensed
+Lantmäteriet only needed for object-level transaction comps). See Tier 1.
 
 **Principle:** build FREE/OPEN high-signal dimensions first; defer licensed; skip
 no-source. Every factor is scored *against the household's profile* — the moat is
@@ -35,6 +38,8 @@ expose a weight slider. No engine rewrite.
 | **School results** | grades/behörighet, Skolinspektionen | Skolverket Planned Education API (CC0, daily) | high | F | add — aggregate school→kommun |
 | **Safety / crime** | reported crime + NTU perceived safety | BRÅ per-kommun (crime 2017–; NTU SAE 2017–) | high | all (esp F,R) | add |
 | **Transit / commute access** | nearby stops, journey time to hub | ResRobot v2.1 (Trafiklab, free key) | high (urban↔rural) | DC,F,RW | add — geo-crosswalk per kommun |
+| **House price level + trend (per kommun)** | mean köpeskilling småhus + 1/5/10/20-yr change, per kommun | SCB "Fastighetspriser och lagfarter" — table **`FastprisSHRegionAr`** (kommun/län/riket) + SCB's ready "Medelpriser per kommun"-table, PxWebApi 2.0, CC0 | high | all (esp DC,R, *and* invest mode) | add — **activates dormant `price` dim for FREE**, full 290 coverage. ⚠ NOT the price *index* (`FastpiPSRegKv` is only 12 regions, not per-kommun); build trend from raw köpeskilling. Lagfarter are län/riket only — use "antal köp per kommun" from FastprisSHRegionAr as activity signal |
+| **Housing shortage** | behovsbaserad bostadsbrist per kommun | Boverket Bostadsmarknadsenkäten (BME), open data CC BY 4.0, `dataportal.se/datasets/101_3154` | high | F,S,RW (buy signal) | add — per-kommun shortage metric |
 
 ## TIER 2 — FREE/OPEN, verify endpoint then build
 
@@ -52,7 +57,7 @@ expose a weight slider. No engine rewrite.
 
 | Factor | Source | Cost | Note |
 |---|---|---|---|
-| **Housing transaction prices** | Lantmäteriet Fastighetsprisregistret / Fastighetsprisavisering | licensed (~100–500k SEK/yr, re-verify) | the lawful per-kommun price source |
+| **Housing transaction prices (object-level comps)** | Lantmäteriet Fastighetsprisregistret / Fastighetsprisavisering | licensed (~100–500k SEK/yr, re-verify) | object-level comps only; for a coarse **kommun-level price index** use the FREE SCB source in Tier 1 instead |
 | **Real rental listings (cards)** | Qasa partner/API | TBD | for embedded cards; deep-links are free now |
 
 ## TIER 4 — NO clean per-kommun source (skip / proxy only)
@@ -89,3 +94,38 @@ expose a weight slider. No engine rewrite.
 4. Life-situation presets (single/couple/family/retiree/remote) that set default weights
    over the now-rich dimension set — this is how juvahem serves "everyone", not just couples.
 5. Licensed price data (Tier 3) when revenue/partnership justifies the spend.
+
+---
+
+## "Investera här"-läget (verified deep-research, wf_02886d5d, 2026-06-17, 23/25 claims)
+
+A credible **invest mode** is buildable entirely on free kommun-level open data — as
+**macro-screening**, not per-object return calc. Object-level KPIs (cap rate, NOI,
+cash-on-cash, LTV, vacancy, GRM) need per-property data + licensed transaction prices →
+**separate licensed phase-4 pro layer, NOT built here.** What works free per kommun:
+
+| Signal | Free source | Coverage | Layman interpretation |
+|---|---|---|---|
+| **Price level + trend (1/5/10 yr)** | SCB `FastprisSHRegionAr` + "Medelpriser per kommun" (CC0) | all 290 | rising 5/10-yr + high activity = hot buyer's market (growth but pricey entry); flat/falling = stagnation or cheap entry |
+| **Demand (pop. growth + net migration)** | Kolada (free API) / SCB PxWeb | all 290 | positive net migration + growth = rising demand; negative = stagnation risk |
+| **Shortage (behovsbaserad bostadsbrist)** | Boverket "Bedömning av bostadsbrist" (DeSO→kommun) | all 290 | high shortage = strong rental demand / low vacancy risk, but regulatory risk. ⚠ verify exact licence on dataset 101_3582 before commercial publish |
+| **Market state + construction** | Boverket BME `dataportal.se/101_3154` (CC BY 4.0) | all 290 | much building + deficit = upswing; much building + balance = oversupply/price-pressure risk |
+| **Price/rent ratio** | rent from SCB HiB `BO0406Tab01` (kr/kvm) ÷ price/kvm | **only ≥75k-inhabitant kommuner** (sample survey ~16k flats) | high ratio = buy-expensive vs rent (good for landlords); low = buy-cheap. ⚠ flag "uncertain/unavailable" for small kommuner — don't hide |
+
+**Ingest:** SCB part via one PxWebApi 2.0 (GET; 150k cells/call, 30 calls/10s/IP; DB
+updates Mon–Fri 08:00; schedule yearly). Boverket + Kolada fetched separately.
+
+**Build order:** Fas 1 — price trend + demography (full 290, simplest ETL, baseline
+leaderboard). Fas 2 — Boverket BME + shortage. Fas 3 — price/rent ratio behind a
+coverage gate (large kommuner only). Fas 4 (licensed) — object-level return KPIs.
+
+**UX:** invest mode = separate mode on the additive engine — kommun-leaderboard on an
+invest-score (weighted price-trend + migration + shortage + construction), per-kommun
+scorecards with plain-text reads ("Köpmarknad: stark", "Hyresmarknad: hög efterfrågan"),
+plain-text risk flags ("Hyresdata osäker — liten kommun", "Hög nyproduktion = utbudsrisk"),
+and a 1/5/10-yr price chart. Full report: `.recovered-research/juvahem-invest-macro.md`.
+
+### Open questions (carried from the research)
+- Exact licence string for Boverket dataset 101_3582 (verify before commercial publish).
+- How many of the 290 kommuner actually have publishable rent values in HiB BO0406Tab01.
+- Invest-score weighting across signal families — fixed or user-adjustable like the main engine?

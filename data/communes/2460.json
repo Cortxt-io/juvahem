@@ -155,5 +155,39 @@
         "radius_m": 4000
       }
     }
+  },
+  "housing": {
+    "price_level_tkr": {
+      "value": 2455.0,
+      "provenance": {
+        "source": "scb:FastprisSHRegionAr",
+        "period": 2025,
+        "fetched": "2026-06-17"
+      }
+    },
+    "price_change_5y_pct": {
+      "value": 38.0,
+      "provenance": {
+        "source": "scb:FastprisSHRegionAr",
+        "period": 2025,
+        "fetched": "2026-06-17"
+      }
+    },
+    "price_change_10y_pct": {
+      "value": 106.6,
+      "provenance": {
+        "source": "scb:FastprisSHRegionAr",
+        "period": 2025,
+        "fetched": "2026-06-17"
+      }
+    },
+    "num_sales": {
+      "value": 61.0,
+      "provenance": {
+        "source": "scb:FastprisSHRegionAr",
+        "period": 2025,
+        "fetched": "2026-06-17"
+      }
+    }
   }
 }

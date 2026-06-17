@@ -99,6 +99,76 @@ export const DIMENSIONS = [
   },
 ];
 
+/**
+ * "Investera här"-läget — the SAME engine, a different lens. Macro-screening on
+ * free kommun-level open data (verified deep-research wf_02886d5d, 2026-06-17):
+ * price level + trend (SCB FastprisSHRegionAr), demand (population forecast), and
+ * sales activity. Object-level return KPIs (cap rate, NOI, cash-on-cash) need
+ * per-property + licensed data → a separate phase-4 pro layer, not modelled here.
+ *
+ * Pass this as the `dimensions` arg to rankCommunes() to rank for investing instead
+ * of living. price_trend and price_entry intentionally pull opposite ways (a hot
+ * market has high growth AND high price) — the investor's weights resolve the tension.
+ */
+export const INVEST_DIMENSIONS = [
+  {
+    key: "price_trend",
+    label: "Prisutveckling 5 år",
+    direction: "higher", // rising prices = capital growth
+    extract: (c) => c.housing?.price_change_5y_pct?.value ?? null,
+  },
+  {
+    key: "price_entry",
+    label: "Insteg (lågt pris)",
+    direction: "lower", // cheaper entry = lower capital needed
+    extract: (c) => c.housing?.price_level_tkr?.value ?? null,
+  },
+  {
+    key: "demand",
+    label: "Efterfrågan (befolkning)",
+    direction: "higher", // population growth = rising demand
+    extract: (c) => c.population?.forecast_change_5y_pct?.value ?? null,
+  },
+  {
+    key: "activity",
+    label: "Marknadsaktivitet (antal köp)",
+    direction: "higher", // more sales = a liquid, active market
+    extract: (c) => c.housing?.num_sales?.value ?? null,
+  },
+];
+
+/**
+ * Plain-text verdict tags for a commune in invest mode — the research's "risk-flaggor
+ * i klartext" (wf_02886d5d). Turns the raw signals into layman reads a non-pro
+ * investor understands. tone: 'good' | 'warn' | 'neutral'. Returns [] if no data.
+ */
+export function investVerdict(commune) {
+  const tags = [];
+  const trend = commune?.housing?.price_change_5y_pct?.value;
+  const demand = commune?.population?.forecast_change_5y_pct?.value;
+  const level = commune?.housing?.price_level_tkr?.value;
+  const sales = commune?.housing?.num_sales?.value;
+
+  if (typeof trend === "number") {
+    if (trend >= 30) tags.push({ label: `Het köpmarknad (+${trend}% 5 år)`, tone: "good" });
+    else if (trend >= 5) tags.push({ label: `Stigande priser (+${trend}% 5 år)`, tone: "good" });
+    else if (trend > -5) tags.push({ label: "Stabila priser", tone: "neutral" });
+    else tags.push({ label: `Fallande priser (${trend}% 5 år)`, tone: "warn" });
+  }
+  if (typeof demand === "number") {
+    if (demand > 0) tags.push({ label: `Växande befolkning (+${round(demand)}%)`, tone: "good" });
+    else tags.push({ label: `Krympande befolkning (${round(demand)}%) — stagnationsrisk`, tone: "warn" });
+  }
+  if (typeof level === "number") {
+    if (level < 2000) tags.push({ label: `Lågt insteg (${Math.round(level)} tkr)`, tone: "good" });
+    else if (level > 6000) tags.push({ label: `Högt insteg (${Math.round(level)} tkr)`, tone: "neutral" });
+  }
+  if (typeof sales === "number" && sales < 30)
+    tags.push({ label: `Tunn marknad — ${Math.round(sales)} köp/år`, tone: "warn" });
+
+  return tags;
+}
+
 /** Normalize weights (any positive numbers) to sum to 1 over the given keys. */
 function normalizeWeights(weights, keys) {
   const picked = keys.map((k) => [k, Math.max(0, Number(weights?.[k] ?? 0))]);
