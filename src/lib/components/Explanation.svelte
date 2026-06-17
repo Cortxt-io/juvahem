@@ -5,10 +5,10 @@
   import { explain } from '$lib/explain.js';
   import { communes } from '$lib/data/communes.js';
 
-  let { entry, kommunkod, compact = false } = $props();
+  let { entry, kommunkod, compact = false, profile = undefined } = $props();
 
   const commune = $derived(communes.find((c) => c.kommunkod === kommunkod) ?? {});
-  const ex = $derived(explain(entry, commune));
+  const ex = $derived(explain(entry, commune, profile));
 </script>
 
 {#if compact}

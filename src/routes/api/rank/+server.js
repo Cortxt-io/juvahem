@@ -4,11 +4,10 @@
 
 import { json } from '@sveltejs/kit';
 import { communes } from '$lib/data/communes.js';
-import { rankCommunes, DIMENSIONS, INVEST_DIMENSIONS } from '$lib/score.js';
+import { rankCommunes, INVEST_DIMENSIONS } from '$lib/score.js';
+import { dimensionsForProfile } from '$lib/presets.js';
 import { explain } from '$lib/explain.js';
 
-// Two modes, one engine: "bo" ranks for living, "invest" ranks for buying.
-const DIMENSION_SETS = { bo: DIMENSIONS, invest: INVEST_DIMENSIONS };
 const byKod = new Map(communes.map((c) => [c.kommunkod, c]));
 
 export async function POST({ request }) {
@@ -20,12 +19,13 @@ export async function POST({ request }) {
   }
 
   const mode = profile?.mode === 'invest' ? 'invest' : 'bo';
-  const ranked = rankCommunes(communes, profile ?? {}, DIMENSION_SETS[mode]);
+  const dims = mode === 'invest' ? INVEST_DIMENSIONS : dimensionsForProfile(profile ?? {});
+  const ranked = rankCommunes(communes, profile ?? {}, dims);
   const limit = Number(profile?.limit) || ranked.length;
   // Attach the human-readable interpretation layer (Fas 1.5, beta).
   const results = ranked.slice(0, limit).map((r) => ({
     ...r,
-    explanation: explain(r, byKod.get(r.kommunkod))
+    explanation: explain(r, byKod.get(r.kommunkod), profile)
   }));
   return json({ mode, count: ranked.length, results });
 }

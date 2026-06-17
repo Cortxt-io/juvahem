@@ -1,36 +1,25 @@
 <script>
+  import { onMount } from 'svelte';
   import { communes } from '$lib/data/communes.js';
   import { rankCommunes, INVEST_DIMENSIONS } from '$lib/score.js';
+  import { PRESETS, getPreset, dimensionsForProfile } from '$lib/presets.js';
+  import PresetPicker from '$lib/components/PresetPicker.svelte';
   import PersonColumns from '$lib/components/PersonColumns.svelte';
   import WeightSliders from '$lib/components/WeightSliders.svelte';
   import RankedList from '$lib/components/RankedList.svelte';
   import Map from '$lib/components/Map.svelte';
 
-  // Life-situation presets — pick one to set how many people and the default
-  // weights. juvahem ranks against YOUR situation, not a generic top-list. As more
-  // dimensions land (schools/safety/transit) their weights get added per situation.
-  const SITUATIONS = [
-    { id: 'par', label: 'Par som jobbar', icon: '👫', persons: 2,
-      weights: { jobs: 35, tax: 15, energy: 15, schools: 5, safety: 10, transit: 5, growth: 15 } },
-    { id: 'singel', label: 'Singel', icon: '🧍', persons: 1,
-      weights: { jobs: 40, tax: 15, energy: 10, schools: 0, safety: 10, transit: 10, growth: 15 } },
-    { id: 'familj', label: 'Familj med barn', icon: '👨‍👩‍👧', persons: 2,
-      weights: { jobs: 20, tax: 10, energy: 15, schools: 30, safety: 15, transit: 5, growth: 5 } },
-    { id: 'pensionar', label: 'Pensionär', icon: '🌅', persons: 2,
-      weights: { jobs: 5, tax: 25, energy: 25, schools: 0, safety: 25, transit: 10, growth: 10 } },
-    { id: 'distans', label: 'Distansarbetare', icon: '💻', persons: 1,
-      weights: { jobs: 10, tax: 20, energy: 30, schools: 5, safety: 10, transit: 5, growth: 20 } }
-  ];
-
   let profile = $state({
     persons: [{ occupationCode: '' }, { occupationCode: '' }],
+    lockDualCareer: true,
     weights: {
       jobs: 35, tax: 15, energy: 15, schools: 5, safety: 10, transit: 5, growth: 15, price: 0, commute: 0,
       // "Investera här"-vikter (egna nycklar, krockar inte med bo-läget):
       price_trend: 45, demand: 25, price_entry: 15, activity: 15
     }
   });
-  let situation = $state(null);
+  let preset = $state(null); // chosen preset slug (null = today's default weights)
+  let custom = $state(false); // true once the user hand-tunes weights off a preset
 
   let mode = $state('bo'); // bo | invest — two modes, one engine
   let step = $state(0); // 0 situation · 1 persons · 2 weights · 3 results
@@ -47,22 +36,60 @@
     'Makro-screening på kommunnivå (fria SCB-data). Visar var marknaden vuxit och är aktiv — ' +
     'inte avkastning per objekt (det kräver licensierad fastighetsdata).';
 
-  function pickSituation(s) {
+  // Apply a life-situation preset: persons count, weights, dual-career lock.
+  function applyPreset(p, { goToStep = 1 } = {}) {
     profile.persons = Array.from(
-      { length: s.persons },
+      { length: p.persons },
       (_, i) => profile.persons[i] ?? { occupationCode: '' }
     );
-    profile.weights = { ...profile.weights, ...s.weights };
-    situation = s.id;
-    step = 1;
+    profile.weights = { ...profile.weights, ...p.weights };
+    profile.lockDualCareer = p.lockDualCareer;
+    preset = p.slug;
+    custom = false;
+    step = goToStep;
+    syncUrl();
   }
 
-  // Live ranking — recomputes on every profile/mode change. Invest mode swaps the
-  // dimension set; same engine, same renormalization.
+  // The "bo" dimension set honours lockDualCareer; invest mode uses its own set.
   const ranked = $derived(
-    rankCommunes(communes, profile, mode === 'invest' ? INVEST_DIMENSIONS : undefined)
+    rankCommunes(communes, profile, mode === 'invest' ? INVEST_DIMENSIONS : dimensionsForProfile(profile))
   );
   const single = $derived(profile.persons.length === 1);
+
+  // --- URL state (?preset=family & optional &w=jobs:35,...) ---
+  const BO_KEYS = ['jobs', 'tax', 'energy', 'schools', 'safety', 'transit', 'growth', 'price', 'commute'];
+
+  function syncUrl() {
+    if (typeof history === 'undefined') return;
+    const params = new URLSearchParams();
+    if (mode === 'invest') params.set('mode', 'invest');
+    if (preset) params.set('preset', preset);
+    if (custom) params.set('w', BO_KEYS.map((k) => `${k}:${profile.weights[k] ?? 0}`).join(','));
+    const qs = params.toString();
+    history.replaceState(null, '', qs ? `?${qs}` : location.pathname);
+  }
+
+  // A hand-tune flips the active preset into "Anpassad — baserad på X" and re-syncs URL.
+  function markCustom() {
+    if (preset && !custom) custom = true;
+    syncUrl();
+  }
+
+  onMount(() => {
+    const q = new URLSearchParams(location.search);
+    if (q.get('mode') === 'invest') mode = 'invest';
+    const p = getPreset(q.get('preset'));
+    if (p) applyPreset(p, { goToStep: 3 }); // shared link lands on results
+    const w = q.get('w');
+    if (w) {
+      for (const pair of w.split(',')) {
+        const [k, v] = pair.split(':');
+        if (BO_KEYS.includes(k)) profile.weights[k] = Number(v) || 0;
+      }
+      custom = true;
+      step = 3;
+    }
+  });
 
   const STEPS = ['Situation', 'Yrken', 'Vikter', 'Resultat'];
 </script>
@@ -105,15 +132,9 @@
       <h1>Var ska du bo?</h1>
       <p class="lead">
         Vi rankar Sveriges alla 290 kommuner mot <b>din</b> situation — jobb, skatt, elkostnad
-        och befolkningstrend, vägt som det passar dig. Börja med vilken situation som stämmer:
+        och befolkningstrend, vägt som det passar dig. Börja med vem du är:
       </p>
-      <div class="situations">
-        {#each SITUATIONS as s (s.id)}
-          <button class="sit" type="button" onclick={() => pickSituation(s)}>
-            <span class="ico">{s.icon}</span>{s.label}
-          </button>
-        {/each}
-      </div>
+      <PresetPicker selected={preset} {custom} onpick={(p) => applyPreset(p)} />
     </section>
   {:else if step === 1}
     <section class="panel">
@@ -134,7 +155,7 @@
       {#if mode === 'invest'}
         <WeightSliders bind:weights={profile.weights} dims={INVEST_SLIDERS} hint={INVEST_HINT} />
       {:else}
-        <WeightSliders bind:weights={profile.weights} />
+        <WeightSliders bind:weights={profile.weights} onchange={markCustom} />
       {/if}
       <div class="actions">
         <button class="btn" type="button" onclick={() => (step = 3)}>Se resultatet →</button>
@@ -150,12 +171,13 @@
         </div>
       </div>
       <p class="sub">
+        {#if preset}Profil: <b>{getPreset(preset)?.label}{custom ? ' (anpassad)' : ''}</b>. {/if}
         Rankat mot er profil. Klicka en kommun för att se varför den hamnar där. Justera vikterna när
         som helst — listan rankar om sig live.
       </p>
 
       {#if view === 'list'}
-        <RankedList {ranked} limit={20} persons={profile.persons} {mode} />
+        <RankedList {ranked} limit={20} persons={profile.persons} {profile} {mode} />
       {:else}
         <Map {ranked} />
       {/if}
@@ -165,7 +187,7 @@
         {#if mode === 'invest'}
           <WeightSliders bind:weights={profile.weights} dims={INVEST_SLIDERS} hint={INVEST_HINT} />
         {:else}
-          <WeightSliders bind:weights={profile.weights} />
+          <WeightSliders bind:weights={profile.weights} onchange={markCustom} />
         {/if}
       </details>
     </section>

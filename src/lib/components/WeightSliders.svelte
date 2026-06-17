@@ -12,7 +12,7 @@
     { key: 'transit', label: 'Kollektivtrafik' },
     { key: 'growth', label: 'Befolkningstrend' }
   ];
-  let { weights = $bindable(), dims = BO_DIMS, hint = '' } = $props();
+  let { weights = $bindable(), dims = BO_DIMS, hint = '', onchange } = $props();
 
   const ACTIVE = $derived(dims);
   const total = $derived(ACTIVE.reduce((s, d) => s + (Number(weights[d.key]) || 0), 0));
@@ -29,7 +29,7 @@
         <span class="lbl">{d.label}</span>
         <span class="pct">{pct(d.key)}%</span>
       </div>
-      <input type="range" min="0" max="100" step="5" bind:value={weights[d.key]} />
+      <input type="range" min="0" max="100" step="5" bind:value={weights[d.key]} oninput={() => onchange?.()} />
     </div>
   {/each}
   <p class="hint">

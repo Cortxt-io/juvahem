@@ -6,7 +6,7 @@
   import ListingLinks from './ListingLinks.svelte';
   import Explanation from './Explanation.svelte';
 
-  let { ranked = [], limit = 20, persons = [], mode = 'bo' } = $props();
+  let { ranked = [], limit = 20, persons = [], mode = 'bo', profile = undefined } = $props();
   let expanded = $state(null); // kommunkod currently expanded
 
   const shown = $derived(ranked.slice(0, limit));
@@ -23,13 +23,13 @@
         <span class="rank">#{r.rank}</span>
         <span class="name">
           {r.name}
-          <Explanation entry={r} kommunkod={r.kommunkod} compact />
+          <Explanation entry={r} kommunkod={r.kommunkod} {profile} compact />
         </span>
         <span class="score">{r.score.toFixed(1)}</span>
       </button>
       {#if expanded === r.kommunkod}
         <div class="detail">
-          <Explanation entry={r} kommunkod={r.kommunkod} />
+          <Explanation entry={r} kommunkod={r.kommunkod} {profile} />
           <ScoreBreakdown breakdown={r.breakdown} />
           {#if mode !== 'invest'}
             <JobMatch kommunkod={r.kommunkod} {persons} />

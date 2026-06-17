@@ -73,10 +73,14 @@ export const RISK_RULES = [
  *
  * @param {{breakdown?: {key:string,label:string,factor:number}[]}} entry  a rankCommunes() result
  * @param {object} commune  the canonical commune (for raw-value risk flags)
+ * @param {object} [profile]  optional — its `weights` make the verdict preset-aware:
+ *                            prioritized dimensions surface first in summary/highlights.
  * @returns {{summary:string, highlights:string[], riskFlags:{type,label,description}[], beta:boolean}}
  */
-export function explain(entry, commune = {}) {
+export function explain(entry, commune = {}, profile = undefined) {
   const breakdown = entry?.breakdown ?? [];
+  const weights = profile?.weights ?? null;
+  const w = (key) => (weights ? Math.max(0, Number(weights[key]) || 0) : 1);
   const strengths = [];
   const weaknesses = [];
 
@@ -88,8 +92,10 @@ export function explain(entry, commune = {}) {
     else if (f <= THRESHOLDS.weak) weaknesses.push({ key: b.key, f, text: text.weak });
   }
 
-  strengths.sort((a, b) => b.f - a.f); // best first
-  weaknesses.sort((a, b) => a.f - b.f); // worst first
+  // Lead with the dimensions this profile actually cares about (weight × signal),
+  // so a family sees schools/safety first, a remote worker sees price/tax first.
+  strengths.sort((a, b) => w(b.key) * b.f - w(a.key) * a.f);
+  weaknesses.sort((a, b) => w(b.key) * (1 - b.f) - w(a.key) * (1 - a.f));
 
   const riskFlags = RISK_RULES.filter((r) => {
     try { return r.test(commune); } catch { return false; }
