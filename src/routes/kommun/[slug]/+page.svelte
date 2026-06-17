@@ -45,6 +45,9 @@
       {#if c.crime100k != null}
         <div class="card stat"><span class="k">Brott / 100k</span><span class="v">{fmt(c.crime100k)}</span></div>
       {/if}
+      {#if c.transitStops != null}
+        <div class="card stat"><span class="k">Kollektivtrafik</span><span class="v">{fmt(c.transitStops)} hållpl.</span></div>
+      {/if}
     </div>
 
     {#if data.topJobs.length}

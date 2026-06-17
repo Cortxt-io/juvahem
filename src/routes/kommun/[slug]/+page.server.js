@@ -48,7 +48,8 @@ export function load({ params }) {
       priceArea: c.energy?.price_area ?? null,
       energyOre: c.energy?.price_level?.value ?? null,
       schoolPct: c.schools?.eligibility_pct?.value ?? null,
-      crime100k: c.safety?.reported_crime_per_100k?.value ?? null
+      crime100k: c.safety?.reported_crime_per_100k?.value ?? null,
+      transitStops: c.transit?.stop_count?.value ?? null
     },
     baselineRank: myRank,
     total: baseline.length,

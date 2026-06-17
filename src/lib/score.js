@@ -79,6 +79,12 @@ export const DIMENSIONS = [
     extract: (c) => c.safety?.reported_crime_per_100k?.value ?? null,
   },
   {
+    key: "transit",
+    label: "Kollektivtrafik",
+    direction: "higher", // public-transport stops near the kommun centre
+    extract: (c) => c.transit?.stop_count?.value ?? null,
+  },
+  {
     key: "price",
     label: "Bostadspris",
     direction: "lower",

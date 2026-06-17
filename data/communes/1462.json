@@ -135,5 +135,15 @@
         "period": 2025
       }
     }
+  },
+  "transit": {
+    "stop_count": {
+      "value": 23,
+      "provenance": {
+        "source": "resrobot:nearbystops",
+        "period": "2026-06-17",
+        "radius_m": 4000
+      }
+    }
   }
 }

@@ -10,6 +10,7 @@
     { key: 'energy', label: 'Elkostnad (elområde)' },
     { key: 'schools', label: 'Skola (behörighet)' },
     { key: 'safety', label: 'Trygghet (få brott)' },
+    { key: 'transit', label: 'Kollektivtrafik' },
     { key: 'growth', label: 'Befolkningstrend' }
   ];
 

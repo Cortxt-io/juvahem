@@ -11,20 +11,20 @@
   // dimensions land (schools/safety/transit) their weights get added per situation.
   const SITUATIONS = [
     { id: 'par', label: 'Par som jobbar', icon: '👫', persons: 2,
-      weights: { jobs: 40, tax: 15, energy: 15, schools: 5, safety: 10, growth: 15 } },
+      weights: { jobs: 35, tax: 15, energy: 15, schools: 5, safety: 10, transit: 5, growth: 15 } },
     { id: 'singel', label: 'Singel', icon: '🧍', persons: 1,
-      weights: { jobs: 45, tax: 15, energy: 15, schools: 0, safety: 10, growth: 15 } },
+      weights: { jobs: 40, tax: 15, energy: 10, schools: 0, safety: 10, transit: 10, growth: 15 } },
     { id: 'familj', label: 'Familj med barn', icon: '👨‍👩‍👧', persons: 2,
-      weights: { jobs: 25, tax: 10, energy: 15, schools: 30, safety: 15, growth: 5 } },
+      weights: { jobs: 20, tax: 10, energy: 15, schools: 30, safety: 15, transit: 5, growth: 5 } },
     { id: 'pensionar', label: 'Pensionär', icon: '🌅', persons: 2,
-      weights: { jobs: 5, tax: 25, energy: 25, schools: 0, safety: 30, growth: 15 } },
+      weights: { jobs: 5, tax: 25, energy: 25, schools: 0, safety: 25, transit: 10, growth: 10 } },
     { id: 'distans', label: 'Distansarbetare', icon: '💻', persons: 1,
-      weights: { jobs: 15, tax: 20, energy: 30, schools: 5, safety: 15, growth: 15 } }
+      weights: { jobs: 10, tax: 20, energy: 30, schools: 5, safety: 10, transit: 5, growth: 20 } }
   ];
 
   let profile = $state({
     persons: [{ occupationCode: '' }, { occupationCode: '' }],
-    weights: { jobs: 40, tax: 15, energy: 15, schools: 5, safety: 10, growth: 15, price: 0, commute: 0 }
+    weights: { jobs: 35, tax: 15, energy: 15, schools: 5, safety: 10, transit: 5, growth: 15, price: 0, commute: 0 }
   });
   let situation = $state(null);
 
