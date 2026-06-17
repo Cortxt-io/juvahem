@@ -58,6 +58,12 @@ export const DIMENSIONS = [
     extract: (c) => c.population?.forecast_change_5y_pct?.value ?? null,
   },
   {
+    key: "energy",
+    label: "Elkostnad",
+    direction: "lower", // lower öre/kWh (electricity area SE1–SE4) is better
+    extract: (c) => c.energy?.price_level?.value ?? null,
+  },
+  {
     key: "price",
     label: "Bostadspris",
     direction: "lower",

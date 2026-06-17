@@ -206,5 +206,16 @@
         "fetched": "2026-06-16"
       }
     }
+  },
+  "energy": {
+    "price_area": "SE1",
+    "price_level": {
+      "value": 46.87,
+      "provenance": {
+        "source": "elprisetjustnu:spot;zones:electricitymaps/entsoe",
+        "period": "trailing-30d",
+        "fetched": "2026-06-17"
+      }
+    }
   }
 }

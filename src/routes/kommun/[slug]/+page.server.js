@@ -44,7 +44,9 @@ export function load({ params }) {
       tax: c.economy?.municipal_tax_pct?.value ?? null,
       totalTax: c.economy?.total_tax_pct?.value ?? null,
       population: c.population?.total?.value ?? null,
-      growth5y: c.population?.forecast_change_5y_pct?.value ?? null
+      growth5y: c.population?.forecast_change_5y_pct?.value ?? null,
+      priceArea: c.energy?.price_area ?? null,
+      energyOre: c.energy?.price_level?.value ?? null
     },
     baselineRank: myRank,
     total: baseline.length,

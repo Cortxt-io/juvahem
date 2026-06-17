@@ -33,6 +33,12 @@
       <div class="card stat"><span class="k">Total skatt</span><span class="v">{fmt(c.totalTax, '%')}</span></div>
       <div class="card stat"><span class="k">Invånare</span><span class="v">{fmt(c.population)}</span></div>
       <div class="card stat"><span class="k">Trend 5 år</span><span class="v">{fmt(c.growth5y, '%')}</span></div>
+      {#if c.priceArea}
+        <div class="card stat">
+          <span class="k">Elområde</span>
+          <span class="v">{c.priceArea} · {fmt(c.energyOre, ' öre')}</span>
+        </div>
+      {/if}
     </div>
 
     {#if data.topJobs.length}

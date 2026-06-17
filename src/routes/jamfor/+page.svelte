@@ -9,7 +9,7 @@
   // The couple profile. price/commute weights stay 0 (no data yet).
   let profile = $state({
     persons: [{ occupationCode: '' }, { occupationCode: '' }],
-    weights: { jobs: 50, tax: 20, growth: 30, price: 0, commute: 0 }
+    weights: { jobs: 45, tax: 20, energy: 20, growth: 15, price: 0, commute: 0 }
   });
 
   let step = $state(0); // 0 intro · 1 persons · 2 weights · 3 results
