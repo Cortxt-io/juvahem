@@ -86,9 +86,11 @@ export const DIMENSIONS = [
   },
   {
     key: "price",
-    label: "Bostadspris",
-    direction: "lower",
-    extract: (c) => c.housing?.price_proxy?.value ?? null,
+    label: "Bostadspris (köpkraft)",
+    direction: "lower", // lower mean köpeskilling = more affordable = better score
+    // Coarse per-kommun affordability proxy: mean köpeskilling for småhus from SCB
+    // (housing.price_level_tkr, see etl/scb.py). NOT an object-level valuation.
+    extract: (c) => c.housing?.price_level_tkr?.value ?? c.housing?.price_proxy?.value ?? null,
   },
   {
     key: "commute",

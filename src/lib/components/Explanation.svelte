@@ -9,6 +9,7 @@
 
   const commune = $derived(communes.find((c) => c.kommunkod === kommunkod) ?? {});
   const ex = $derived(explain(entry, commune, profile));
+  const hasPrice = $derived(commune?.housing?.price_level_tkr?.value != null);
 </script>
 
 {#if compact}
@@ -42,6 +43,13 @@
 
     {#if !ex.summary && !ex.highlights.length && !ex.riskFlags.length}
       <p class="none">Ingen tydlig profil – se poängfördelningen nedan.</p>
+    {/if}
+
+    {#if hasPrice}
+      <p class="disclaimer">
+        Prisnivån baseras på grov kommunnivådata från SCB (medel-köpeskilling för småhus),
+        inte en värdering av enskild bostad.
+      </p>
     {/if}
   </div>
 {/if}
@@ -100,5 +108,13 @@
     margin: 0;
     color: var(--muted);
     font-size: 13px;
+  }
+  .disclaimer {
+    margin: 0;
+    color: var(--muted);
+    font-size: 12px;
+    font-style: italic;
+    border-top: 1px dashed var(--line);
+    padding-top: 8px;
   }
 </style>

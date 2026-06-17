@@ -20,7 +20,7 @@ export const PRESETS = [
     description: 'Optimerar för att BÅDA får jobb (harmoniskt medel), rimlig skatt och pendling.',
     persons: 2,
     lockDualCareer: true,
-    weights: { jobs: 35, tax: 15, transit: 10, price: 10, growth: 10, energy: 10, safety: 5, schools: 5 }
+    weights: { jobs: 35, tax: 15, price: 15, transit: 10, growth: 10, energy: 10, safety: 5, schools: 5 }
   },
   {
     slug: 'single',
@@ -29,7 +29,7 @@ export const PRESETS = [
     description: 'Jobb, låg skatt, bra pendling och trygghet — skola och elkostnad tonas ned.',
     persons: 1,
     lockDualCareer: false,
-    weights: { jobs: 40, tax: 20, transit: 15, safety: 15, growth: 10, schools: 0, energy: 0, price: 0 }
+    weights: { jobs: 40, tax: 20, transit: 15, safety: 15, price: 10, growth: 10, schools: 0, energy: 0 }
   },
   {
     slug: 'family',
@@ -38,17 +38,17 @@ export const PRESETS = [
     description: 'Skolor och trygghet i topp, plus bostadspris, pendling och elkostnad.',
     persons: 2,
     lockDualCareer: false,
-    weights: { schools: 30, safety: 20, price: 15, transit: 15, energy: 10, jobs: 5, tax: 5, growth: 0 }
+    weights: { schools: 28, safety: 18, price: 20, transit: 14, energy: 10, jobs: 5, tax: 5, growth: 0 }
   },
   {
     slug: 'retiree',
     label: 'Pensionär',
     icon: '🌅',
     // future: healthcare/service + climate/sun once those dimensions land.
-    description: 'Låg skatt, trygghet och elkostnad väger tyngst — jobb spelar ingen roll.',
+    description: 'Låg skatt, trygghet, elkostnad och köpkraft väger tyngst — jobb spelar ingen roll.',
     persons: 2,
     lockDualCareer: false,
-    weights: { tax: 25, safety: 25, energy: 20, growth: 10, transit: 10, schools: 0, jobs: 0, price: 10 }
+    weights: { tax: 22, safety: 22, price: 15, energy: 18, growth: 10, transit: 13, schools: 0, jobs: 0 }
   },
   {
     slug: 'remote',

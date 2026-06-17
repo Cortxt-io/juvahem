@@ -22,6 +22,12 @@
   let custom = $state(false); // true once the user hand-tunes weights off a preset
 
   let mode = $state('bo'); // bo | invest — two modes, one engine
+  let priorityLowPrice = $state(false); // invest toggle: bias toward low köpeskilling
+
+  // Bonus toggle — bumps the (same SCB) price dimension's weight in invest mode.
+  function toggleLowPrice() {
+    profile.weights.price_entry = priorityLowPrice ? 70 : 15;
+  }
   let step = $state(0); // 0 situation · 1 persons · 2 weights · 3 results
   let view = $state('list'); // list | map
 
@@ -153,6 +159,10 @@
       <h2>{mode === 'invest' ? 'Vad väger tyngst i investeringen?' : 'Vad väger tyngst för er?'}</h2>
       <p class="sub">Dra reglagen. Rankningen längst ner uppdateras direkt.</p>
       {#if mode === 'invest'}
+        <label class="lowprice">
+          <input type="checkbox" bind:checked={priorityLowPrice} onchange={toggleLowPrice} />
+          Prioritera låg köpeskilling (billigt insteg väger tyngst)
+        </label>
         <WeightSliders bind:weights={profile.weights} dims={INVEST_SLIDERS} hint={INVEST_HINT} />
       {:else}
         <WeightSliders bind:weights={profile.weights} onchange={markCustom} />
@@ -336,6 +346,15 @@
     background: var(--accent);
     color: #fff;
     font-weight: 600;
+  }
+  .lowprice {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    cursor: pointer;
   }
   .tune {
     margin-top: 24px;

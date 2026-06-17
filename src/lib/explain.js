@@ -23,7 +23,10 @@ export const DIM_TEXT = {
   schools: { strong: 'Starka skolresultat', weak: 'Svaga skolresultat' },
   safety: { strong: 'Trygg kommun – få anmälda brott', weak: 'Mer brott än de flesta kommuner' },
   transit: { strong: 'Bra kollektivtrafik och pendling', weak: 'Svag kollektivtrafik – bilberoende vardag' },
-  price: { strong: 'Lågt bostadspris', weak: 'Högt bostadspris' },
+  price: {
+    strong: 'Relativt låg prisnivå gör kommunen mer tillgänglig för köp',
+    weak: 'Hög prisnivå jämfört med många kommuner kan begränsa köpkraften'
+  },
   commute: { strong: 'Kort pendling', weak: 'Lång pendling' },
   // --- "investera här" dimensions ---
   price_trend: { strong: 'Stark prisutveckling de senaste åren', weak: 'Svag prisutveckling' },
@@ -58,6 +61,13 @@ export const RISK_RULES = [
       && num(c.housing?.price_change_5y_pct?.value) <= -5,
     label: 'Fallande bostadspriser',
     description: 'Bostadspriserna har sjunkit de senaste fem åren – kapitalrisk vid köp.'
+  },
+  {
+    type: 'expensive',
+    test: (c) => num(c.housing?.price_level_tkr?.value) !== null
+      && num(c.housing?.price_level_tkr?.value) >= 5000,
+    label: 'Dyr marknad',
+    description: 'Hög prisnivå på småhus (grov SCB-kommunnivå) – kräver större kapitalinsats.'
   },
   {
     type: 'thin_market',
