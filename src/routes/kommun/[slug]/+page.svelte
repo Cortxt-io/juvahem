@@ -1,4 +1,7 @@
 <script>
+  import ListingLinks from '$lib/components/ListingLinks.svelte';
+  import { jobLink } from '$lib/data/portalKeys.js';
+
   let { data } = $props();
   const c = $derived(data.commune);
   const fmt = (n, suffix = '') =>
@@ -36,10 +39,17 @@
       <h2>Starkast jobbmarknad här</h2>
       <ul class="jobs">
         {#each data.topJobs as j (j.id)}
-          <li><span>{j.label}</span><b>{j.value.toFixed(1)}</b><small>annonser / 10k inv.</small></li>
+          <li>
+            <span>{j.label}</span>
+            <b>{j.value.toFixed(1)}</b><small>annonser / 10k inv.</small>
+            <a href={jobLink(c.kommunkod, j.id)} target="_blank" rel="noopener nofollow">Se jobben ↗</a>
+          </li>
         {/each}
       </ul>
     {/if}
+
+    <h2>Bostäder i {c.name}</h2>
+    <ListingLinks kommunkod={c.kommunkod} name={c.name} />
 
     {#if data.neighbours.length}
       <h2>Liknande kommuner</h2>

@@ -94,7 +94,7 @@
       </p>
 
       {#if view === 'list'}
-        <RankedList {ranked} limit={20} />
+        <RankedList {ranked} limit={20} persons={profile.persons} />
       {:else}
         <Map {ranked} />
       {/if}

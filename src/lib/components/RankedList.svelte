@@ -2,8 +2,10 @@
   import { flip } from 'svelte/animate';
   import { kommunkodToSlug } from '$lib/data/communes.js';
   import ScoreBreakdown from './ScoreBreakdown.svelte';
+  import JobMatch from './JobMatch.svelte';
+  import ListingLinks from './ListingLinks.svelte';
 
-  let { ranked = [], limit = 20 } = $props();
+  let { ranked = [], limit = 20, persons = [] } = $props();
   let expanded = $state(null); // kommunkod currently expanded
 
   const shown = $derived(ranked.slice(0, limit));
@@ -24,6 +26,8 @@
       {#if expanded === r.kommunkod}
         <div class="detail">
           <ScoreBreakdown breakdown={r.breakdown} />
+          <JobMatch kommunkod={r.kommunkod} {persons} />
+          <ListingLinks kommunkod={r.kommunkod} name={r.name} />
           <a class="btn ghost small" href="/kommun/{kommunkodToSlug.get(r.kommunkod)}">
             Mer om {r.name} →
           </a>
