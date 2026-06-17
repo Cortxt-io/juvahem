@@ -4,7 +4,7 @@
   import ScoreBreakdown from './ScoreBreakdown.svelte';
   import JobMatch from './JobMatch.svelte';
   import ListingLinks from './ListingLinks.svelte';
-  import InvestVerdict from './InvestVerdict.svelte';
+  import Explanation from './Explanation.svelte';
 
   let { ranked = [], limit = 20, persons = [], mode = 'bo' } = $props();
   let expanded = $state(null); // kommunkod currently expanded
@@ -21,14 +21,15 @@
     <li class="item" animate:flip={{ duration: 350 }}>
       <button class="rowbtn" type="button" onclick={() => toggle(r.kommunkod)}>
         <span class="rank">#{r.rank}</span>
-        <span class="name">{r.name}</span>
+        <span class="name">
+          {r.name}
+          <Explanation entry={r} kommunkod={r.kommunkod} compact />
+        </span>
         <span class="score">{r.score.toFixed(1)}</span>
       </button>
       {#if expanded === r.kommunkod}
         <div class="detail">
-          {#if mode === 'invest'}
-            <InvestVerdict kommunkod={r.kommunkod} />
-          {/if}
+          <Explanation entry={r} kommunkod={r.kommunkod} />
           <ScoreBreakdown breakdown={r.breakdown} />
           {#if mode !== 'invest'}
             <JobMatch kommunkod={r.kommunkod} {persons} />
@@ -81,6 +82,10 @@
   }
   .name {
     font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
   }
   .score {
     font-variant-numeric: tabular-nums;
