@@ -5,6 +5,12 @@ per-kommun data source for each. Drives the ETL and the scoring dimensions
 (`src/lib/score.js`). Seeded by a verified deep-research pass (2026-06-17, 105-agent
 harness, 3-vote adversarial verification — 24/25 claims confirmed).
 
+**LIVE 2026-06-17 — 8 dimensions shipped (all free):** jobs (JobTech), total tax
+(municipal+regional), energy SE1–SE4 (elprisetjustnu, point-in-polygon zone crosswalk),
+schools (Kolada N15424), safety (Kolada N07540), transit (ResRobot nearby-stops),
+population growth (Kolada). Plus life-situation presets (single/couple/family/retiree/
+remote). Dormant: housing price (Tier 3, licensed) + door-to-door commute time.
+
 **Principle:** build FREE/OPEN high-signal dimensions first; defer licensed; skip
 no-source. Every factor is scored *against the household's profile* — the moat is
 personalization, not a generic "best municipality" list. Factors apply per
