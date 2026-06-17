@@ -46,7 +46,9 @@ export function load({ params }) {
       population: c.population?.total?.value ?? null,
       growth5y: c.population?.forecast_change_5y_pct?.value ?? null,
       priceArea: c.energy?.price_area ?? null,
-      energyOre: c.energy?.price_level?.value ?? null
+      energyOre: c.energy?.price_level?.value ?? null,
+      schoolPct: c.schools?.eligibility_pct?.value ?? null,
+      crime100k: c.safety?.reported_crime_per_100k?.value ?? null
     },
     baselineRank: myRank,
     total: baseline.length,

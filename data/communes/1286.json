@@ -247,5 +247,23 @@
         "fetched": "2026-06-17"
       }
     }
+  },
+  "safety": {
+    "reported_crime_per_100k": {
+      "value": 11917.13068,
+      "provenance": {
+        "source": "kolada:N07540",
+        "period": 2025
+      }
+    }
+  },
+  "schools": {
+    "eligibility_pct": {
+      "value": 88.0,
+      "provenance": {
+        "source": "kolada:N15424",
+        "period": 2025
+      }
+    }
   }
 }

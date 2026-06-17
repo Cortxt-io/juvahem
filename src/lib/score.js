@@ -67,6 +67,18 @@ export const DIMENSIONS = [
     extract: (c) => c.energy?.price_level?.value ?? null,
   },
   {
+    key: "schools",
+    label: "Skola (behörighet)",
+    direction: "higher", // % of year-9 pupils eligible for upper secondary
+    extract: (c) => c.schools?.eligibility_pct?.value ?? null,
+  },
+  {
+    key: "safety",
+    label: "Trygghet (få brott)",
+    direction: "lower", // reported crimes per 100k — fewer is better
+    extract: (c) => c.safety?.reported_crime_per_100k?.value ?? null,
+  },
+  {
     key: "price",
     label: "Bostadspris",
     direction: "lower",

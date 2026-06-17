@@ -39,6 +39,12 @@
           <span class="v">{c.priceArea} · {fmt(c.energyOre, ' öre')}</span>
         </div>
       {/if}
+      {#if c.schoolPct != null}
+        <div class="card stat"><span class="k">Skola (behörighet)</span><span class="v">{fmt(c.schoolPct, '%')}</span></div>
+      {/if}
+      {#if c.crime100k != null}
+        <div class="card stat"><span class="k">Brott / 100k</span><span class="v">{fmt(c.crime100k)}</span></div>
+      {/if}
     </div>
 
     {#if data.topJobs.length}

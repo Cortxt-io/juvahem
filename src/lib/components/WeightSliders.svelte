@@ -8,6 +8,8 @@
     { key: 'jobs', label: 'Jobb (båda)' },
     { key: 'tax', label: 'Skatt (kommun + region)' },
     { key: 'energy', label: 'Elkostnad (elområde)' },
+    { key: 'schools', label: 'Skola (behörighet)' },
+    { key: 'safety', label: 'Trygghet (få brott)' },
     { key: 'growth', label: 'Befolkningstrend' }
   ];
 
