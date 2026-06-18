@@ -36,6 +36,8 @@ export const DIMENSIONS = [
   {
     key: "jobs",
     label: "Jobb (båda)",
+    category: "Jobb",
+    unit: "index",
     direction: "higher",
     // Dual-career: harmonic mean of each person's job-fit for this commune.
     // job-fit is filled in once JobTech data lands; null until then.
@@ -48,6 +50,8 @@ export const DIMENSIONS = [
   {
     key: "tax",
     label: "Skatt (kommun + region)",
+    category: "Ekonomi",
+    unit: "pct",
     direction: "lower",
     // Total local tax = what residents actually pay (municipal + regional). Falls
     // back to municipal-only if total is missing. Wide spread → high signal.
@@ -57,36 +61,48 @@ export const DIMENSIONS = [
   {
     key: "growth",
     label: "Befolkningstrend",
+    category: "Tillväxt",
+    unit: "pct_signed",
     direction: "higher",
     extract: (c) => c.population?.forecast_change_5y_pct?.value ?? null,
   },
   {
     key: "energy",
     label: "Elkostnad",
+    category: "Miljö & energi",
+    unit: "orekwh",
     direction: "lower", // lower öre/kWh (electricity area SE1–SE4) is better
     extract: (c) => c.energy?.price_level?.value ?? null,
   },
   {
     key: "schools",
     label: "Skola (behörighet)",
+    category: "Familj & service",
+    unit: "pct",
     direction: "higher", // % of year-9 pupils eligible for upper secondary
     extract: (c) => c.schools?.eligibility_pct?.value ?? null,
   },
   {
     key: "safety",
     label: "Trygghet (få brott)",
+    category: "Trygghet",
+    unit: "per100k",
     direction: "lower", // reported crimes per 100k — fewer is better
     extract: (c) => c.safety?.reported_crime_per_100k?.value ?? null,
   },
   {
     key: "transit",
     label: "Kollektivtrafik",
+    category: "Pendling",
+    unit: "stops",
     direction: "higher", // public-transport stops near the kommun centre
     extract: (c) => c.transit?.stop_count?.value ?? null,
   },
   {
     key: "price",
     label: "Bostadspris (köpkraft)",
+    category: "Ekonomi",
+    unit: "tkr",
     direction: "lower", // lower mean köpeskilling = more affordable = better score
     // Coarse per-kommun affordability proxy: mean köpeskilling for småhus from SCB
     // (housing.price_level_tkr, see etl/scb.py). NOT an object-level valuation.
@@ -95,6 +111,8 @@ export const DIMENSIONS = [
   {
     key: "commute",
     label: "Pendling",
+    category: "Pendling",
+    unit: "min",
     direction: "lower",
     // On-demand (ResRobot); filled per request. null until computed.
     extract: (c, profile) => c.commute?.[profile?.commuteKey]?.value ?? null,
@@ -116,24 +134,32 @@ export const INVEST_DIMENSIONS = [
   {
     key: "price_trend",
     label: "Prisutveckling 5 år",
+    category: "Investering",
+    unit: "pct_signed",
     direction: "higher", // rising prices = capital growth
     extract: (c) => c.housing?.price_change_5y_pct?.value ?? null,
   },
   {
     key: "price_entry",
     label: "Insteg (lågt pris)",
+    category: "Investering",
+    unit: "tkr",
     direction: "lower", // cheaper entry = lower capital needed
     extract: (c) => c.housing?.price_level_tkr?.value ?? null,
   },
   {
     key: "demand",
     label: "Efterfrågan (befolkning)",
+    category: "Investering",
+    unit: "pct_signed",
     direction: "higher", // population growth = rising demand
     extract: (c) => c.population?.forecast_change_5y_pct?.value ?? null,
   },
   {
     key: "activity",
     label: "Marknadsaktivitet (antal köp)",
+    category: "Investering",
+    unit: "sales",
     direction: "higher", // more sales = a liquid, active market
     extract: (c) => c.housing?.num_sales?.value ?? null,
   },
@@ -228,9 +254,11 @@ export function rankCommunes(communes, profile, dimensions = DIMENSIONS) {
       breakdown.push({
         key: dim.key,
         label: dim.label,
+        category: dim.category ?? null,
+        unit: dim.unit ?? null,
         factor: round(factor * 100), // 0–100 per factor
         contribution: round(contribution * 100), // points added to total
-        raw: rv,
+        raw: rv, // the REAL value (e.g. 31.8 % tax) — surfaced in the UI, not just the match
       });
     }
     return {

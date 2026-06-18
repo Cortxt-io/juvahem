@@ -4,8 +4,9 @@
   // total for comprehension (UI-SPEC: "normalized to 100%").
   // `dims` is the slider set for the current mode (defaults to "bo här").
   const BO_DIMS = [
-    { key: 'jobs', label: 'Jobb (båda)' },
+    { key: 'jobs', label: 'Jobb (efterfrågan)' },
     { key: 'tax', label: 'Skatt (kommun + region)' },
+    { key: 'price', label: 'Bostadspris (köpkraft)' },
     { key: 'energy', label: 'Elkostnad (elområde)' },
     { key: 'schools', label: 'Skola (behörighet)' },
     { key: 'safety', label: 'Trygghet (få brott)' },
@@ -33,7 +34,7 @@
     </div>
   {/each}
   <p class="hint">
-    {hint || 'Dra för att vikta vad som betyder mest för er. Bostadspris och pendling är på väg in — de påverkar inte rankningen ännu.'}
+    {hint || 'Dra för att vikta vad som betyder mest för dig. Pendling är på väg in — den påverkar inte rankningen ännu.'}
   </p>
 </div>
 

@@ -1,11 +1,13 @@
 <script>
-  // Choropleth of all 290 kommuner, filled by the current ranking score.
-  // MapLibre + OpenFreeMap tiles (no API key). Boundaries are served as a static
-  // asset (static/commune_boundaries.geojson) and fetched at runtime so the ~1-2MB
-  // geometry never bloats the JS bundle. Score is joined onto each feature by kommunkod.
+  // Choropleth of all 290 kommuner — the atlas. Fill is the score ramp normalized
+  // over the CURRENT min..max so the leader always burns gold (cold teal -> sage ->
+  // gold). MapLibre + OpenFreeMap (no API key); boundaries fetched as a static asset.
+  // Hover-sync: hovering a kommun emits onhover(kod); the `highlighted` prop (set by
+  // the list) marks that kommun here with a dark fill + light halo so even a tiny
+  // northern kommun pops at national zoom — the map and index breathe together.
   import { onMount, onDestroy } from 'svelte';
 
-  let { ranked = [] } = $props();
+  let { ranked = [], highlighted = null, onhover = undefined } = $props();
 
   let container;
   let map = null;
@@ -15,17 +17,26 @@
 
   const scoreByKod = $derived(new Map(ranked.map((r) => [r.kommunkod, r.score])));
 
+  // Normalize the current scores to 0-1 so the ramp spans the live range.
+  function bounds() {
+    const vals = [...scoreByKod.values()];
+    if (!vals.length) return { min: 0, max: 1 };
+    const min = Math.min(...vals);
+    const max = Math.max(...vals);
+    return { min, max: max === min ? min + 1 : max };
+  }
+
   function paint() {
     if (!map || !geojson || !map.getSource('communes')) return;
+    const { min, max } = bounds();
     const data = {
       ...geojson,
-      features: geojson.features.map((f) => ({
-        ...f,
-        properties: {
-          ...f.properties,
-          score: scoreByKod.get(String(f.properties.kommunkod ?? f.properties.kom_kod ?? '')) ?? null
-        }
-      }))
+      features: geojson.features.map((f) => {
+        const kod = String(f.properties.kod ?? '');
+        const score = scoreByKod.get(kod);
+        const t = typeof score === 'number' ? (score - min) / (max - min) : null;
+        return { ...f, properties: { ...f.properties, score: score ?? null, t } };
+      })
     };
     map.getSource('communes').setData(data);
   }
@@ -36,6 +47,14 @@
     paint();
   });
 
+  // Mark the kommun the list is hovering — drives both highlight layers.
+  $effect(() => {
+    if (!map || !map.getLayer('communes-highlight')) return;
+    const hlFilter = ['==', ['get', 'kod'], highlighted ?? ' '];
+    map.setFilter('communes-highlight-fill', hlFilter);
+    map.setFilter('communes-highlight', hlFilter);
+  });
+
   onMount(async () => {
     try {
       const resp = await fetch('/commune_boundaries.geojson');
@@ -43,15 +62,26 @@
         status = 'nodata';
         return;
       }
-      geojson = await resp.json();
+      const raw = await resp.json();
+      // Normalize a stable string `kod` onto every feature for joins + filters.
+      geojson = {
+        ...raw,
+        features: raw.features.map((f) => ({
+          ...f,
+          properties: {
+            ...f.properties,
+            kod: String(f.properties.kommunkod ?? f.properties.kom_kod ?? '')
+          }
+        }))
+      };
       maplibre = (await import('maplibre-gl')).default;
       await import('maplibre-gl/dist/maplibre-gl.css');
 
       map = new maplibre.Map({
         container,
         style: 'https://tiles.openfreemap.org/styles/liberty',
-        center: [16.5, 62.5],
-        zoom: 3.6,
+        center: [16.8, 62.6],
+        zoom: 3.5,
         attributionControl: true
       });
 
@@ -64,26 +94,33 @@
           paint: {
             'fill-color': [
               'case',
-              ['==', ['get', 'score'], null],
-              '#d9d2c5',
-              [
-                'interpolate',
-                ['linear'],
-                ['get', 'score'],
-                0, '#e9efe7',
-                40, '#a9c6ad',
-                70, '#5a8c6a',
-                100, '#2c5840'
-              ]
+              ['==', ['get', 't'], null],
+              '#cfd3cb',
+              ['interpolate', ['linear'], ['get', 't'], 0, '#3b5a63', 0.5, '#9fb08a', 1, '#e2a32b']
             ],
-            'fill-opacity': 0.78
+            'fill-opacity': 0.82
           }
         });
         map.addLayer({
           id: 'communes-line',
           type: 'line',
           source: 'communes',
-          paint: { 'line-color': '#ffffff', 'line-width': 0.4 }
+          paint: { 'line-color': '#f3f4f0', 'line-width': 0.4 }
+        });
+        // Highlight — dark fill + light halo, driven by the `highlighted` prop.
+        map.addLayer({
+          id: 'communes-highlight-fill',
+          type: 'fill',
+          source: 'communes',
+          paint: { 'fill-color': '#16242a', 'fill-opacity': 0.9 },
+          filter: ['==', ['get', 'kod'], ' ']
+        });
+        map.addLayer({
+          id: 'communes-highlight',
+          type: 'line',
+          source: 'communes',
+          paint: { 'line-color': '#f3f4f0', 'line-width': 2.4 },
+          filter: ['==', ['get', 'kod'], ' ']
         });
 
         const popup = new maplibre.Popup({ closeButton: false, closeOnClick: false });
@@ -91,12 +128,14 @@
           const p = e.features?.[0]?.properties;
           if (!p) return;
           map.getCanvas().style.cursor = 'pointer';
-          const score = p.score == null ? '–' : Number(p.score).toFixed(1);
+          const score = p.score == null ? '-' : Number(p.score).toFixed(1);
           popup.setLngLat(e.lngLat).setHTML(`<strong>${p.name ?? ''}</strong><br/>Poäng: ${score}`).addTo(map);
+          onhover?.(String(p.kod ?? ''));
         });
         map.on('mouseleave', 'communes-fill', () => {
           map.getCanvas().style.cursor = '';
           popup.remove();
+          onhover?.(null);
         });
 
         status = 'ready';
@@ -112,6 +151,11 @@
 
 <div class="mapwrap">
   <div class="map" bind:this={container}></div>
+  <div class="legend">
+    <span class="eyebrow">Träffsäkerhet</span>
+    <span class="ramp" aria-hidden="true"></span>
+    <span class="ends"><span>låg</span><span>hög</span></span>
+  </div>
   {#if status === 'nodata'}
     <div class="overlay">Kartdata (kommungränser) byggs in härnäst — listan visar rankningen så länge.</div>
   {:else if status === 'error'}
@@ -125,11 +169,35 @@
   }
   .map {
     width: 100%;
-    height: 540px;
-    border-radius: 14px;
+    height: 560px;
+    border-radius: 12px;
     overflow: hidden;
     border: 1px solid var(--line);
-    background: #eef2ec;
+    background: #dde1d8;
+  }
+  .legend {
+    position: absolute;
+    left: 12px;
+    bottom: 12px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 8px 10px;
+    display: grid;
+    gap: 5px;
+    width: 132px;
+  }
+  .ramp {
+    height: 8px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #3b5a63, #9fb08a, #e2a32b);
+  }
+  .ends {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--muted);
   }
   .overlay {
     position: absolute;
@@ -140,7 +208,7 @@
     text-align: center;
     padding: 24px;
     color: var(--muted);
-    background: rgba(250, 247, 242, 0.85);
-    border-radius: 14px;
+    background: rgba(233, 235, 230, 0.88);
+    border-radius: 12px;
   }
 </style>

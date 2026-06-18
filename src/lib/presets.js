@@ -14,6 +14,15 @@ import { DIMENSIONS, harmonicMean } from './score.js';
 // ─────────────────────────────────────────────────────────────────────────────
 export const PRESETS = [
   {
+    slug: 'balanced',
+    label: 'Balanserad',
+    icon: '⚖️',
+    description: 'Neutral utgångspunkt — alla faktorer väger ungefär lika. Justera reglagen så det blir ditt.',
+    persons: 1,
+    lockDualCareer: false,
+    weights: { jobs: 14, tax: 14, price: 14, growth: 14, safety: 12, schools: 12, transit: 10, energy: 10 }
+  },
+  {
     slug: 'couple',
     label: 'Par / dual-career',
     icon: '👫',
@@ -62,7 +71,10 @@ export const PRESETS = [
   }
 ];
 
-export const DEFAULT_PRESET = 'couple';
+// Neutral default — no life-situation is the hero. The tool ranks against an even
+// spread of factors until the user picks a snabbval or drags the sliders.
+export const DEFAULT_PRESET = null;
+export const BALANCED_WEIGHTS = PRESETS[0].weights;
 
 /** Look up a preset by slug (null if unknown). */
 export function getPreset(slug) {
