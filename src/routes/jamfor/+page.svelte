@@ -62,6 +62,10 @@
     rankCommunes(communes, profile, mode === 'invest' ? INVEST_DIMENSIONS : dimensionsForProfile(profile))
   );
 
+  // The hovered kommun (from list OR map) — surfaced even when it's outside the
+  // rendered top-20, so a map hover never silently misses.
+  const hlEntry = $derived(highlighted ? ranked.find((r) => r.kommunkod === highlighted) : null);
+
   // --- URL state (?preset=family & optional &w=jobs:35,...) ---
   const BO_KEYS = ['jobs', 'tax', 'energy', 'schools', 'safety', 'transit', 'growth', 'price', 'commute'];
 
@@ -172,7 +176,11 @@
     <section class="index">
       <div class="index-head">
         <span class="eyebrow">{mode === 'invest' ? 'Index · investering' : 'Index · boende'}</span>
-        {#if preset}<span class="profiletag">{getPreset(preset)?.label}{custom ? ' (anpassad)' : ''}</span>{/if}
+        {#if hlEntry}
+          <span class="hlchip tnum">{hlEntry.name} · #{hlEntry.rank} · {hlEntry.score.toFixed(1)}</span>
+        {:else if preset}
+          <span class="profiletag">{getPreset(preset)?.label}{custom ? ' (anpassad)' : ''}</span>
+        {/if}
       </div>
       <p class="sub">Klicka en kommun för att se varför. Hovra för att hitta den på kartan. Datatäckning per rad.</p>
       <RankedList
@@ -314,6 +322,14 @@
     background: var(--accent-soft);
     padding: 3px 9px;
     border-radius: 999px;
+  }
+  .hlchip {
+    font-size: 12px;
+    color: #fff;
+    background: var(--ink);
+    padding: 3px 10px;
+    border-radius: 999px;
+    white-space: nowrap;
   }
   .sub {
     color: var(--muted);

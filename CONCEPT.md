@@ -1,49 +1,34 @@
-# Juvahem — koncept (one-pager, utkast)
+# Juvahem — koncept (one-pager)
 
-> Status: **utforskande**. Utanför CNS-portföljen tills det mognat. Domän: **juvahem.se** (köpt 2026-06-15).
+> Status: **live** på juvahem.se. Egen Venture i Cortxt-portföljen (`domain: juvahem`), eget repo + egen drift.
 
 ## I en mening
-Ett beslutsverktyg som hjälper **par** svara på *"var ska vi bo?"* — och hitta boende där — utifrån
-**parets egna parametrar** (båda personernas jobb/kompetens, budget, hushållsstorlek, livsstil), inte
-generiska topplistor.
+Ett **neutralt, datadrivet beslutsverktyg** som rankar Sveriges alla **290 kommuner mot dina prioriteringar** — du säger vad som väger tyngst (och vad som är ett måste), verktyget sorterar hela landet mot just det och visar *varför*, faktor för faktor.
+
+## Positionering
+*"Sveriges 290 kommuner, rankade mot dina prioriteringar."* Inte en topplista över "bästa orter" (de viktar åt alla lika) — utan en rankning byggd på **din** profil, med den riktiga datan synlig, inte gömd bakom ett svart match-tal.
+
+> Tidigare var produkten framad som ett **par-verktyg**. Den framingen är borttagen (2026-06-18): dual-career är *ett läge* bland flera, inte hjälten. Verktyget tjänar ensamstående, familjer, pensionärer, distansarbetare och par — och investerare via ett eget invest-läge.
 
 ## Problemet
-Att välja **var** man ska bo som par är ett höginsats-beslut med spridd, motstridig info:
-- Jobbmarknad för **BÅDAS** kompetenser (inte bara en av er)
-- Boendekostnad: kommunalskatt, huspriser, pendling
-- Livskvalitet: natur/stad, service, framtid (krymper orten?)
+Att välja **var** man ska bo är ett höginsats-beslut med spridd, motstridig info: jobbmarknad, skatt, bostadspris, skola, trygghet, pendling, framtid. Idag görs det ad-hoc i huvudet och tjugo webbflikar. Ingen tar **din** kombinerade profil och rankar orter mot den — transparent och med källorna framme.
 
-Idag görs det ad-hoc i huvudet och spridda webbflikar. **Ingen tar parets *kombinerade* profil och rankar
-orter mot den.**
+## Insikten (moat)
+- **Personalisering, inte en generisk lista.** Varje faktor vägs mot din profil (vikter + måsten). Moaten är kontext-/framtidslagret Hemnet/Booli saknar, inte annonsportalen.
+- **Transparens som princip.** Visa den riktiga siffran (skatt 31,8 % · pris 5 396 tkr), inte bara en match-%. Ogenomskinliga index (jfr Numbeo) undergräver tilliten; öppna data + synlig härkomst bygger den.
 
-## För vem
-Par / småhushåll som **överväger att flytta och är öppna för var** — särskilt från dyr storstad mot
-billigare ort/landsbygd. Första nisch = exakt Rikard & Amelies fall: storstad → Norrland.
+## Hur det fungerar (live)
+1. **Profil:** säg vem du är / vad du bryr dig om (sätter vikter), och dina **måsten** (dealbreakers som silar bort kommuner).
+2. **Rankning live:** 290 kommuner rankas direkt mot din profil; index + atlas-karta sorterar om sig medan du drar reglagen. Ettan glöder guld.
+3. **Förklaring:** varje kommun bryts ner per faktor — råvärde + träff för din viktning + bidrag + datatäckning + källa. Egen datasida per kommun.
 
-## Insikten (edge)
-Beslutet ska **parametriseras på paret**: två personers kompetenser + inkomstpotential + budget + hushåll
-→ vägd ortsrankning + konkreta boendekandidater. Bevisat på er själva (tech-distans + industri →
-Älvsbyn-axeln, vald på skatt/huspris/pendling). **Er research är prototypen.**
+## Faktorer
+8 fria, öppna per-kommun-dimensioner live (jobb, skatt, bostadspris, elkostnad, skola, trygghet, kollektivtrafik, befolkningstrend), 15–20+ på väg (regionskatt, bostadsbrist, sol/klimat, bredband, natur, vård, nätavgift…). Full katalog + källor i `FACTORS.md`. Motorn är additiv: ny faktor = ETL-block + dimensionsrad + reglage, ingen omskrivning.
 
-## Vad det gör (MVP-tes)
-1. Paret matar in: yrken/kompetenser, inkomstmål, boendebudget, hushållsstorlek, preferenser (natur/stad/pendling).
-2. Verktyget rankar orter (jobbmatchning för båda · kommunalskatt · huspriser · pendling · service).
-3. Levererar en kort **"var-ska-vi-bo"-rapport** + boendekandidater — er Norrbotten-research, generaliserad.
+## Affärsmodell & avgränsningar (beslutade)
+- **Affiliate förkastad** (provision går till mäklaren, inte oss). Primär modell = betald fördjupad **beslutsrapport**; sekundärt B2B (relocation-firmor) / B2G (kommunal inflyttarservice).
+- **Booli = juridisk spärr** (villkoren förbjuder konkurrerande bruk — använd aldrig Booli-data). Hemnet/Booli-skrapning utesluten (EU-databasrätt + ToS). Bostäder kopplas via **lagliga djuplänkar** (Qasa hyra, Hemnet köp/tomt).
+- **Gratis-data-MVP** först (Kolada, SCB, JobTech, m.fl., CC0). Riktiga objekt-slutpriser = licens (Lantmäteriet) → senare fas.
 
-## MVP-avgränsning
-Börja **smalt**: EN flyttyp (storstad → Norrland), några orter, halvautomatisk research. Validera att par
-faktiskt vill ha/betalar för det **innan** full automation.
-
-## Öppna frågor (besvara innan bygge)
-- **Affärsmodell:** engångsrapport (betald)? abonnemang? affiliate mot mäklare/Hemnet?
-- **Data:** Hemnet/Booli **blockerar maskinläsning (HTTP 403)** — ert eget förbehåll. Hur får vi färska
-  bostads-/prisdata lagligt? (API? partner? manuell kurering först?)
-- **Marknad:** vilken första region/flyttyp? Hur stor är målgruppen "öppna-för-var"-par?
-- **Konkurrens:** finns liknande (flyttkalkylatorer, "best places to live"-sajter)? Vad saknar de? (= par-vinkeln + boende-koppling)
-
-## Nästa steg (välj efter denna sida)
-- **A) Landningssida** på juvahem.se — förklara konceptet + samla väntelista → validera efterfrågan billigt.
-- **B) Verktygs-MVP** — en enkel "mata in profil → få ortsförslag"-flöde, halvautomatiskt.
-
-Rekommendation: **A först** (validera att andra par vill ha det) — er egen research bevisar redan att det
-*går* att göra; det obevisade är om *andra* betalar för det.
+## Riktning framåt (foundation)
+Bygger mot ett **profil-kontrakt** som alla ytor är vyer av (identitet · måsten · vikter · kontext), data-presentation som visar råvärdet, rika kommun-sidor, sparade/delbara profiler, fler beslutskontexter, och framtidsytor (rapport, boende-koppling, head-to-head, språk-inmatning). Plan: `.claude/plans/` + `NOTES.md`.
