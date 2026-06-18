@@ -4,7 +4,9 @@
   // own 0–100 strength. Dormant dimensions are listed honestly as "Kommer snart".
   let { breakdown = [] } = $props();
 
-  const DORMANT = ['Bostadspris', 'Pendling'];
+  // Pendling (commute) is the one dimension still computed on-demand / not yet in
+  // the dataset. Bostadspris is live (SCB) and weighted like any other factor.
+  const DORMANT = ['Pendling'];
   const maxContribution = $derived(
     Math.max(1, ...breakdown.map((b) => b.contribution))
   );

@@ -28,15 +28,15 @@
 </script>
 
 <svelte:head>
-  <title>Juvahem — var ska ni bo?</title>
+  <title>Juvahem — Sveriges 290 kommuner, rankade mot dina prioriteringar</title>
   <meta
     name="description"
-    content="Juvahem hjälper par hitta rätt plats att flytta till — utifrån era jobb, er budget och ert liv. Inte generiska topplistor."
+    content="Juvahem rankar alla 290 svenska kommuner mot just dina prioriteringar — jobb, skatt, bostadspris, trygghet och mer. Transparent, datadrivet, live. Inte generiska topplistor."
   />
-  <meta property="og:title" content="Juvahem — var ska ni bo?" />
+  <meta property="og:title" content="Juvahem — rankade mot dina prioriteringar" />
   <meta
     property="og:description"
-    content="Beslutsverktyget för par som vill hitta en ny plats att bo på."
+    content="Alla 290 kommuner rankade mot dina prioriteringar — transparent och datadrivet."
   />
   <meta property="og:type" content="website" />
   <link rel="canonical" href="https://juvahem.se/" />
@@ -45,35 +45,37 @@
 <div class="wrap home">
   <header>
     <a class="brand" href="/"><span class="dot">🏡</span> Juvahem</a>
-    <a class="btn small" href="/jamfor">Testa verktyget</a>
+    <a class="btn small" href="/jamfor">Öppna verktyget</a>
   </header>
 
   <div class="hero">
-    <h1>Var ska <span class="accent">ni</span> bo?</h1>
+    <span class="eyebrow">Datadrivet · transparent · live</span>
+    <h1>Sveriges 290 kommuner, rankade mot <span class="accent">dina</span> prioriteringar.</h1>
     <p class="lead">
-      Juvahem hjälper par hitta rätt plats att flytta till — utifrån <b>era</b> jobb, er budget och
-      ert liv. Inte generiska topplistor, utan en rankning byggd på ert pars kombinerade profil.
+      Säg vad som väger tyngst — jobb, skatt, bostadspris, trygghet — så rankar Juvahem hela landet
+      mot just det. Transparent och datadrivet, med förklaring per faktor. Inte generiska topplistor.
     </p>
     <div class="cta-row">
-      <a class="btn" href="/jamfor">Ranka kommunerna åt oss</a>
+      <a class="btn" href="/jamfor">Ranka kommunerna</a>
       <a class="btn ghost" href="#sa-funkar-det">Så funkar det</a>
     </div>
+    <p class="datacred">Byggt på öppna data: SCB · Kolada · JobTech · ResRobot</p>
   </div>
 
   <section id="sa-funkar-det">
     <h2>Så funkar det</h2>
     <div class="steps">
       <div class="card step">
-        <span class="n">1</span><h3>Berätta om er</h3>
-        <p>Era yrken, hushåll och vad ni vill ha — vikta jobb, ekonomi och tillväxt mot varandra.</p>
+        <span class="n">1</span><h3>Vikta faktorerna</h3>
+        <p>Dra reglagen för vad som betyder mest för dig — jobb, ekonomi, pris, trygghet, tillväxt.</p>
       </div>
       <div class="card step">
-        <span class="n">2</span><h3>Vi rankar 290 kommuner</h3>
-        <p>Mot jobbmarknaden för er <i>båda</i>, kommunalskatt och befolkningstrend — live.</p>
+        <span class="n">2</span><h3>290 kommuner rankas live</h3>
+        <p>Varje kommun får en poäng mot dina vikter — listan rankar om sig direkt när du justerar.</p>
       </div>
       <div class="card step">
-        <span class="n">3</span><h3>Ni får ett svar</h3>
-        <p>En rankad lista med poäng, förklaring per faktor och en karta över hela landet.</p>
+        <span class="n">3</span><h3>Se varför — inte bara vad</h3>
+        <p>Poäng, bidrag per faktor, datatäckning och en karta över hela landet. Inget svart hål.</p>
       </div>
     </div>
   </section>
@@ -82,37 +84,37 @@
     <h2>Varför Juvahem?</h2>
     <ul class="why">
       <li>
-        <b>Ingen annan tar ert kombinerade pars-profil.</b> Topplistor över "bästa orter" bryr sig inte
-        om att <i>båda</i> behöver kunna jobba.
+        <b>Rankat mot dig, inte mot ett genomsnitt.</b> Topplistor över "bästa orter" väger faktorerna
+        åt alla lika. Här bestämmer du vad som räknas.
       </li>
       <li>
-        <b>Beslutet är för stort för magkänsla och spridda webbflikar.</b> Jobb, ekonomi och tillväxt på
-        ett ställe, vägt mot er.
+        <b>Transparent hela vägen.</b> Varje poäng går att bryta ner per faktor, med datakälla och
+        datatäckning synlig — du ser var siffran är säker och var den är tunn.
       </li>
       <li>
-        <b>Byggt av ett par som själva gjorde resan.</b> Vi flyttade — och insåg att verktyget vi önskade
-        inte fanns.
+        <b>Ett ställe i stället för tjugo flikar.</b> Jobb, skatt, bostadspris, skola, trygghet och
+        tillväxt samlat och vägt — på sekunder, inte en helg.
       </li>
     </ul>
   </section>
 
   <section>
     <div id="vantelista">
-      <h2>Vill ni ha er färdiga rapport när den är klar?</h2>
-      <p>Verktyget rankar redan live. Skriv upp er så hör vi av oss när den fördjupade rapporten öppnar.</p>
+      <h2>Vill du ha den fördjupade rapporten när den öppnar?</h2>
+      <p>Verktyget rankar redan live. Skriv upp dig så hör vi av oss när den fördjupade rapporten är klar.</p>
       {#if status === 'done'}
-        <div class="ok">Tack! Ni står på listan — vi hör av oss. 🏡</div>
+        <div class="ok">Tack! Du står på listan — vi hör av oss. 🏡</div>
       {:else}
         <form onsubmit={submit}>
           <input
             type="email"
             bind:value={email}
-            placeholder="er.mejl@exempel.se"
+            placeholder="din.mejl@exempel.se"
             required
             aria-label="E-post"
           />
           <button class="btn" type="submit" disabled={status === 'sending'}>
-            {status === 'sending' ? 'Skickar…' : 'Skriv upp oss'}
+            {status === 'sending' ? 'Skickar…' : 'Skriv upp mig'}
           </button>
         </form>
         {#if status === 'error'}<p class="err">{errorMsg}</p>{/if}
@@ -122,7 +124,7 @@
   </section>
 
   <footer>
-    Juvahem · juvahem.se · ett verktyg för par som vill hitta en ny plats att bo på.<br />
+    Juvahem · juvahem.se · alla 290 kommuner rankade mot dina prioriteringar.<br />
     Frågor? <a href="mailto:hej@juvahem.se">hej@juvahem.se</a>
   </footer>
 </div>
@@ -143,8 +145,12 @@
     letter-spacing: -0.03em;
     margin: 0 0 18px;
   }
+  .hero .eyebrow {
+    display: block;
+    margin-bottom: 14px;
+  }
   .accent {
-    color: var(--accent);
+    color: var(--gold-dark);
   }
   .lead {
     font-size: clamp(18px, 2.6vw, 22px);
@@ -156,6 +162,13 @@
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
+  }
+  .datacred {
+    margin: 22px 0 0;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.02em;
   }
   section {
     padding: 40px 0;

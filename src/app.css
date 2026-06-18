@@ -1,13 +1,38 @@
 :root {
-  --bg: #faf7f2;
-  --ink: #23211d;
-  --muted: #6b665d;
-  --line: #e7e1d6;
-  --accent: #3f6f52;
-  --accent-dark: #2c5840;
-  --accent-soft: #eef2ec;
-  --card: #fffdf9;
-  --warn: #b06b2c;
+  /* "Statistisk atlas" — cool map-paper ground, cartographic ink, and a single
+     sequential score ramp (cold teal → sage → gold) that is the product's only
+     colour logic: the same ramp paints the choropleth, the row meters and the
+     leader. Gold is reserved for best-fit, everywhere. */
+  --bg: #e9ebe6; /* papper */
+  --ink: #16242a; /* bläck */
+  --muted: #5e6b6c; /* dimma */
+  --line: #d2d6ce;
+
+  --card: #f3f4f0; /* a clean sheet on the paper */
+  --surface: #f3f4f0;
+  --surface-2: #dde1d8; /* recessed tracks */
+
+  /* Interactive accent — deep teal, kept distinct from the score ramp so UI ≠ data. */
+  --accent: #1e444c;
+  --accent-dark: #132e34;
+  --accent-soft: #dde4e1;
+
+  /* Score ramp (the data language). */
+  --score-lo: #3b5a63;
+  --score-mid: #9fb08a;
+  --score-hi: #e2a32b; /* gold — best fit */
+  --gold: #e2a32b;
+  --gold-dark: #9a6c12;
+
+  --warn: #b0632a;
+
+  --font-display: 'Familjen Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Space Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+  --wrap: 960px;
+  --wrap-wide: 1200px;
+  --radius: 12px;
 }
 * {
   box-sizing: border-box;
@@ -17,29 +42,55 @@ html {
 }
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-family: var(--font-body);
   color: var(--ink);
   background: var(--bg);
-  line-height: 1.6;
+  line-height: 1.55;
   -webkit-font-smoothing: antialiased;
+}
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
 a {
   color: var(--accent);
 }
+
+/* Numeric/data text is monospace — the instrument's measurement voice. */
+.tnum {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+/* Mono uppercase label — cartographic eyebrow (VIKTER, DATA, mode). */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
 .wrap {
-  max-width: 960px;
+  max-width: var(--wrap);
   margin: 0 auto;
   padding: 0 22px;
+}
+.wrap.wide {
+  max-width: var(--wrap-wide);
 }
 .btn {
   display: inline-block;
   background: var(--accent);
   color: #fff;
   border: 0;
-  border-radius: 11px;
+  border-radius: 10px;
   padding: 13px 22px;
+  font-family: var(--font-body);
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 500;
   cursor: pointer;
   text-decoration: none;
   transition: background 0.15s;
@@ -56,6 +107,9 @@ a {
   color: var(--accent);
   border: 1px solid var(--line);
 }
+.btn.ghost:hover {
+  background: var(--accent-soft);
+}
 .btn.small {
   padding: 8px 14px;
   font-size: 14px;
@@ -64,6 +118,7 @@ a {
   display: flex;
   align-items: center;
   gap: 10px;
+  font-family: var(--font-display);
   font-weight: 700;
   font-size: 20px;
   letter-spacing: -0.02em;
@@ -78,4 +133,49 @@ a {
   border: 1px solid var(--line);
   border-radius: 14px;
   padding: 20px;
+}
+
+/* ── Instrument primitives ─────────────────────────────────────────────── */
+
+/* Score meter: a recessed track with a teal fill (gold when it's the leader). */
+.meter {
+  position: relative;
+  background: var(--surface-2);
+  border-radius: 999px;
+  height: 8px;
+  overflow: hidden;
+}
+.meter > .bar {
+  position: absolute;
+  inset: 0 auto 0 0;
+  background: var(--accent);
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+.meter.gold > .bar {
+  background: var(--gold);
+}
+
+/* Data-coverage indicator — how complete the inputs were for a row/result. */
+.coverage {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+}
+.coverage > .dots {
+  display: inline-flex;
+  gap: 2px;
+}
+.coverage .d {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--surface-2);
+}
+.coverage .d.on {
+  background: var(--accent);
 }
