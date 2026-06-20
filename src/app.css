@@ -1,3 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Preflight is disabled (see tailwind.config.js). This minimal compat gives
+ * shadcn's `border` utilities a visible style without resetting juvahem's base.
+ * The cartographic identity below stays the source of truth. */
+@layer base {
+  *,
+  ::before,
+  ::after {
+    border-width: 0;
+    border-style: solid;
+    border-color: var(--line);
+  }
+}
+
 :root {
   /* "Statistisk atlas" — cool map-paper ground, cartographic ink, and a single
      sequential score ramp (cold teal → sage → gold) that is the product's only
