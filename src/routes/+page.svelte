@@ -1,4 +1,7 @@
 <script>
+  import Button from '$lib/components/ui/Button.svelte';
+  import PlannedFeature from '$lib/components/ui/PlannedFeature.svelte';
+
   let email = $state('');
   let status = $state('idle'); // idle | sending | done | error
   let errorMsg = $state('');
@@ -45,7 +48,7 @@
 <div class="wrap home">
   <header>
     <a class="brand" href="/"><span class="dot">🏡</span> Juvahem</a>
-    <a class="btn small" href="/jamfor">Öppna verktyget</a>
+    <Button href="/jamfor" size="small">Öppna verktyget</Button>
   </header>
 
   <div class="hero">
@@ -56,8 +59,8 @@
       mot just det. Transparent och datadrivet, med förklaring per faktor. Inte generiska topplistor.
     </p>
     <div class="cta-row">
-      <a class="btn" href="/jamfor">Ranka kommunerna</a>
-      <a class="btn ghost" href="#sa-funkar-det">Så funkar det</a>
+      <Button href="/jamfor">Ranka kommunerna</Button>
+      <Button href="#sa-funkar-det" variant="ghost">Så funkar det</Button>
     </div>
     <p class="datacred">Byggt på öppna data: SCB · Kolada · JobTech · ResRobot</p>
   </div>
@@ -99,6 +102,14 @@
   </section>
 
   <section>
+    <h2>På väg</h2>
+    <div class="mb-6 max-w-[420px]">
+      <PlannedFeature
+        label="Fördjupad rapport"
+        hint="Per-kommun-djupdyk: pendling, skola, marknad och prognoser samlat — utöver live-indexet."
+      />
+    </div>
+
     <div id="vantelista">
       <h2>Vill du ha den fördjupade rapporten när den öppnar?</h2>
       <p>Verktyget rankar redan live. Skriv upp dig så hör vi av oss när den fördjupade rapporten är klar.</p>
@@ -113,9 +124,13 @@
             required
             aria-label="E-post"
           />
-          <button class="btn" type="submit" disabled={status === 'sending'}>
+          <Button
+            type="submit"
+            disabled={status === 'sending'}
+            class="bg-white text-accent-dark hover:bg-[#f1efe9]"
+          >
             {status === 'sending' ? 'Skickar…' : 'Skriv upp mig'}
-          </button>
+          </Button>
         </form>
         {#if status === 'error'}<p class="err">{errorMsg}</p>{/if}
       {/if}

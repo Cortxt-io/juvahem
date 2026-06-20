@@ -8,6 +8,7 @@
   import WeightSliders from '$lib/components/WeightSliders.svelte';
   import RankedList from '$lib/components/RankedList.svelte';
   import Map from '$lib/components/Map.svelte';
+  import PlannedFeature from '$lib/components/ui/PlannedFeature.svelte';
 
   // Neutral default — one optional person, an even spread of factors. No persona.
   let profile = $state({
@@ -153,6 +154,13 @@
             Prioritera låg köpeskilling (billigt insteg väger tyngst)
           </label>
           <WeightSliders bind:weights={profile.weights} dims={INVEST_SLIDERS} hint={INVEST_HINT} />
+          <div class="mt-4">
+            <PlannedFeature
+              label="Avkastning per objekt"
+              note="kräver licensierad data"
+              hint="Makro-screeningen visar var marknaden vuxit och är aktiv. Avkastning per objekt kräver licensierad fastighetsdata — på väg."
+            />
+          </div>
         {:else}
           <WeightSliders bind:weights={profile.weights} onchange={markCustom} />
         {/if}
