@@ -41,13 +41,25 @@
 <style>
   .sliders {
     display: grid;
-    gap: 18px;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 24px;
+  }
+  @media (max-width: 560px) {
+    .sliders {
+      grid-template-columns: 1fr;
+    }
+  }
+  .hint {
+    grid-column: 1 / -1;
   }
   .head {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
     margin-bottom: 4px;
+  }
+  .lbl {
+    font-size: 14px;
   }
   .lbl {
     font-weight: 600;

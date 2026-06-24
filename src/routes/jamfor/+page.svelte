@@ -134,18 +134,23 @@
   </div>
 
   <div class="controlbar">
-    <div class="presets">
-      <span class="eyebrow">Snabbval — valfri startpunkt</span>
-      <PresetPicker selected={preset} {custom} onpick={(p) => applyPreset(p)} />
-    </div>
     <button class="btn ghost small justera" type="button"
       onclick={() => (showControls = !showControls)} aria-expanded={showControls}>
-      {showControls ? '✕ Stäng reglage' : (mode === 'invest' ? '⚙ Justera vikter' : '⚙ Justera vikter & jobb')}
+      {showControls ? '✕ Stäng' : (mode === 'invest' ? '⚙ Snabbval & vikter' : '⚙ Snabbval, vikter & jobb')}
     </button>
+    {#if preset}
+      <span class="activetag">{getPreset(preset)?.label}{custom ? ' · anpassad' : ''}</span>
+    {/if}
   </div>
 
   {#if showControls}
     <div class="adjust">
+      <div class="block">
+        <span class="eyebrow">Snabbval — valfri startpunkt</span>
+        <p class="blockhint">Sätter vikterna åt dig. Justera sedan fritt nedan.</p>
+        <PresetPicker selected={preset} {custom} onpick={(p) => applyPreset(p)} />
+      </div>
+
       <div class="block">
         <span class="eyebrow">{mode === 'invest' ? 'Vikta investeringen' : 'Vikter'}</span>
         <p class="blockhint">Dra för att vikta. {mode === 'invest' ? '' : 'Allt rankar om sig live.'}</p>
@@ -261,24 +266,22 @@
 
   .controlbar {
     display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 16px;
+    align-items: center;
+    gap: 12px;
     margin-bottom: 16px;
     flex-wrap: wrap;
-  }
-  .presets {
-    flex: 1;
-    min-width: 0;
-  }
-  .presets .eyebrow {
-    display: block;
-    margin-bottom: 8px;
   }
   .justera {
     flex: none;
     white-space: nowrap;
-    align-self: center;
+  }
+  .activetag {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--accent-dark);
+    background: var(--accent-soft);
+    padding: 4px 10px;
+    border-radius: 999px;
   }
 
   .adjust {
@@ -286,11 +289,6 @@
     grid-template-columns: 1fr;
     gap: 16px;
     margin-bottom: 20px;
-  }
-  @media (min-width: 760px) {
-    .adjust {
-      grid-template-columns: 1fr 1fr;
-    }
   }
 
   .results {
