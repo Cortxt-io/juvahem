@@ -26,47 +26,50 @@
 <div class="sliders">
   {#each ACTIVE as d (d.key)}
     <div class="row">
-      <div class="head">
-        <span class="lbl">{d.label}</span>
-        <span class="pct">{pct(d.key)}%</span>
-      </div>
-      <input type="range" min="0" max="100" step="5" bind:value={weights[d.key]} oninput={() => onchange?.()} />
+      <span class="lbl" title={d.label}>{d.label}</span>
+      <input type="range" min="0" max="100" step="5" aria-label={d.label}
+        bind:value={weights[d.key]} oninput={() => onchange?.()} />
+      <span class="pct">{pct(d.key)}%</span>
     </div>
   {/each}
   <p class="hint">
-    {hint || 'Dra för att vikta vad som betyder mest för dig. Pendling är på väg in — den påverkar inte rankningen ännu.'}
+    {hint || 'Dra för att vikta vad som betyder mest. Pendling är på väg in.'}
   </p>
 </div>
 
 <style>
   .sliders {
     display: grid;
-    gap: 13px;
+    gap: 9px;
   }
-  .head {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 4px;
-  }
-  .lbl {
-    font-size: 14px;
+  .row {
+    display: grid;
+    grid-template-columns: 82px 1fr 30px;
+    align-items: center;
+    gap: 8px;
   }
   .lbl {
-    font-weight: 600;
+    font-size: 13px;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .pct {
     color: var(--accent-dark);
     font-variant-numeric: tabular-nums;
     font-weight: 700;
+    font-size: 12px;
+    text-align: right;
   }
   input[type='range'] {
     width: 100%;
+    min-width: 0;
     accent-color: var(--accent);
   }
   .hint {
     color: var(--muted);
-    font-size: 13px;
-    margin: 4px 0 0;
+    font-size: 12px;
+    margin: 6px 0 0;
   }
 </style>

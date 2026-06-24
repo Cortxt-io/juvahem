@@ -27,6 +27,7 @@
   let mode = $state('bo'); // bo | invest — two modes, one engine
   let priorityLowPrice = $state(false); // invest toggle: bias toward low köpeskilling
   let highlighted = $state(null); // kommunkod hovered in list OR map — syncs both
+  let panelOpen = $state(false); // narrow screens: filter panel as a left slide-in drawer
 
   // Bonus toggle — bumps the (same SCB) price dimension's weight in invest mode.
   function toggleLowPrice() {
@@ -124,11 +125,16 @@
     </p>
   </div>
 
-  <div class="tabs" role="tablist" aria-label="Läge">
-    <button class="tab" role="tab" type="button" class:active={mode === 'bo'}
-      aria-selected={mode === 'bo'} onclick={() => setMode('bo')}>Bo här</button>
-    <button class="tab" role="tab" type="button" class:active={mode === 'invest'}
-      aria-selected={mode === 'invest'} onclick={() => setMode('invest')}>Investera här</button>
+  <div class="tabsrow">
+    <div class="tabs" role="tablist" aria-label="Läge">
+      <button class="tab" role="tab" type="button" class:active={mode === 'bo'}
+        aria-selected={mode === 'bo'} onclick={() => setMode('bo')}>Bo här</button>
+      <button class="tab" role="tab" type="button" class:active={mode === 'invest'}
+        aria-selected={mode === 'invest'} onclick={() => setMode('invest')}>Investera här</button>
+    </div>
+    <button class="btn small filterbtn" type="button" onclick={() => (panelOpen = true)}>
+      ⚙ Sökfilter
+    </button>
   </div>
 
   <div class="layout">
@@ -155,7 +161,11 @@
       />
     </main>
 
-    <aside class="panel">
+    <aside class="panel" class:open={panelOpen}>
+      <div class="panel-head">
+        <span class="eyebrow">Sökfilter</span>
+        <button class="panel-close" type="button" onclick={() => (panelOpen = false)} aria-label="Stäng filter">✕</button>
+      </div>
       <div class="panel-card">
         <div class="psection">
           <span class="eyebrow">Snabbval</span>
@@ -196,6 +206,10 @@
         {/if}
       </div>
     </aside>
+
+    {#if panelOpen}
+      <button class="backdrop" type="button" aria-label="Stäng filter" onclick={() => (panelOpen = false)}></button>
+    {/if}
   </div>
 </div>
 
@@ -208,11 +222,25 @@
     padding: 20px 0 14px;
     flex-wrap: wrap;
   }
+  .tabsrow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 20px;
+  }
   .tabs {
     display: flex;
     gap: 4px;
-    border-bottom: 1px solid var(--line);
-    margin-bottom: 20px;
+  }
+  .filterbtn {
+    display: none;
+    flex: none;
+    margin-bottom: 8px;
+  }
+  .panel-head {
+    display: none;
   }
   .tab {
     border: 0;
@@ -328,5 +356,52 @@
     color: var(--muted);
     font-size: 13px;
     margin: 0 0 16px;
+  }
+
+  /* Narrow: the filter panel becomes a left slide-in drawer behind a "Sökfilter" button. */
+  @media (max-width: 999px) {
+    .filterbtn {
+      display: inline-flex;
+    }
+    .panel {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: min(340px, 86vw);
+      z-index: 50;
+      background: var(--bg);
+      padding: 16px;
+      overflow-y: auto;
+      transform: translateX(-100%);
+      transition: transform 0.25s ease;
+      box-shadow: 2px 0 24px rgba(20, 30, 28, 0.18);
+    }
+    .panel.open {
+      transform: translateX(0);
+    }
+    .panel-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+    .panel-close {
+      border: 0;
+      background: none;
+      cursor: pointer;
+      font-size: 18px;
+      line-height: 1;
+      color: var(--muted);
+      padding: 4px 6px;
+    }
+    .backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 40;
+      border: 0;
+      cursor: pointer;
+      background: rgba(20, 30, 28, 0.4);
+    }
   }
 </style>
