@@ -1,7 +1,7 @@
 <script>
-  // Life-situation preset picker (Fas B). Five cards; the selected one highlights.
-  // When the user has hand-tuned weights afterwards, `custom` shows a "based on X" note
-  // without losing the preset identity.
+  // Life-situation preset picker. A light, optional starting point — rendered as a
+  // compact chip row (not heavy cards), so it stays secondary to the ranking. The
+  // description lives in the tooltip; `custom` keeps the preset identity after hand-tuning.
   import { PRESETS, getPreset } from '$lib/presets.js';
 
   let { selected = null, custom = false, onpick } = $props();
@@ -9,18 +9,17 @@
 </script>
 
 <div class="picker">
-  <div class="cards">
+  <div class="chips">
     {#each PRESETS as p (p.slug)}
       <button
         type="button"
-        class="card"
+        class="chip"
         class:active={selected === p.slug}
         aria-pressed={selected === p.slug}
+        title={p.description}
         onclick={() => onpick?.(p)}
       >
-        <span class="ico">{p.icon}</span>
-        <span class="lbl">{p.label}</span>
-        <span class="desc">{p.description}</span>
+        {p.label}
       </button>
     {/each}
   </div>
@@ -31,48 +30,34 @@
 </div>
 
 <style>
-  .cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-    gap: 12px;
-  }
-  .card {
+  .chips {
     display: flex;
-    flex-direction: column;
-    gap: 6px;
-    text-align: left;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .chip {
     border: 1px solid var(--line);
     background: var(--card);
-    border-radius: 14px;
-    padding: 16px;
-    cursor: pointer;
-    transition: border-color 0.12s, background 0.12s;
-  }
-  .card:hover {
-    border-color: var(--accent);
-    background: #fbf8f2;
-  }
-  .card.active {
-    border-color: var(--accent);
-    background: var(--accent-soft);
-    box-shadow: inset 0 0 0 1px var(--accent);
-  }
-  .ico {
-    font-size: 26px;
-  }
-  .lbl {
-    font-weight: 700;
-    font-size: 16px;
-    color: var(--ink);
-  }
-  .desc {
+    border-radius: 999px;
+    padding: 7px 14px;
     font-size: 13px;
-    color: var(--muted);
-    line-height: 1.35;
+    font-weight: 500;
+    color: var(--ink);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: border-color 0.12s, background 0.12s, color 0.12s;
+  }
+  .chip:hover {
+    border-color: var(--accent);
+  }
+  .chip.active {
+    border-color: var(--accent);
+    background: var(--accent);
+    color: #fff;
   }
   .custom {
-    margin: 12px 0 0;
-    font-size: 13px;
+    margin: 10px 0 0;
+    font-size: 12px;
     color: var(--accent-dark);
   }
 </style>
