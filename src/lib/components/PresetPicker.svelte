@@ -33,14 +33,14 @@
   .chips {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 6px;
   }
   .chip {
     border: 1px solid var(--line);
     background: var(--card);
     border-radius: 999px;
-    padding: 7px 14px;
-    font-size: 13px;
+    padding: 5px 11px;
+    font-size: 12px;
     font-weight: 500;
     color: var(--ink);
     cursor: pointer;
