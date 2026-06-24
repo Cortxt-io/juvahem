@@ -168,11 +168,6 @@
       </div>
       <div class="panel-card">
         <div class="psection">
-          <span class="eyebrow">Snabbval</span>
-          <PresetPicker selected={preset} {custom} onpick={(p) => applyPreset(p)} />
-        </div>
-
-        <div class="psection">
           <span class="eyebrow">{mode === 'invest' ? 'Vikta investeringen' : 'Vikter'}</span>
           {#if mode === 'invest'}
             <label class="lowprice">
@@ -204,6 +199,11 @@
             {/if}
           </div>
         {/if}
+
+        <div class="psection psection--compact">
+          <span class="eyebrow">Snabbval · valfri genväg</span>
+          <PresetPicker selected={preset} {custom} onpick={(p) => applyPreset(p)} />
+        </div>
       </div>
     </aside>
 
@@ -318,6 +318,12 @@
   .psection .eyebrow {
     display: block;
     margin-bottom: 12px;
+  }
+  .psection--compact {
+    padding: 12px 16px;
+  }
+  .psection--compact .eyebrow {
+    margin-bottom: 8px;
   }
   .lowprice,
   .dc {
