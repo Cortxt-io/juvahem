@@ -16,11 +16,13 @@
     onhover = undefined
   } = $props();
   let expanded = $state(null); // kommunkod currently expanded
+  let activeTab = $state('varfor'); // tab within the expanded detail
 
   const shown = $derived(ranked.slice(0, limit));
 
   function toggle(kod) {
     expanded = expanded === kod ? null : kod;
+    activeTab = 'varfor'; // every open starts on Varför (the primary "why")
   }
 </script>
 
@@ -48,21 +50,37 @@
       </button>
       {#if expanded === r.kommunkod}
         <div class="detail">
-          <div class="coverage" title="Andel av faktorerna som hade data för {r.name}">
-            <span class="dots">
-              {#each Array(5) as _, i (i)}
-                <span class="d" class:on={i < Math.round((r.coverage ?? 0) * 5)}></span>
-              {/each}
+          <div class="tabs" role="tablist" aria-label="Detaljer om {r.name}">
+            <button class="tab" class:active={activeTab === 'varfor'} role="tab" type="button"
+              aria-selected={activeTab === 'varfor'} onclick={() => (activeTab = 'varfor')}>Varför</button>
+            {#if mode !== 'invest'}
+              <button class="tab" class:active={activeTab === 'jobb'} role="tab" type="button"
+                aria-selected={activeTab === 'jobb'} onclick={() => (activeTab = 'jobb')}>Jobb</button>
+            {/if}
+            <button class="tab" class:active={activeTab === 'bostader'} role="tab" type="button"
+              aria-selected={activeTab === 'bostader'} onclick={() => (activeTab = 'bostader')}>Bostäder</button>
+            <span class="coverage" title="Andel av faktorerna som hade data för {r.name}">
+              <span class="dots">
+                {#each Array(5) as _, i (i)}
+                  <span class="d" class:on={i < Math.round((r.coverage ?? 0) * 5)}></span>
+                {/each}
+              </span>
+              {Math.round((r.coverage ?? 0) * 100)}%
             </span>
-            Datatäckning {Math.round((r.coverage ?? 0) * 100)}%
           </div>
-          <Explanation entry={r} kommunkod={r.kommunkod} {profile} />
-          <ScoreBreakdown breakdown={r.breakdown} />
-          {#if mode !== 'invest'}
-            <JobMatch kommunkod={r.kommunkod} {persons} />
-          {/if}
-          <ListingLinks kommunkod={r.kommunkod} name={r.name} />
-          <a class="btn ghost small" href="/kommun/{kommunkodToSlug.get(r.kommunkod)}">
+
+          <div class="panel">
+            {#if activeTab === 'varfor'}
+              <Explanation entry={r} kommunkod={r.kommunkod} {profile} showSummary={false} />
+              <ScoreBreakdown breakdown={r.breakdown} />
+            {:else if activeTab === 'jobb'}
+              <JobMatch kommunkod={r.kommunkod} {persons} />
+            {:else if activeTab === 'bostader'}
+              <ListingLinks kommunkod={r.kommunkod} name={r.name} />
+            {/if}
+          </div>
+
+          <a class="btn ghost small morelink" href="/kommun/{kommunkodToSlug.get(r.kommunkod)}">
             Mer om {r.name} →
           </a>
         </div>
@@ -148,12 +166,51 @@
     height: 6px;
   }
   .detail {
-    padding: 4px 16px 16px;
+    padding: 10px 16px 16px;
     border-top: 1px solid var(--line);
     display: grid;
-    gap: 14px;
+    gap: 12px;
   }
-  .detail .btn {
-    justify-self: start;
+  .tabs {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    border-bottom: 1px solid var(--line);
   }
+  .tab {
+    border: 0;
+    background: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+  }
+  .tab:hover { color: var(--ink); }
+  .tab.active {
+    color: var(--accent-dark);
+    border-bottom-color: var(--accent);
+  }
+  .coverage {
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    color: var(--muted);
+    font-family: var(--font-mono);
+  }
+  .dots { display: inline-flex; gap: 2px; }
+  .d {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--line);
+  }
+  .d.on { background: var(--accent); }
+  .panel { display: grid; gap: 14px; }
+  .morelink { justify-self: start; }
 </style>

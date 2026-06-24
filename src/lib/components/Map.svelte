@@ -169,7 +169,7 @@
   }
   .map {
     width: 100%;
-    height: 560px;
+    height: 420px;
     border-radius: 12px;
     overflow: hidden;
     border: 1px solid var(--line);

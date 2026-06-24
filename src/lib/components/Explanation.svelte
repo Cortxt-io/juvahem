@@ -5,7 +5,9 @@
   import { explain } from '$lib/explain.js';
   import { communes } from '$lib/data/communes.js';
 
-  let { entry, kommunkod, compact = false, profile = undefined } = $props();
+  // showSummary=false lets the expanded "Varför"-tab skip the summary line when the
+  // collapsed row already shows it (compact) — kills the duplicate summary render.
+  let { entry, kommunkod, compact = false, showSummary = true, profile = undefined } = $props();
 
   const commune = $derived(communes.find((c) => c.kommunkod === kommunkod) ?? {});
   const ex = $derived(explain(entry, commune, profile));
@@ -18,7 +20,7 @@
   {/if}
 {:else}
   <div class="explain">
-    {#if ex.summary}
+    {#if ex.summary && showSummary}
       <p class="summary big">{ex.summary} <span class="beta">beta</span></p>
     {/if}
 
