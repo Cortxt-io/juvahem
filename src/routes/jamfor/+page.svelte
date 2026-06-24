@@ -129,22 +129,23 @@
     <span class="eyebrow">Sveriges 290 kommuner · live-index</span>
     <h1>Rankade mot {mode === 'invest' ? 'din investering' : 'dina prioriteringar'}.</h1>
     <p class="lead">
-      Dra reglagen för vad som väger tyngst — index och karta sorterar om sig direkt. Ettan glöder guld.
+      Välj ett snabbval eller justera vikterna — index och karta sorterar om sig direkt. Ettan glöder guld.
     </p>
   </div>
 
-  <button class="ctrl-toggle btn ghost small" type="button" onclick={() => (showControls = !showControls)}>
-    {showControls ? 'Dölj reglage' : '⚙ Justera rankningen'}
-  </button>
+  <div class="controlbar">
+    <div class="presets">
+      <span class="eyebrow">Snabbval — valfri startpunkt</span>
+      <PresetPicker selected={preset} {custom} onpick={(p) => applyPreset(p)} />
+    </div>
+    <button class="btn ghost small justera" type="button"
+      onclick={() => (showControls = !showControls)} aria-expanded={showControls}>
+      {showControls ? '✕ Stäng reglage' : (mode === 'invest' ? '⚙ Justera vikter' : '⚙ Justera vikter & jobb')}
+    </button>
+  </div>
 
-  <div class="dashboard">
-    <aside class="controls" class:open={showControls}>
-      <div class="block">
-        <span class="eyebrow">Snabbval</span>
-        <p class="blockhint">Valfri startpunkt — sätter vikterna åt dig. Justera sedan fritt.</p>
-        <PresetPicker selected={preset} {custom} onpick={(p) => applyPreset(p)} />
-      </div>
-
+  {#if showControls}
+    <div class="adjust">
       <div class="block">
         <span class="eyebrow">{mode === 'invest' ? 'Vikta investeringen' : 'Vikter'}</span>
         <p class="blockhint">Dra för att vikta. {mode === 'invest' ? '' : 'Allt rankar om sig live.'}</p>
@@ -179,8 +180,10 @@
           {/if}
         </div>
       {/if}
-    </aside>
+    </div>
+  {/if}
 
+  <div class="results">
     <section class="index">
       <div class="index-head">
         <span class="eyebrow">{mode === 'invest' ? 'Index · investering' : 'Index · boende'}</span>
@@ -190,7 +193,7 @@
           <span class="profiletag">{getPreset(preset)?.label}{custom ? ' (anpassad)' : ''}</span>
         {/if}
       </div>
-      <p class="sub">Klicka en kommun för att se varför. Hovra för att hitta den på kartan. Datatäckning per rad.</p>
+      <p class="sub">Klicka en kommun för att se varför. Hovra för att hitta den på kartan.</p>
       <RankedList
         {ranked}
         limit={20}
@@ -256,12 +259,41 @@
     max-width: 56ch;
   }
 
-  .ctrl-toggle {
-    display: none;
-    margin-bottom: 14px;
+  .controlbar {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+  .presets {
+    flex: 1;
+    min-width: 0;
+  }
+  .presets .eyebrow {
+    display: block;
+    margin-bottom: 8px;
+  }
+  .justera {
+    flex: none;
+    white-space: nowrap;
+    align-self: center;
   }
 
-  .dashboard {
+  .adjust {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+  @media (min-width: 760px) {
+    .adjust {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .results {
     display: grid;
     grid-template-columns: 1fr;
     gap: 22px;
@@ -269,19 +301,13 @@
     padding-bottom: 50px;
   }
   @media (min-width: 1080px) {
-    .dashboard {
-      grid-template-columns: 300px minmax(0, 1fr) 360px;
+    .results {
+      grid-template-columns: minmax(0, 1fr) 360px;
     }
-    .controls,
     .atlas-map {
       position: sticky;
       top: 18px;
     }
-  }
-
-  .controls {
-    display: grid;
-    gap: 16px;
   }
   .block {
     border: 1px solid var(--line);
@@ -345,18 +371,8 @@
     margin: 0 0 16px;
   }
 
-  /* Narrow: controls collapse into a drawer; map drops below the index. */
+  /* Narrow: map drops below the index. */
   @media (max-width: 1079px) {
-    .ctrl-toggle {
-      display: inline-flex;
-    }
-    .controls {
-      display: none;
-    }
-    .controls.open {
-      display: grid;
-      margin-bottom: 8px;
-    }
     .atlas-map {
       margin-top: 8px;
     }
