@@ -12,7 +12,7 @@
   <title>{c.name} — flytta hit? | Juvahem</title>
   <meta
     name="description"
-    content="{c.name}: kommunalskatt {fmt(c.tax, '%')}, befolkningstrend {fmt(c.growth5y, '%')} på 5 år. Se hur {c.name} passar ert par på Juvahem."
+    content="{c.name}: kommunalskatt {fmt(c.tax, '%')}, befolkningstrend {fmt(c.growth5y, '%')} på 5 år. Se hur {c.name} passar din profil på Juvahem."
   />
   <link rel="canonical" href="https://juvahem.se/kommun/{data.slug}" />
 </svelte:head>
@@ -25,7 +25,7 @@
     <h1>{c.name}</h1>
     <p class="lead">
       Plats <b>{data.baselineRank}</b> av {data.total} i en neutral rankning på skatt och
-      befolkningstrend. Lägg in ert pars yrken i verktyget för en rankning mot er.
+      befolkningstrend. Lägg in din profil i verktyget för en rankning mot dina prioriteringar.
     </p>
 
     <div class="grid">
@@ -76,7 +76,7 @@
     {/if}
 
     <div class="cta">
-      <a class="btn" href="/jamfor">Ranka mot ert par →</a>
+      <a class="btn" href="/jamfor">Ranka mot din profil →</a>
     </div>
   </article>
 </div>
