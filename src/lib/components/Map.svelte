@@ -82,8 +82,11 @@
         style: 'https://tiles.openfreemap.org/styles/liberty',
         center: [16.8, 62.6],
         zoom: 3.5,
-        attributionControl: true
+        attributionControl: { compact: true }
       });
+      // Overlay controls — zoom (bottom-right) + fullscreen (top-right), à la Hemnet.
+      map.addControl(new maplibre.NavigationControl({ showCompass: false }), 'bottom-right');
+      map.addControl(new maplibre.FullscreenControl(), 'top-right');
 
       map.on('load', () => {
         map.addSource('communes', { type: 'geojson', data: geojson });
@@ -152,7 +155,7 @@
 <div class="mapwrap">
   <div class="map" bind:this={container}></div>
   <div class="legend">
-    <span class="eyebrow">Träffsäkerhet</span>
+    <span class="eyebrow">Poäng</span>
     <span class="ramp" aria-hidden="true"></span>
     <span class="ends"><span>låg</span><span>hög</span></span>
   </div>
@@ -169,7 +172,7 @@
   }
   .map {
     width: 100%;
-    height: 420px;
+    height: 460px;
     border-radius: 12px;
     overflow: hidden;
     border: 1px solid var(--line);

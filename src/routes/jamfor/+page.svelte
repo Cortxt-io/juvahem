@@ -26,7 +26,6 @@
 
   let mode = $state('bo'); // bo | invest — two modes, one engine
   let priorityLowPrice = $state(false); // invest toggle: bias toward low köpeskilling
-  let showControls = $state(false); // narrow screens: controls drawer
   let highlighted = $state(null); // kommunkod hovered in list OR map — syncs both
 
   // Bonus toggle — bumps the (same SCB) price dimension's weight in invest mode.
@@ -115,87 +114,33 @@
 <div class="wrap wide">
   <header class="topbar">
     <a class="brand" href="/"><span class="dot">🏡</span> Juvahem</a>
-    <div class="mode">
-      <button class="modebtn" class:active={mode === 'bo'} type="button" onclick={() => setMode('bo')}>
-        Bo här
-      </button>
-      <button class="modebtn" class:active={mode === 'invest'} type="button" onclick={() => setMode('invest')}>
-        Investera här
-      </button>
-    </div>
   </header>
 
   <div class="intro">
     <span class="eyebrow">Sveriges 290 kommuner · live-index</span>
     <h1>Rankade mot {mode === 'invest' ? 'din investering' : 'dina prioriteringar'}.</h1>
     <p class="lead">
-      Välj ett snabbval eller justera vikterna — index och karta sorterar om sig direkt. Ettan glöder guld.
+      Välj ett snabbval eller justera vikterna i panelen — index och karta sorterar om sig direkt. Ettan glöder guld.
     </p>
   </div>
 
-  <div class="controlbar">
-    <button class="btn ghost small justera" type="button"
-      onclick={() => (showControls = !showControls)} aria-expanded={showControls}>
-      {showControls ? '✕ Stäng' : (mode === 'invest' ? '⚙ Snabbval & vikter' : '⚙ Snabbval, vikter & jobb')}
-    </button>
-    {#if preset}
-      <span class="activetag">{getPreset(preset)?.label}{custom ? ' · anpassad' : ''}</span>
-    {/if}
+  <div class="tabs" role="tablist" aria-label="Läge">
+    <button class="tab" role="tab" type="button" class:active={mode === 'bo'}
+      aria-selected={mode === 'bo'} onclick={() => setMode('bo')}>Bo här</button>
+    <button class="tab" role="tab" type="button" class:active={mode === 'invest'}
+      aria-selected={mode === 'invest'} onclick={() => setMode('invest')}>Investera här</button>
   </div>
 
-  {#if showControls}
-    <div class="adjust">
-      <div class="block">
-        <span class="eyebrow">Snabbval — valfri startpunkt</span>
-        <p class="blockhint">Sätter vikterna åt dig. Justera sedan fritt nedan.</p>
-        <PresetPicker selected={preset} {custom} onpick={(p) => applyPreset(p)} />
+  <div class="layout">
+    <main class="main">
+      <div class="atlas-map">
+        <Map {ranked} {highlighted} onhover={(k) => (highlighted = k)} />
       </div>
 
-      <div class="block">
-        <span class="eyebrow">{mode === 'invest' ? 'Vikta investeringen' : 'Vikter'}</span>
-        <p class="blockhint">Dra för att vikta. {mode === 'invest' ? '' : 'Allt rankar om sig live.'}</p>
-        {#if mode === 'invest'}
-          <label class="lowprice">
-            <input type="checkbox" bind:checked={priorityLowPrice} onchange={toggleLowPrice} />
-            Prioritera låg köpeskilling (billigt insteg väger tyngst)
-          </label>
-          <WeightSliders bind:weights={profile.weights} dims={INVEST_SLIDERS} hint={INVEST_HINT} />
-          <div class="mt-4">
-            <PlannedFeature
-              label="Avkastning per objekt"
-              note="kräver licensierad data"
-              hint="Makro-screeningen visar var marknaden vuxit och är aktiv. Avkastning per objekt kräver licensierad fastighetsdata — på väg."
-            />
-          </div>
-        {:else}
-          <WeightSliders bind:weights={profile.weights} onchange={markCustom} />
-        {/if}
-      </div>
-
-      {#if mode !== 'invest'}
-        <div class="block">
-          <span class="eyebrow">Jobbmatchning · valfritt</span>
-          <p class="blockhint">Lägg till yrke(n) så vägs jobb-faktorn mot riktig efterfrågan i varje kommun.</p>
-          <PersonColumns bind:persons={profile.persons} />
-          {#if profile.persons.length >= 2}
-            <label class="dc">
-              <input type="checkbox" bind:checked={profile.lockDualCareer} />
-              Båda måste kunna jobba (dual-career — straffar orter som bara passar en)
-            </label>
-          {/if}
-        </div>
-      {/if}
-    </div>
-  {/if}
-
-  <div class="results">
-    <section class="index">
       <div class="index-head">
         <span class="eyebrow">{mode === 'invest' ? 'Index · investering' : 'Index · boende'}</span>
         {#if hlEntry}
           <span class="hlchip tnum">{hlEntry.name} · #{hlEntry.rank} · {hlEntry.score.toFixed(1)}</span>
-        {:else if preset}
-          <span class="profiletag">{getPreset(preset)?.label}{custom ? ' (anpassad)' : ''}</span>
         {/if}
       </div>
       <p class="sub">Klicka en kommun för att se varför. Hovra för att hitta den på kartan.</p>
@@ -208,11 +153,49 @@
         {highlighted}
         onhover={(k) => (highlighted = k)}
       />
-    </section>
+    </main>
 
-    <div class="atlas-map">
-      <Map {ranked} {highlighted} onhover={(k) => (highlighted = k)} />
-    </div>
+    <aside class="panel">
+      <div class="panel-card">
+        <div class="psection">
+          <span class="eyebrow">Snabbval</span>
+          <PresetPicker selected={preset} {custom} onpick={(p) => applyPreset(p)} />
+        </div>
+
+        <div class="psection">
+          <span class="eyebrow">{mode === 'invest' ? 'Vikta investeringen' : 'Vikter'}</span>
+          {#if mode === 'invest'}
+            <label class="lowprice">
+              <input type="checkbox" bind:checked={priorityLowPrice} onchange={toggleLowPrice} />
+              Prioritera låg köpeskilling
+            </label>
+            <WeightSliders bind:weights={profile.weights} dims={INVEST_SLIDERS} hint={INVEST_HINT} />
+            <div class="mt-4">
+              <PlannedFeature
+                label="Avkastning per objekt"
+                note="kräver licensierad data"
+                hint="Makro-screeningen visar var marknaden vuxit och är aktiv. Avkastning per objekt kräver licensierad fastighetsdata — på väg."
+              />
+            </div>
+          {:else}
+            <WeightSliders bind:weights={profile.weights} onchange={markCustom} />
+          {/if}
+        </div>
+
+        {#if mode !== 'invest'}
+          <div class="psection">
+            <span class="eyebrow">Jobbmatchning · valfritt</span>
+            <PersonColumns bind:persons={profile.persons} />
+            {#if profile.persons.length >= 2}
+              <label class="dc">
+                <input type="checkbox" bind:checked={profile.lockDualCareer} />
+                Båda måste kunna jobba (dual-career — straffar orter som bara passar en)
+              </label>
+            {/if}
+          </div>
+        {/if}
+      </div>
+    </aside>
   </div>
 </div>
 
@@ -225,26 +208,31 @@
     padding: 20px 0 14px;
     flex-wrap: wrap;
   }
-  .mode {
-    display: inline-flex;
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    overflow: hidden;
+  .tabs {
+    display: flex;
+    gap: 4px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 20px;
   }
-  .modebtn {
+  .tab {
     border: 0;
-    background: var(--card);
-    padding: 9px 18px;
+    background: none;
+    padding: 10px 16px;
     cursor: pointer;
     font-family: var(--font-mono);
     font-size: 12px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--muted);
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
   }
-  .modebtn.active {
-    background: var(--accent);
-    color: #fff;
+  .tab:hover {
+    color: var(--ink);
+  }
+  .tab.active {
+    color: var(--ink);
+    border-bottom-color: var(--accent);
   }
   .intro {
     margin: 6px 0 18px;
@@ -264,63 +252,44 @@
     max-width: 56ch;
   }
 
-  .controlbar {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 16px;
-    flex-wrap: wrap;
-  }
-  .justera {
-    flex: none;
-    white-space: nowrap;
-  }
-  .activetag {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--accent-dark);
-    background: var(--accent-soft);
-    padding: 4px 10px;
-    border-radius: 999px;
-  }
-
-  .adjust {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 16px;
-    margin-bottom: 20px;
-  }
-
-  .results {
+  .layout {
     display: grid;
     grid-template-columns: 1fr;
     gap: 22px;
     align-items: start;
     padding-bottom: 50px;
   }
-  @media (min-width: 1080px) {
-    .results {
-      grid-template-columns: minmax(0, 1fr) 360px;
+  @media (min-width: 1000px) {
+    .layout {
+      grid-template-columns: minmax(0, 1fr) 340px;
     }
-    .atlas-map {
+    .panel {
       position: sticky;
       top: 18px;
     }
   }
-  .block {
+  .main {
+    min-width: 0;
+  }
+  .atlas-map {
+    margin-bottom: 18px;
+    min-width: 0;
+  }
+  .panel-card {
     border: 1px solid var(--line);
     background: var(--card);
     border-radius: 14px;
-    padding: 14px 16px 18px;
+    overflow: hidden;
   }
-  .block .eyebrow {
+  .psection {
+    padding: 16px;
+  }
+  .psection + .psection {
+    border-top: 1px solid var(--line);
+  }
+  .psection .eyebrow {
     display: block;
-    margin-bottom: 4px;
-  }
-  .blockhint {
-    font-size: 13px;
-    color: var(--muted);
-    margin: 0 0 14px;
+    margin-bottom: 12px;
   }
   .lowprice,
   .dc {
@@ -347,14 +316,6 @@
     gap: 12px;
     margin-bottom: 4px;
   }
-  .profiletag {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--accent-dark);
-    background: var(--accent-soft);
-    padding: 3px 9px;
-    border-radius: 999px;
-  }
   .hlchip {
     font-size: 12px;
     color: #fff;
@@ -367,12 +328,5 @@
     color: var(--muted);
     font-size: 13px;
     margin: 0 0 16px;
-  }
-
-  /* Narrow: map drops below the index. */
-  @media (max-width: 1079px) {
-    .atlas-map {
-      margin-top: 8px;
-    }
   }
 </style>

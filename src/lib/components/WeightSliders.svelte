@@ -41,16 +41,7 @@
 <style>
   .sliders {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px 24px;
-  }
-  @media (max-width: 560px) {
-    .sliders {
-      grid-template-columns: 1fr;
-    }
-  }
-  .hint {
-    grid-column: 1 / -1;
+    gap: 13px;
   }
   .head {
     display: flex;
