@@ -27,7 +27,7 @@
   let mode = $state('bo'); // bo | invest — two modes, one engine
   let priorityLowPrice = $state(false); // invest toggle: bias toward low köpeskilling
   let highlighted = $state(null); // kommunkod hovered in list OR map — syncs both
-  let panelOpen = $state(false); // narrow screens: filter panel as a left slide-in drawer
+  let wizardOpen = $state(false); // weights/jobs wizard — opens full-width above the map
 
   // Bonus toggle — bumps the (same SCB) price dimension's weight in invest mode.
   function toggleLowPrice() {
@@ -132,49 +132,23 @@
       <button class="tab" role="tab" type="button" class:active={mode === 'invest'}
         aria-selected={mode === 'invest'} onclick={() => setMode('invest')}>Investera här</button>
     </div>
-    <button class="btn small filterbtn" type="button" onclick={() => (panelOpen = true)}>
-      ⚙ Sökfilter
+    <button class="btn small wizbtn" type="button" aria-expanded={wizardOpen}
+      onclick={() => (wizardOpen = !wizardOpen)}>
+      {wizardOpen ? '✕ Stäng vikter' : '⚙ Justera vikter'}
     </button>
   </div>
 
-  <div class="layout">
-    <main class="main">
-      <div class="atlas-map">
-        <Map {ranked} {highlighted} onhover={(k) => (highlighted = k)} />
-      </div>
-
-      <div class="index-head">
-        <span class="eyebrow">{mode === 'invest' ? 'Index · investering' : 'Index · boende'}</span>
-        {#if hlEntry}
-          <span class="hlchip tnum">{hlEntry.name} · #{hlEntry.rank} · {hlEntry.score.toFixed(1)}</span>
-        {/if}
-      </div>
-      <p class="sub">Klicka en kommun för att se varför. Hovra för att hitta den på kartan.</p>
-      <RankedList
-        {ranked}
-        limit={20}
-        persons={profile.persons}
-        {profile}
-        {mode}
-        {highlighted}
-        onhover={(k) => (highlighted = k)}
-      />
-    </main>
-
-    <aside class="panel" class:open={panelOpen}>
-      <div class="panel-head">
-        <span class="eyebrow">Sökfilter</span>
-        <button class="panel-close" type="button" onclick={() => (panelOpen = false)} aria-label="Stäng filter">✕</button>
-      </div>
-      <div class="panel-card">
-        <div class="psection">
+  {#if wizardOpen}
+    <section class="wizard">
+      <div class="wiz-grid">
+        <div class="wiz-cell wiz-weights">
           <span class="eyebrow">{mode === 'invest' ? 'Vikta investeringen' : 'Vikter'}</span>
           {#if mode === 'invest'}
             <label class="lowprice">
               <input type="checkbox" bind:checked={priorityLowPrice} onchange={toggleLowPrice} />
               Prioritera låg köpeskilling
             </label>
-            <WeightSliders bind:weights={profile.weights} dims={INVEST_SLIDERS} hint={INVEST_HINT} />
+            <WeightSliders bind:weights={profile.weights} dims={INVEST_SLIDERS} hint={INVEST_HINT} columns={2} />
             <div class="mt-4">
               <PlannedFeature
                 label="Avkastning per objekt"
@@ -183,12 +157,12 @@
               />
             </div>
           {:else}
-            <WeightSliders bind:weights={profile.weights} onchange={markCustom} />
+            <WeightSliders bind:weights={profile.weights} onchange={markCustom} columns={2} />
           {/if}
         </div>
 
         {#if mode !== 'invest'}
-          <div class="psection">
+          <div class="wiz-cell wiz-jobs">
             <span class="eyebrow">Jobbmatchning · valfritt</span>
             <PersonColumns bind:persons={profile.persons} />
             {#if profile.persons.length >= 2}
@@ -199,18 +173,35 @@
             {/if}
           </div>
         {/if}
-
-        <div class="psection psection--compact">
-          <span class="eyebrow">Snabbval · valfri genväg</span>
-          <PresetPicker selected={preset} {custom} onpick={(p) => applyPreset(p)} />
-        </div>
       </div>
-    </aside>
 
-    {#if panelOpen}
-      <button class="backdrop" type="button" aria-label="Stäng filter" onclick={() => (panelOpen = false)}></button>
+      <div class="wiz-presets">
+        <span class="eyebrow">Snabbval · valfri genväg</span>
+        <PresetPicker selected={preset} {custom} onpick={(p) => applyPreset(p)} />
+      </div>
+    </section>
+  {/if}
+
+  <div class="atlas-map">
+    <Map {ranked} {highlighted} onhover={(k) => (highlighted = k)} />
+  </div>
+
+  <div class="index-head">
+    <span class="eyebrow">{mode === 'invest' ? 'Index · investering' : 'Index · boende'}</span>
+    {#if hlEntry}
+      <span class="hlchip tnum">{hlEntry.name} · #{hlEntry.rank} · {hlEntry.score.toFixed(1)}</span>
     {/if}
   </div>
+  <p class="sub">Klicka en kommun för att se varför. Hovra för att zooma in den på kartan.</p>
+  <RankedList
+    {ranked}
+    limit={20}
+    persons={profile.persons}
+    {profile}
+    {mode}
+    {highlighted}
+    onhover={(k) => (highlighted = k)}
+  />
 </div>
 
 <style>
@@ -233,14 +224,6 @@
   .tabs {
     display: flex;
     gap: 4px;
-  }
-  .filterbtn {
-    display: none;
-    flex: none;
-    margin-bottom: 8px;
-  }
-  .panel-head {
-    display: none;
   }
   .tab {
     border: 0;
@@ -268,10 +251,10 @@
     gap: 6px;
   }
   .intro h1 {
-    font-size: clamp(26px, 4vw, 42px);
+    font-size: clamp(24px, 3.4vw, 40px);
     line-height: 1.05;
     margin: 0;
-    max-width: 18ch;
+    white-space: nowrap;
   }
   .lead {
     font-size: 16px;
@@ -280,50 +263,63 @@
     max-width: 56ch;
   }
 
-  .layout {
+  @media (max-width: 560px) {
+    .intro h1 {
+      white-space: normal;
+    }
+  }
+
+  /* Wizard — full-width weights/jobs editor that opens above the map. */
+  .wizbtn {
+    flex: none;
+  }
+  .wizard {
+    border: 1px solid var(--line);
+    background: var(--card);
+    border-radius: 14px;
+    padding: 18px;
+    margin-bottom: 20px;
+    display: grid;
+    gap: 18px;
+  }
+  .wiz-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 22px;
-    align-items: start;
-    padding-bottom: 50px;
+    gap: 18px;
   }
-  @media (min-width: 1000px) {
-    .layout {
-      grid-template-columns: minmax(0, 1fr) 340px;
-    }
-    .panel {
-      position: sticky;
-      top: 18px;
+  @media (min-width: 880px) {
+    .wiz-grid {
+      grid-template-columns: 2fr 1fr;
+      gap: 28px;
     }
   }
-  .main {
-    min-width: 0;
+  .wiz-cell .eyebrow {
+    display: block;
+    margin-bottom: 12px;
+  }
+  .wiz-jobs {
+    border-top: 1px solid var(--line);
+    padding-top: 18px;
+  }
+  @media (min-width: 880px) {
+    .wiz-jobs {
+      border-top: 0;
+      padding-top: 0;
+      border-left: 1px solid var(--line);
+      padding-left: 28px;
+    }
+  }
+  .wiz-presets {
+    border-top: 1px solid var(--line);
+    padding-top: 16px;
+  }
+  .wiz-presets .eyebrow {
+    display: block;
+    margin-bottom: 10px;
   }
   .atlas-map {
     margin-bottom: 18px;
     min-width: 0;
-  }
-  .panel-card {
-    border: 1px solid var(--line);
-    background: var(--card);
-    border-radius: 14px;
-    overflow: hidden;
-  }
-  .psection {
-    padding: 16px;
-  }
-  .psection + .psection {
-    border-top: 1px solid var(--line);
-  }
-  .psection .eyebrow {
-    display: block;
-    margin-bottom: 12px;
-  }
-  .psection--compact {
-    padding: 12px 16px;
-  }
-  .psection--compact .eyebrow {
-    margin-bottom: 8px;
   }
   .lowprice,
   .dc {
@@ -362,52 +358,5 @@
     color: var(--muted);
     font-size: 13px;
     margin: 0 0 16px;
-  }
-
-  /* Narrow: the filter panel becomes a left slide-in drawer behind a "Sökfilter" button. */
-  @media (max-width: 999px) {
-    .filterbtn {
-      display: inline-flex;
-    }
-    .panel {
-      position: fixed;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      width: min(340px, 86vw);
-      z-index: 50;
-      background: var(--bg);
-      padding: 16px;
-      overflow-y: auto;
-      transform: translateX(-100%);
-      transition: transform 0.25s ease;
-      box-shadow: 2px 0 24px rgba(20, 30, 28, 0.18);
-    }
-    .panel.open {
-      transform: translateX(0);
-    }
-    .panel-head {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 14px;
-    }
-    .panel-close {
-      border: 0;
-      background: none;
-      cursor: pointer;
-      font-size: 18px;
-      line-height: 1;
-      color: var(--muted);
-      padding: 4px 6px;
-    }
-    .backdrop {
-      position: fixed;
-      inset: 0;
-      z-index: 40;
-      border: 0;
-      cursor: pointer;
-      background: rgba(20, 30, 28, 0.4);
-    }
   }
 </style>

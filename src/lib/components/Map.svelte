@@ -15,6 +15,27 @@
   let geojson = null;
   let status = $state('loading'); // loading | ready | nodata | error
 
+  // National "home" view — the resting framing the map eases back to.
+  const HOME = { center: [16.8, 62.6], zoom: 3.5 };
+  let flyTimer = null; // debounce so fast list-hover doesn't thrash the camera
+
+  // Bounding box [[minLng,minLat],[maxLng,maxLat]] of a Polygon/MultiPolygon feature.
+  function bbox(geom) {
+    let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+    const scan = (coords) => {
+      for (const c of coords) {
+        if (typeof c[0] === 'number') {
+          if (c[0] < minX) minX = c[0];
+          if (c[1] < minY) minY = c[1];
+          if (c[0] > maxX) maxX = c[0];
+          if (c[1] > maxY) maxY = c[1];
+        } else scan(c);
+      }
+    };
+    scan(geom.coordinates);
+    return [[minX, minY], [maxX, maxY]];
+  }
+
   const scoreByKod = $derived(new Map(ranked.map((r) => [r.kommunkod, r.score])));
 
   // Normalize the current scores to 0-1 so the ramp spans the live range.
@@ -53,6 +74,29 @@
     const hlFilter = ['==', ['get', 'kod'], highlighted ?? ' '];
     map.setFilter('communes-highlight-fill', hlFilter);
     map.setFilter('communes-highlight', hlFilter);
+  });
+
+  // Smoothly frame the highlighted kommun (zoom in); ease back to the national view
+  // when nothing is highlighted. Debounced so rapid list-hover retargets cleanly.
+  $effect(() => {
+    const kod = highlighted;
+    if (!map || status !== 'ready' || !geojson) return;
+    clearTimeout(flyTimer);
+    flyTimer = setTimeout(() => {
+      if (!map) return;
+      if (!kod) {
+        map.easeTo({ ...HOME, duration: 900 });
+        return;
+      }
+      const f = geojson.features.find((x) => String(x.properties.kod ?? '') === kod);
+      if (!f) return;
+      map.fitBounds(bbox(f.geometry), {
+        padding: 60,
+        maxZoom: 8.5,
+        duration: 900,
+        essential: true
+      });
+    }, 140);
   });
 
   onMount(async () => {
@@ -149,7 +193,10 @@
     }
   });
 
-  onDestroy(() => map?.remove());
+  onDestroy(() => {
+    clearTimeout(flyTimer);
+    map?.remove();
+  });
 </script>
 
 <div class="mapwrap">
@@ -172,11 +219,16 @@
   }
   .map {
     width: 100%;
-    height: 320px;
+    height: 340px;
     border-radius: 12px;
     overflow: hidden;
     border: 1px solid var(--line);
     background: #dde1d8;
+  }
+  @media (min-width: 1000px) {
+    .map {
+      height: 520px;
+    }
   }
   .legend {
     position: absolute;

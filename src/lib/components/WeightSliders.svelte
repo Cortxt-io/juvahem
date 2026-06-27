@@ -13,7 +13,7 @@
     { key: 'transit', label: 'Kollektivtrafik' },
     { key: 'growth', label: 'Befolkningstrend' }
   ];
-  let { weights = $bindable(), dims = BO_DIMS, hint = '', onchange } = $props();
+  let { weights = $bindable(), dims = BO_DIMS, hint = '', onchange, columns = 1 } = $props();
 
   const ACTIVE = $derived(dims);
   const total = $derived(ACTIVE.reduce((s, d) => s + (Number(weights[d.key]) || 0), 0));
@@ -23,7 +23,7 @@
   }
 </script>
 
-<div class="sliders">
+<div class="sliders" class:two={columns === 2}>
   {#each ACTIVE as d (d.key)}
     <div class="row">
       <span class="lbl" title={d.label}>{d.label}</span>
@@ -41,6 +41,13 @@
   .sliders {
     display: grid;
     gap: 9px;
+  }
+  .sliders.two {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px 22px;
+  }
+  .sliders.two .hint {
+    grid-column: 1 / -1;
   }
   .row {
     display: grid;
